@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Roboto+Condensed:wght@300;400&display=swap');
+
+$fonts: (
+	landing-small: (600 32px 'Poppins'),
+	landing-large: (600 90px 'Poppins'),
+	primary-small: (600 30px 'Poppins'),
+	primary-large: (600 40px 'Poppins'),
+	secondary-small: (16px 'Roboto Condensed'),
+	secondary-large: (20px 'Roboto Condensed')
+);
+
+$colors: (
+	white: #FDFFF7,
+	primary: #217BFF,
+	bg-dark: #363636,
+	bg-darker: #2b2b2b,
+	bg-item: #1d1d1d
+);
+
+@function font($fonttype) {
+	@return map-get($fonts, $fonttype);
+}
+
+@function color($color) {
+	@return map-get($colors, $color);
+}
+
+html, body {
+	padding:0;
+	margin:0;
+}
+
+.main-container{
+	scroll-snap-type: y mandatory;
+	max-height: 100vh;
+	overflow: scroll;
+}
+
+.page{
+	scroll-snap-align: end;
+	box-sizing: border-box;
+	position: static;
+	display: grid;
+	width: 100vw;
+	height: 100vh;
+	align-content: center;
+}
+.page:nth-child(odd){
+	background: color(bg-darker);
+}
+.page:nth-child(even){
+	background: color(bg-dark);
+}
+.spacer{
+	background: color(bg-dark);
+}
+
+span#cursor-text, span#cursor{
+	color:color(primary);
+}
+
+.header-text{
+	color:color(white);
+	font: font(primary-small)
+}
+
+.card{
+	background: color(bg-item);
+	border-radius: 16px;
+}
+/* For mobile devices */
+
+.spacer{
+	height: 56px;
+	width: auto;
+}
+.page{
+	height: calc(100vh - 56px);
+}
+nav{
+	background: color(bg-dark);
+	display: flex;
+	justify-content: flex-end;
+	padding: 0 16px 0 16px;
+	height: 56px;
+	border-bottom: 2px solid color(primary);
+	position: fixed;
+	top:0px;
+	left:0px;
+	right:0px;
+}
+.logo{
+	padding:16px 0px 16px 0px;
+	height: 24px;
+	margin-right: auto;
+}
+
+.nav-links{
+	display: flex;
+	visibility: hidden;
+	opacity: 0;
+	background: color(bg-darker);
+	color: color(white);
+	padding: 0em;
+	width: 242px;
+	height: 292px;
+	margin: auto;
+	z-index: 1;
+	border-radius: 16px;
+	border: 0px solid color(primary);
+	filter: drop-shadow(0 0 0px color(bg-dark));
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition: 00.15s ease-in-out;
+}
+.nav-links.clicked{
+	border-radius: 16px;
+	visibility: visible;
+	width: 262px;
+	height: 312px;
+	border: 2px solid color(primary);
+	filter: drop-shadow(0 0 4px color(bg-dark));
+	opacity: 1;
+}
+.nav-links > ul{
+	width: inherit;
+	height: inherit;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 0%;
+	list-style-type: none;
+	padding:0px 24px;
+	transition: 00.15s ease-in-out;
+	z-index: 1;
+}
+.nav-links > ul > li{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font:font(primary-small);
+	transition: 00.15s ease-in-out;
+	opacity: 0;
+	z-index: 1;
+
+}
+
+.nav-links.clicked > ul > li{
+	opacity: 1;
+}
+
+nav > span.arrow{
+	color: color(white);
+	align-self: center;
+	padding: 16px 16px 16px 16px;
+	position: fixed;
+	top:0px;
+	right:0px;
+	transition: 0.15s ease-in-out;
+	z-index: 1;
+	cursor: pointer;
+}
+
+nav > span.arrow.clicked{
+	transform: rotate(90deg);
+	color: color(primary);
+}
+.glass{
+	display: flex;
+	visibility:hidden;
+	position:fixed;
+	top:0%;
+	bottom:0%;
+	left:0%;
+	right:0%;
+	width: 100%;
+	height: 100%;
+	backdrop-filter: blur(0px) grayscale(0);
+	-webkit-backdrop-filter: blur(0px) grayscale(0);
+	z-index: -1;
+	transition: 0.15s ease-in-out;
+	justify-content: center;
+	align-items: center;
+}
+.glass.clicked{
+	visibility: visible;
+	z-index: 0;
+	backdrop-filter: blur(5px) grayscale(1);
+	-webkit-backdrop-filter: blur(5px) grayscale(1);
+}
+
+.page{
+	padding: 16px;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+	grid-gap: 16px;
+}
+
+.header-text{
+	font:font(primary-small);
+	grid-row: 1;
+	grid-column: 1/-1;
+}
+
+.card-container{
+	grid-row: 2/-1;
+	grid-column: 1/-1;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+	grid-gap: 16px;
+}
+
+.card{
+	grid-column: span 3;
+}
+
+.landing-text{
+	font:font(landing-small);
+	grid-column: 1/-1;
+	color:color(white);
+}

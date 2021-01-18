@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style/style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+	<nav>
+		<img class="logo" src="img/brandLogo4.svg" alt="heylakshya logo">
+
+		<div class="glass" id="glass" onclick="navPress()">
+			<div class="nav-links" id="nav-links">
+				<ul>
+					<li>Projects</li>
+					<li>Skills</li>
+					<li>Education</li>
+					<li>Experience</li>
+					<li>Contact</li>
+				</ul>
+			</div>
+		</div>
+
+		<span class="material-icons arrow" id="arrow" onclick="navPress()">dashboard</span>
+	</nav>
+
+	
+	<div class="main-container">
+		<div class="spacer"></div>
+
+		<div class="page" id="landing">
+			<div class="landing-text">
+				Hi there! <br> My name is Lakshya,<br> and I <span id="cursor-text"></span><span id="cursor">_</span>
+			</div>
+		</div>
+	
+		<div class="page" id="projects">
+			<div class="header-text">Some of my Projects</div>
+			<div class="card-container">
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+			</div>
+		</div>
+		<div class="page" id="work">
+			<div class="header-text">My work experiences have enabled me to reach out of my comfort zone…</div>
+			<div class="card-container">
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+			</div>
+		</div>
+		<div class="page" id="extracurricular">
+			<div class="header-text">…while my extracurriculars helped me develop important soft-skills.</div>
+			<div class="card-container">
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+			</div>
+		</div>
+		<div class="page" id="skills">
+			<div class="header-text">I have various skills that help me contribute to interdisciplinary projects</div>
+			<div class="card-container">
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+			</div>
+		</div>
+		<div class="page" id="interests">
+			<div class="header-text">Aspiring to be a polymath, I am always looking for developing new interests</div>
+			<div class="card-container">
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+			</div>
+		</div>
+		<div class="page" id="contact">
+			<div class="header-text">I always enjoy learning about new perspectives and discussing ideas!</div>
+			<div class="card-container"></div>
+		</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
