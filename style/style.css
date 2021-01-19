@@ -225,7 +225,7 @@ html body .main-container .page#landing img.profile {
   -o-object-fit: cover;
      object-fit: cover;
   z-index: 1;
-  width: 100%;
+  height: 100%;
 }
 
 html body .main-container .page .header-text {
