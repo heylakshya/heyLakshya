@@ -43,6 +43,16 @@ typist.prototype.type = function() {
 
 window.onload = function() {
 	let element = document.getElementById('cursor-text');
-	let words = ["collaborate.", "build.", "design.", "develop.", "research."];
+	let words = ["developer.", "builder.", "designer.", "researcher.", "collaborator."];
 	new typist(element, words);
 };
+
+function light_up_bg(){
+	document.getElementById('contact-bg').classList.add("over");
+	document.getElementById('contact-button').classList.add("over");
+}
+
+function dark_up_bg(){
+	document.getElementById('contact-bg').classList.remove("over");
+	document.getElementById('contact-button').classList.remove("over");
+}
