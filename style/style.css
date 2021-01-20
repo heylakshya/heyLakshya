@@ -53,8 +53,8 @@ html body nav .glass {
   backdrop-filter: blur(0px) grayscale(0);
   -webkit-backdrop-filter: blur(0px) grayscale(0);
   z-index: -1;
-  -webkit-transition: 0.15s ease-in-out;
-  transition: 0.15s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -97,8 +97,8 @@ html body nav .nav-links {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: 0.15s ease-in-out;
-  transition: 0.15s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   position: fixed;
   left: 50%;
   top: 50%;
@@ -127,8 +127,8 @@ html body nav .nav-links ul {
   margin: 0%;
   list-style-type: none;
   padding: 0px 24px;
-  -webkit-transition: 0.15s ease-in-out;
-  transition: 0.15s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   z-index: 2;
 }
 
@@ -138,8 +138,8 @@ html body nav .nav-links ul li a {
   padding-top: 0px;
   padding-bottom: 0px;
   font: 600 24px "Poppins";
-  -webkit-transition: 0.15s ease-in-out;
-  transition: 0.15s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   opacity: 0;
   z-index: 2;
 }
@@ -163,8 +163,8 @@ html body nav span.arrow {
   display: block;
   color: #FDFFF7;
   padding: 24px;
-  -webkit-transition: 0.15s ease-in-out;
-  transition: 0.15s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   z-index: 2;
   cursor: pointer;
 }
@@ -487,8 +487,8 @@ html body .main-container .page .contact-container .svg-container svg.svgbg {
   fill: #101010;
   z-index: 1;
   height: 100%;
-  -webkit-transition: 0.15s ease-in-out;
-  transition: 0.15s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 html body .main-container .page .contact-container .svg-container svg.svgbg.over {
@@ -505,8 +505,8 @@ html body .main-container .page .contact-container .button {
   -webkit-filter: drop-shadow(0 0 10px #000000);
           filter: drop-shadow(0 0 10px #000000);
   z-index: 1;
-  -webkit-transition: 0.15s ease-in-out;
-  transition: 0.15s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   cursor: pointer;
 }
 
@@ -569,8 +569,8 @@ html body .main-container .page .footer .social-container .social i {
   display: block;
   color: #FDFFF7;
   height: 100%;
-  -webkit-transition: 0.15s ease-in-out;
-  transition: 0.15s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   font-size: xx-large;
   padding: 24px 0 24px 24px;
 }
