@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Roboto+Condensed:wght@300;400&display=swap");
+@use './include-media';
+@use 'https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Roboto+Condensed:wght@300;400&display=swap';
 html body {
   position: fixed;
   top: 0;
@@ -34,7 +35,7 @@ html body nav {
 
 html body nav .logo {
   display: block;
-  padding: 24px;
+  padding: 20px;
   height: 24px;
 }
 
@@ -126,7 +127,7 @@ html body nav .nav-links ul {
           align-items: center;
   margin: 0%;
   list-style-type: none;
-  padding: 0px 24px;
+  padding: 0px 20px;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   z-index: 2;
@@ -137,7 +138,7 @@ html body nav .nav-links ul li a {
   text-decoration: none;
   padding-top: 0px;
   padding-bottom: 0px;
-  font: 600 24px "Poppins";
+  font: 600 18px "Poppins";
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   opacity: 0;
@@ -162,7 +163,7 @@ html body nav .nav-links.clicked {
 html body nav span.arrow {
   display: block;
   color: #FDFFF7;
-  padding: 24px;
+  padding: 20px;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   z-index: 2;
@@ -200,6 +201,7 @@ html body .main-container .page {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: relative;
@@ -244,12 +246,13 @@ html body .main-container .page#landing .profile-container img.profile {
 
 html body .main-container .page .header-text {
   color: #FDFFF7;
-  font: 600 24px "Poppins";
+  font: 600 18px "Poppins";
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
   grid-column: 1/-1;
-  padding: 24px;
+  padding: 20px;
+  padding-bottom: 0;
   margin: 0;
   background: inherit;
 }
@@ -300,8 +303,9 @@ html body .main-container .page .card-area .card-container .card {
       grid-template-rows: repeat(4, 1fr);
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  padding: 24px;
+  padding: 20px;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 html body .main-container .page .card-area .card-container .card .cardbg {
@@ -330,7 +334,7 @@ html body .main-container .page .card-area .card-container .card .cardimg {
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  border: 4px solid #c33149;
+  border: 2px solid #c33149;
   -webkit-filter: drop-shadow(0 10px 10px #000000);
           filter: drop-shadow(0 10px 10px #000000);
 }
@@ -350,21 +354,32 @@ html body .main-container .page .card-area .card-container .card .cardtext {
   grid-row: -2/-1;
   -ms-grid-column: 1;
   grid-column: 1;
-  padding: 24px;
-  font: 500 18px "Poppins";
+  padding: 12px;
+  font: 300 14px "Poppins";
   z-index: 1;
+  line-height: 1em;
 }
 
 html body .main-container .page .card-area .swipe-text {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
   -ms-grid-row: 2;
   grid-row: 2;
   -ms-grid-column: 1;
   grid-column: 1;
   fill: #c3c3c3;
   opacity: 0.3;
+}
+
+html body .main-container .page .card-area .swipe-text img {
+  height: 100%;
+  max-width: 80%;
 }
 
 html body .main-container .page:nth-child(odd) {
@@ -390,11 +405,11 @@ html body .main-container .page .landing-text-container {
   -ms-grid-row: 4;
   -ms-grid-row-span: 2;
   grid-row: 4/6;
-  padding: 24px;
+  padding: 20px;
 }
 
 html body .main-container .page .landing-text-container .landing-text {
-  font: 1000 32px "Poppins";
+  font: 600 20px "Poppins";
   color: #FDFFF7;
 }
 
@@ -403,9 +418,9 @@ html body .main-container .page .landing-text-container .landing-text span#curso
 }
 
 html body .main-container .page ul.arrow-links {
-  padding: 0 24px;
-  padding-top: 24px;
-  margin-left: -6px;
+  padding: 20px;
+  padding-top: 0px;
+  margin: 0 0 0 -6px;
   grid-column: 1/-1;
   -ms-grid-row: 6;
   -ms-grid-row-span: 1;
@@ -417,11 +432,11 @@ html body .main-container .page ul.arrow-links {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   list-style-type: none;
-  font: 500 24px "Poppins";
+  font: 300 20px "Poppins";
 }
 
 html body .main-container .page ul.arrow-links li {
@@ -435,7 +450,7 @@ html body .main-container .page ul.arrow-links li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 0;
 }
 
 html body .main-container .page ul.arrow-links li::before {
@@ -468,6 +483,7 @@ html body .main-container .page .contact-container .svg-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 20px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -496,8 +512,10 @@ html body .main-container .page .contact-container .svg-container svg.svgbg.over
 }
 
 html body .main-container .page .contact-container .button {
-  padding: 24px;
-  font: 600 24px "Poppins";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px;
+  font: 600 18px "Poppins";
   background: #101010;
   color: #FDFFF7;
   border: 4px solid #4e96ff;
@@ -571,12 +589,12 @@ html body .main-container .page .footer .social-container .social i {
   height: 100%;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-  font-size: xx-large;
-  padding: 24px 0 24px 24px;
+  font-size: x-large;
+  padding: 20px 0 20px 20px;
 }
 
 html body .main-container .page .footer .social-container .social i:last-child {
-  padding-right: 24px;
+  padding-right: 20px;
 }
 
 html body .main-container .page .footer .social-container .social i:hover {
