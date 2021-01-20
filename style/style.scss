@@ -2,15 +2,15 @@
 @use 'https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Roboto+Condensed:wght@300;400&display=swap';
 
 $fonts: (
-	landing-small: (600 20px 'Poppins'),
+	landing-small: (600 6.5vw 'Poppins'),
 	landing-medium: (600 50px 'Poppins'),
 	landing-large: (600 90px 'Poppins'),
 
-	primary-small: (600 18px 'Poppins'),
+	primary-small: (600 6vw 'Poppins'),
 	primary-medium: (600 40px 'Poppins'),
 	primary-large: (600 40px 'Poppins'),
 
-	secondary-small: (300 20px 'Poppins'),
+	secondary-small: (300 6vw 'Poppins'),
 	secondary-medium: (400 20px 'Poppins'),
 	secondary-large: (500 30px 'Poppins'),
 
@@ -18,7 +18,7 @@ $fonts: (
 	text-medium: (300 14px 'Poppins'),
 	text-large: (300 14px 'Poppins'),
 
-	icons-small: (18px 'Material Icons'),
+	icons-small: (6vw 'Material Icons'),
 	icons-large: (24px 'Material Icons')
 );
 
