@@ -51,8 +51,8 @@ html body nav .glass {
   right: 0%;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(0px) grayscale(0);
-  -webkit-backdrop-filter: blur(0px) grayscale(0);
+  backdrop-filter: blur(0px) sepia(0);
+  -webkit-backdrop-filter: blur(0px) sepia(0);
   z-index: -1;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
@@ -67,8 +67,8 @@ html body nav .glass {
 html body nav .glass.clicked {
   visibility: visible;
   z-index: 2;
-  -webkit-backdrop-filter: blur(10px) grayscale(1);
-          backdrop-filter: blur(10px) grayscale(1);
+  -webkit-backdrop-filter: blur(10px) sepia(1);
+          backdrop-filter: blur(10px) sepia(1);
 }
 
 html body nav .nav-links {
@@ -315,7 +315,7 @@ html body .main-container .page .card-area .card-container .card .cardbg {
   -ms-grid-column: 1;
   grid-column: 1;
   border-radius: 16px;
-  background: #101010;
+  background: #1d1d1d;
   -webkit-filter: drop-shadow(0 0 10px #000000);
           filter: drop-shadow(0 0 10px #000000);
 }
@@ -323,7 +323,7 @@ html body .main-container .page .card-area .card-container .card .cardbg {
 html body .main-container .page .card-area .card-container .card .cardimg {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #101010;
+  background: #1d1d1d;
   border-radius: 16px;
   -ms-grid-row: 1;
   -ms-grid-row-span: 3;
@@ -334,7 +334,7 @@ html body .main-container .page .card-area .card-container .card .cardimg {
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  border: 2px solid #c33149;
+  border: 4px solid #c33149;
   -webkit-filter: drop-shadow(0 10px 10px #000000);
           filter: drop-shadow(0 10px 10px #000000);
 }
@@ -354,7 +354,7 @@ html body .main-container .page .card-area .card-container .card .cardtext {
   grid-row: -2/-1;
   -ms-grid-column: 1;
   grid-column: 1;
-  padding: 12px;
+  padding: 20px;
   font: 300 14px "Poppins";
   z-index: 1;
   line-height: 1em;
@@ -500,7 +500,7 @@ html body .main-container .page .contact-container .svg-container svg.svgbg {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   display: block;
-  fill: #101010;
+  fill: #1d1d1d;
   z-index: 1;
   height: 100%;
   -webkit-transition: 0.3s ease-in-out;
@@ -516,7 +516,7 @@ html body .main-container .page .contact-container .button {
           box-sizing: border-box;
   padding: 20px;
   font: 600 6vw "Poppins";
-  background: #101010;
+  background: #1d1d1d;
   color: #FDFFF7;
   border: 4px solid #4e96ff;
   border-radius: 16px;
@@ -571,7 +571,7 @@ html body .main-container .page .footer .social-container {
 
 html body .main-container .page .footer .social-container .social {
   display: block;
-  background: #101010;
+  background: #1d1d1d;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
