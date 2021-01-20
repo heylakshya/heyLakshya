@@ -20,13 +20,13 @@ $fonts: (
 
 $colors: (
 	white-custom: #FDFFF7,
-	primary-custom: #4e96ff,
-	bg-dark: #1f1f1f,
+	primary: #4e96ff,
+	bg-dark: #171717,
 	bg-darker: #171717,
 	bg-item: #101010,
 	grey-custom: #c3c3c3,
-	shadow: #070707,
-	yellow-custom: #c33149,
+	shadow: #000000,
+	secondary: #c33149,
 	black-custom: #000000
 );
 
@@ -53,8 +53,8 @@ $padding: (
 	@return map-get($padding, $arg);
 }
 
-$anim-time: 0.3s;
-$anim-type: ease-out;
+$anim-time: 0.15s;
+$anim-type: ease-in-out;
 $border-radius: 16px;
 
 
@@ -125,7 +125,7 @@ html{
 				margin: auto;
 				z-index: 2;
 				border-radius: $border-radius;
-				border: 0px solid color(primary-custom);
+				border: 0px solid color(secondary);
 				filter: drop-shadow(0 0 0px color(shadow));
 				flex-direction: column;
 				justify-content: center;
@@ -171,8 +171,8 @@ html{
 					visibility: visible;
 					width: 262px;
 					height: 312px;
-					border: 4px solid color(primary-custom);
-					filter: drop-shadow(0 0 4px color(shadow));
+					border: 4px solid color(primary);
+					filter: drop-shadow(0 0 10px color(shadow));
 					opacity: 1;
 				}
 			}
@@ -187,7 +187,7 @@ html{
 		
 				&.clicked{
 					transform: rotate(-90deg);
-					color: color(primary-custom);
+					color: color(primary);
 				}
 			}
 		}
@@ -217,12 +217,20 @@ html{
 				&#landing{
 					background: color(black-custom);
 
-					img.profile{
+					.profile-container{
 						grid-row: 1/4;
 						grid-column: 1/-1;
-						object-fit: cover;
-						z-index: 1;
-						height: 100%;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						overflow: hidden;
+
+						img.profile{
+							max-height: 100%; 
+							max-width: 100%; 
+							object-fit: scale-down;
+							z-index: 1;
+						}
 					}
 				}
 				
@@ -232,7 +240,7 @@ html{
 					grid-row: 1/2;
 					grid-column: 1/-1;
 					padding: padding(padding-small);
-					margin: auto 0;
+					margin: 0;
 					background: inherit;
 				}
 				.card-area{
@@ -275,9 +283,7 @@ html{
 								border-radius: $border-radius;
 								background: color(bg-item);
 								filter: drop-shadow(0 0 10px color(shadow));
-								border-bottom: 1px solid color(grey-custom);
-								border-left: 1px solid color(grey-custom);
-								border-right: 1px solid color(grey-custom);
+								// border: 2px solid color(secondary);
 							}
 	
 							.cardimg{
@@ -288,6 +294,7 @@ html{
 								grid-column: 1;
 								display: flex;
 								overflow: hidden;
+								border: 4px solid color(secondary);
 								filter: drop-shadow(0 10px 10px color(shadow));
 
 								img{
@@ -340,13 +347,14 @@ html{
 						font:font(landing-small);
 						color:color(white-custom);
 						span#cursor-text, span#cursor{
-							color:color(primary-custom);
+							color:color(primary);
 						}
 					}
 				}
 
 				ul.arrow-links{
 					padding: 0 padding(padding-small);
+					padding-top: padding(padding-small);
 					margin-left: -6px;
 					grid-column: 1/-1;
 					grid-row: 6/7;
@@ -358,7 +366,7 @@ html{
 
 					li{
 						display:flex;
-						color: color(primary-custom);
+						color: color(secondary);
 						justify-content: flex-start;
 						align-items: center;
 						margin-bottom: padding(padding-small);
@@ -372,7 +380,7 @@ html{
 				}
 				
 				.contact-container{
-					grid-row: 2/-2;
+					grid-row: 2/-1;
 					grid-column: 1/-1;
 					display: flex;
 					flex-direction: column;
@@ -384,23 +392,23 @@ html{
 					.svg-container{
 						display: flex;
 						justify-content: center;
-						align-items: center;
+						align-items: flex-start;
 						position: absolute;
-						height:100vh;
+						height:100%;
+						width: 100%;
 						overflow:hidden;
+						// mask-image: linear-gradient(transparent, transparent, rgba(0,0,0,1.0),  rgba(0,0,0,1.0),  rgba(0,0,0,1.0));
 
 						svg.svgbg{
 							flex-shrink: 0;
 							display: block;
-							fill: color(primary-custom);
+							fill: color(bg-item);
 							z-index: 1;
 							height:100%;
 							transition: $anim-time $anim-type;
-							mask-image: radial-gradient(rgba(0,0,0,1.0), rgba(0,0,0,0.0), rgba(0,0,0,0.0));
-								mask-size: 100%;
 
 							&.over{
-								fill: color(bg-dark);
+								fill: color(secondary);
 							}
 						}
 
@@ -411,7 +419,7 @@ html{
 						font: font(primary-small);
 						background: color(bg-item);
 						color: color(white-custom);
-						border: 4px solid color(primary-custom);
+						border: 4px solid color(primary);
 						border-radius: $border-radius;
 						filter: drop-shadow(0 0 10px color(shadow));
 						z-index: 1;
@@ -419,9 +427,8 @@ html{
 						cursor: pointer;
 	
 						&.over{
-							border: 0px solid color(primary-custom);
-							filter: drop-shadow(0 0 10px color(shadow));
-							background: color(primary-custom);
+							border: 0px solid color(primary);
+							background: color(primary);
 						}
 					}
 				}
@@ -429,8 +436,8 @@ html{
 				.footer{
 					grid-row: -2/-1;
 					grid-column: 1/-1;
-					background: color(black-custom);
-					border-top: 2px solid color(shadow);
+					// background: color(bg-darker);
+					// border-top: 4px solid color(primary);
 					z-index: 1;
 					display: grid;
 					grid-template-rows: repeat(3, 1fr);
@@ -438,19 +445,39 @@ html{
 					justify-content: center;
 					align-items: center;
 
-					.social{
-						grid-column: 2/3;
-						grid-row: 2;
-						background: color(bg-dark);
+					.social-container{
 						display: flex;
-						justify-content: space-evenly;
+						grid-column: 2;
+						grid-row: 2;
+						justify-content: center;
 						align-items: center;
-						border-radius: $border-radius;
 						width: 100%;
 						height: 100%;
 
-						.social-button{
-							font: font(icons-large)
+						.social{
+							display: block;
+							background: color(bg-item);
+							display: flex;
+							border-radius: $border-radius;
+							justify-content: space-evenly;
+							filter: drop-shadow(0 0 10px color(shadow));
+							
+							i{
+								display: block;
+								color:color(white-custom);
+								height: 100%;
+								transition: $anim-time $anim-type;
+								font-size: xx-large;
+								padding: padding(padding-small) 0 padding(padding-small) padding(padding-small);
+
+								&:last-child{
+									padding-right: padding(padding-small);
+								}
+	
+								&:hover{
+									color:color(primary);
+								}
+							}
 						}
 					}
 				}
@@ -460,5 +487,5 @@ html{
 }
 
 span.highlight{
-	color: color(primary-custom);
+	color: color(primary);
 }
