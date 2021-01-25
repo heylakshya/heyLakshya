@@ -15,7 +15,7 @@ let typist = function(element, words) {
 }
 
 typist.prototype.type = function() {
-	console.log("test", this.timer, this.txt, this.isDeleting, this.txt!=='');
+	// console.log("test", this.timer, this.txt, this.isDeleting, this.txt!=='');
 	if (!this.isDeleting && this.txt!==this.words[this.word_index]){
 		this.txt = this.words[this.word_index].substring(0, this.txt.length + 1);
 		this.timer = 230;
@@ -56,3 +56,17 @@ function dark_up_bg(){
 	document.getElementById('contact-bg').classList.remove("over");
 	document.getElementById('contact-button').classList.remove("over");
 }
+
+function blink_toggle(id){
+	document.getElementById(id).classList.toggle("on");
+}
+
+function blinker(){
+	setTimeout(blink_toggle, 0, "arrow1");
+	setTimeout(blink_toggle, 300, "arrow2");
+	setTimeout(blink_toggle, 600, "arrow1");
+	setTimeout(blink_toggle, 900, "arrow2");
+	console.log("test");
+}
+
+document.addEventListener("load", setInterval(blinker, 1200));
