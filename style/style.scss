@@ -34,7 +34,8 @@ $colors: (
 	primary: #3385FF,
 	dark: #171717,
 	darker: #1d1d1d,
-	almost-black: #333333,
+	almost-black1: #111111,
+	almost-black2: #141414,
 	shadow: #000000,
 	secondary: #4e96ff,
 	black-custom: #000000
@@ -110,7 +111,7 @@ html{
 				padding:padding(xs);
 				height: 24px;
 
-				@include media (">big-phone", "<tablet") {
+				@include media (">=big-phone", "<tablet") {
 					padding: padding(xs) padding(s);
 				}
 				@include media (">=tablet", "<desktop") {
@@ -202,11 +203,12 @@ html{
 					align-items: center;
 					margin: 0%;
 					list-style-type: none;
-					padding:0px padding(xs);
+					padding: 0 padding(xs);
 					transition: $anim-time $anim-type;
 					z-index: 2;
 
 					@include media(">=desktop"){
+						padding-right: 0;
 						flex-direction: row;
 						justify-content: flex-end;
 						height: initial;
@@ -230,7 +232,7 @@ html{
 							font:font(primary-small);
 							transition: $anim-time $anim-type;
 
-							@include media (">big-phone", "<tablet") {
+							@include media (">=big-phone", "<tablet") {
 								padding: padding(s);
 								font:font(primary-medium);
 							}
@@ -285,7 +287,7 @@ html{
 				z-index: 2;
 				cursor: pointer;
 
-				@include media (">big-phone", "<tablet") {
+				@include media (">=big-phone", "<tablet") {
 					padding: padding(xs) padding(s);
 				}
 				@include media (">=tablet", "<desktop") {
@@ -327,6 +329,16 @@ html{
 				height: 100%;
 				grid-template-columns: repeat(4, 1fr);
 				grid-template-rows: auto repeat(5, 2fr);
+				// border-bottom: 4px solid color(black-custom);
+				background: color(almost-black1);
+			
+				&:nth-child(even){
+					background: color(almost-black2);
+				}
+
+				@include media("height>=1440px", ">=desktop"){
+					height: 63vw;
+				}
 
 				&#landing{
 					grid-template-rows: auto repeat(5, 2fr) 1fr;
@@ -498,7 +510,7 @@ html{
 	
 							.cardtext{
 								box-sizing: border-box;
-								color: color(almost-black);
+								color: color(almost-black1);
 								grid-row: -2/-1;
 								grid-column: 1/-1;
 								padding: padding(xs);
@@ -511,7 +523,7 @@ html{
 								// border: 4px solid color(secondary);
 								filter: drop-shadow(0 0 4px color(shadow));
 
-								// @include media (">big-phone", "<tablet") {
+								// @include media (">=big-phone", "<tablet") {
 								// 	padding: padding(s);
 								// }
 								// @include media (">=tablet", "<desktop") {
@@ -537,7 +549,7 @@ html{
 						fill: color(grey-custom);
 						opacity: 0.3;
 
-						@include media (">big-phone", "<tablet") {
+						@include media (">=big-phone", "<tablet") {
 							padding: 0 padding(s);
 						}
 						@include media (">=tablet", "<desktop") {
@@ -559,14 +571,6 @@ html{
 						}
 					}
 				}
-			
-				&:nth-child(odd){
-					background: color(dark);
-				}
-			
-				&:nth-child(even){
-					background: color(dark);
-				}
 
 				.landing-text-container{
 					display: flex;
@@ -576,7 +580,7 @@ html{
 					grid-row: 4/6;
 					padding: padding(xs);
 
-					@include media (">big-phone", "<tablet") {
+					@include media (">=big-phone", "<tablet") {
 						padding: padding(s);
 					}
 					@include media (">=tablet", "<desktop") {
@@ -622,7 +626,7 @@ html{
 					list-style-type: none;
 					font: font(secondary-small);
 
-					@include media (">big-phone", "<tablet") {
+					@include media (">=big-phone", "<tablet") {
 						padding: 0 padding(s);
 						font: font(secondary-medium);
 					}
@@ -651,7 +655,7 @@ html{
 							content: "\E315";
 							font: font(icons-small);
 
-							@include media (">big-phone", "<tablet") {
+							@include media (">=big-phone", "<tablet") {
 								font: font(icons-medium);
 							}
 							@include media (">=tablet", "<desktop") {
@@ -728,65 +732,129 @@ html{
 					}
 				}
 
-				.button-container{
-					grid-row: 2/-3;
-					grid-column: 1/-1;
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
+				// .button-container{
+				// 	grid-row: 2/-3;
+				// 	grid-column: 1/-1;
+				// 	display: flex;
+				// 	flex-direction: column;
+				// 	justify-content: center;
+				// 	align-items: center;
 					
-					.button{
-						box-sizing: border-box;
-						padding: padding(xs);
-						font: font(primary-small);
-						background: color(darker);
-						color: color(white-custom);
-						border: 4px solid color(primary);
-						border-radius: $border-radius;
-						filter: drop-shadow(0 0 10px color(shadow));
-						z-index: 1;
-						transition: $anim-time $anim-type;
-						cursor: pointer;
+				// 	.button{
+				// 		box-sizing: border-box;
+				// 		padding: padding(xs);
+				// 		background: color(darker);
+				// 		color: color(white-custom);
+				// 		border: 4px solid color(primary);
+				// 		border-radius: $border-radius;
+				// 		filter: drop-shadow(0 0 10px color(shadow));
+				// 		z-index: 1;
+				// 		transition: $anim-time $anim-type;
+				// 		cursor: pointer;
+				// 		font: font(secondary-small);
 
-						@include media (">big-phone", "<tablet") {
-							padding: padding(s);
-						}
-						@include media (">=tablet", "<desktop") {
-							padding: padding(m);
-						}
-						@include media (">=desktop", "<big-desktop") {
-							padding: padding(l);
-						}
-						@include media (">=big-desktop") {
-							padding: padding(l);
-						}
+				// 		@include media (">=big-phone", "<tablet") {
+				// 			padding: padding(xs) padding(s);
+				// 			font: font(secondary-medium);
+				// 		}
+				// 		@include media (">=tablet", "<desktop") {
+				// 			padding: padding(xs) padding(m);
+				// 			font: font(secondary-large);
+				// 		}
+				// 		@include media (">=desktop", "<big-desktop") {
+				// 			padding: padding(xs) padding(l);
+				// 			font: font(secondary-large);
+				// 		}
+				// 		@include media (">=big-desktop") {
+				// 			padding: padding(xs) padding(l);
+				// 			font: font(secondary-large);
+				// 		}
 	
-						&.over{
-							border: 0px solid color(primary);
-							background: color(primary);
-						}
-					}
-				}
+				// 		&.over{
+				// 			border: 0px solid color(primary);
+				// 			background: color(primary);
+				// 		}
+				// 	}
+				// }
 
 				.footer{
 					grid-row: -3/-2;
 					grid-column: 1/-1;
 					z-index: 1;
-					display: grid;
-					grid-template-rows: repeat(3, 1fr);
-					grid-template-columns: repeat(3, 1fr);
+					display: flex;
+					// grid-template-rows: repeat(3, 1fr);
+					// grid-template-columns: repeat(3, 1fr);
 					justify-content: center;
-					align-items: center;
+					align-items: stretch;
 
 					.social-container{
 						display: flex;
+						flex-direction: column;
 						grid-column: 2;
 						grid-row: 2;
 						justify-content: center;
-						align-items: center;
+						align-items: stretch;
 						width: 100%;
 						height: 100%;
+						padding: padding(xs);
+
+						@include media (">=big-phone", "<tablet") {
+							padding: padding(xs) padding(s);
+							width: max-content;
+						}
+						@include media (">=tablet", "<desktop") {
+							padding: padding(xs) padding(m);
+							width: max-content;
+						}
+						@include media (">=desktop", "<big-desktop") {
+							padding: padding(xs) padding(l);
+							width: max-content;
+						}
+						@include media (">=big-desktop") {
+							padding: padding(xs) padding(l);
+							width: max-content;
+						}
+
+
+						.button{
+							box-sizing: border-box;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							padding: padding(xs);
+							background: color(darker);
+							color: color(white-custom);
+							// border: 4px solid color(primary);
+							border-radius: $border-radius;
+							filter: drop-shadow(0 0 10px color(shadow));
+							z-index: 1;
+							transition: $anim-time $anim-type;
+							cursor: pointer;
+							font: font(secondary-small);
+							margin-bottom: padding(xs);
+	
+							@include media (">=big-phone", "<tablet") {
+								padding: padding(xs) padding(s);
+								font: font(secondary-medium);
+							}
+							@include media (">=tablet", "<desktop") {
+								padding: padding(xs) padding(m);
+								font: font(secondary-large);
+							}
+							@include media (">=desktop", "<big-desktop") {
+								padding: padding(xs) padding(l);
+								font: font(secondary-large);
+							}
+							@include media (">=big-desktop") {
+								padding: padding(xs) padding(l);
+								font: font(secondary-large);
+							}
+		
+							&.over{
+								border: 0px solid color(primary);
+								background: color(primary);
+							}
+						}
 
 						.social{
 							display: block;
@@ -804,33 +872,33 @@ html{
 								font-size: x-large;
 								padding: padding(xs) 0 padding(xs) padding(xs);
 
-								@include media (">big-phone", "<tablet") {
-									padding: padding(s);
+								@include media (">=big-phone", "<tablet") {
+									padding: padding(xs) 0 padding(xs) padding(s);
 								}
 								@include media (">=tablet", "<desktop") {
-									padding: padding(m);
+									padding: padding(xs) 0 padding(xs) padding(m);
 								}
 								@include media (">=desktop", "<big-desktop") {
-									padding: padding(l);
+									padding: padding(xs) 0 padding(xs) padding(l);
 								}
 								@include media (">=big-desktop") {
-									padding: padding(l);
+									padding: padding(xs) 0 padding(xs) padding(l);
 								}
 
 								&:last-child{
 									padding-right: padding(xs);
 
-									@include media (">big-phone", "<tablet") {
-										padding: padding(s);
+									@include media (">=big-phone", "<tablet") {
+										padding-right: padding(s);
 									}
 									@include media (">=tablet", "<desktop") {
-										padding: padding(m);
+										padding-right: padding(m);
 									}
 									@include media (">=desktop", "<big-desktop") {
-										padding: padding(l);
+										padding-right: padding(l);
 									}
 									@include media (">=big-desktop") {
-										padding: padding(l);
+										padding-right: padding(l);
 									}
 								}
 	
