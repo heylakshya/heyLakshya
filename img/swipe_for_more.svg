@@ -1,1 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="230.4" height="25" viewBox="0 0 230.4 25"><g transform="translate(-72.6 -1379)"><text transform="translate(188 1398)" fill="#c3c3c3" font-size="18" font-family="Poppins-Medium, Poppins" font-weight="500" letter-spacing="0.02em"><tspan x="-70.2" y="0">Swipe for more</tspan></text><path d="M10.6,7.4,6,2.8,1.4,7.4,0,6,6,0l6,6Z" transform="translate(303 1385.7) rotate(90)" fill="#c3c3c3"/><path d="M10.6,0,6,4.6,1.4,0,0,1.4l6,6,6-6Z" transform="translate(80 1385.7) rotate(90)" fill="#c3c3c3"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="230.4" height="25" viewBox="0 0 230.4 25">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: rgba(195,195,195,0.3);
+      }
+
+      .cls-1 {
+        font-size: 18px;
+        font-family: Poppins-Medium, Poppins;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+      }
+    </style>
+  </defs>
+  <g id="Group_12" data-name="Group 12" transform="translate(-72.6 -1379)">
+    <text id="Swipe_for_more" data-name="Swipe for more" class="cls-1" transform="translate(188 1398)"><tspan x="-70.2" y="0">Swipe for more</tspan></text>
+    <path id="Icon_Keyboard_Arrow_-_Up_Dark" data-name="Icon / Keyboard Arrow - Up / Dark" class="cls-2" d="M10.6,7.4,6,2.8,1.4,7.4,0,6,6,0l6,6Z" transform="translate(303 1385.7) rotate(90)"/>
+    <path id="Icon_Keyboard_Arrow_-_Up_Dark-2" data-name="Icon / Keyboard Arrow - Up / Dark" class="cls-2" d="M10.6,0,6,4.6,1.4,0,0,1.4l6,6,6-6Z" transform="translate(80 1385.7) rotate(90)"/>
+  </g>
+</svg>

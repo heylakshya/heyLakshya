@@ -49,12 +49,12 @@ window.onload = function() {
 
 function light_up_bg(){
 	document.getElementById('contact-bg').classList.add("over");
-	document.getElementById('contact-button').classList.add("over");
+	document.getElementById('submit').classList.add("over");
 }
 
 function dark_up_bg(){
 	document.getElementById('contact-bg').classList.remove("over");
-	document.getElementById('contact-button').classList.remove("over");
+	document.getElementById('submit').classList.remove("over");
 }
 
 function blink_toggle(id){
@@ -66,7 +66,16 @@ function blinker(){
 	setTimeout(blink_toggle, 300, "arrow2");
 	setTimeout(blink_toggle, 600, "arrow1");
 	setTimeout(blink_toggle, 900, "arrow2");
-	console.log("test");
+	// console.log("test");
 }
 
-document.addEventListener("load", setInterval(blinker, 1200));
+function card_on(card){
+	card.children[1].classList.add('card-hover');
+}
+
+function card_off(card){
+	card.children[1].classList.remove('card-hover');
+}
+
+console.log(document.getElementsByClassName('cardimg'));
+setInterval(blinker, 1200)

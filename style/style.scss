@@ -34,11 +34,12 @@ $colors: (
 	primary: #3385FF,
 	dark: #171717,
 	darker: #1d1d1d,
-	almost-black1: #111111,
-	almost-black2: #141414,
+	almost-black1: #242424,
+	almost-black2: #303030,
 	shadow: #000000,
 	secondary: #4e96ff,
-	black-custom: #000000
+	black-custom: #000000,
+	gray-custom: #333333
 );
 
 @function color($color) {
@@ -55,18 +56,20 @@ $sizes: (
 }
 
 $padding: (
+	xxxs: 4px,
+	xxs: 12px,
 	xs: 20px,
 	s: 40px,
 	m: 48px,
-	l: 64px
+	l: 105px
 );
 
 @function padding($arg) {
 	@return map-get($padding, $arg);
 }
 
-$anim-time: 0.3s;
-$anim-type: ease-in-out;
+$anim-time: 0.1s;
+$anim-type: ease-in;
 $border-radius: 16px;
 
 $breakpoints: (
@@ -79,7 +82,9 @@ $breakpoints: (
 
 
 html{
+	scroll-behavior: smooth;
 	body{
+		scroll-behavior: smooth;
 		position: fixed;
 		top:0;
 		bottom:0;
@@ -88,7 +93,7 @@ html{
 		padding:0;
 		margin:0;
 		display: grid;
-		grid-template-rows: 1fr 13fr;
+		grid-template-rows: auto 13fr;
 		-webkit-tap-highlight-color: rgba(0,0,0,0);
 
 		nav{
@@ -101,6 +106,8 @@ html{
 			align-items: center;
 			z-index: 2;
 			flex-basis: 100%;
+			height: auto;
+			perspective: 1000px;
 
 			@include media (">=desktop") {
 				justify-content: space-between;
@@ -109,16 +116,20 @@ html{
 			.logo{
 				display: block;
 				padding:padding(xs);
+				padding-right:0;
 				height: 24px;
 
 				@include media (">=big-phone", "<tablet") {
 					padding: padding(xs) padding(s);
+					padding-right:0;
 				}
 				@include media (">=tablet", "<desktop") {
 					padding: padding(xs) padding(m);
+					padding-right:0;
 				}
 				@include media (">=desktop") {
 					padding: padding(xs) padding(l);
+					padding-right:0;
 				}
 			}
 
@@ -130,10 +141,9 @@ html{
 				bottom:0%;
 				left:0%;
 				right:0%;
-				width: 100%;
-				height: 100%;
+				width: 100vw;
+				height: 100vh;
 				backdrop-filter: blur(0px) grayscale(0);
-				-webkit-backdrop-filter: blur(0px) grayscale(0);
 				z-index: -1;
 				transition: $anim-time $anim-type;
 				justify-content: center;
@@ -170,9 +180,16 @@ html{
 				align-items: center;
 				transition: $anim-time $anim-type;
 				position: fixed;
-				left: 50%;
-				top: 50%;
-				transform: translate(-50%, -50%);
+				right: padding(xs);
+				top: padding(xs);
+				transform: translate(0, 10%);
+
+				@include media (">=big-phone", "<tablet") {
+					right: padding(s);
+				}
+				@include media (">=tablet", "<desktop") {
+					right: padding(m);
+				}
 
 				@include media(">=desktop"){
 					position: initial;
@@ -200,7 +217,7 @@ html{
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
-					align-items: center;
+					align-items: flex-start;
 					margin: 0%;
 					list-style-type: none;
 					padding: 0 padding(xs);
@@ -233,19 +250,15 @@ html{
 							transition: $anim-time $anim-type;
 
 							@include media (">=big-phone", "<tablet") {
-								padding: padding(s);
 								font:font(primary-medium);
 							}
 							@include media (">=tablet", "<desktop") {
-								padding: padding(m);
 								font:font(primary-medium);
 							}
 							@include media (">=desktop", "<big-desktop") {
-								padding: padding(xs) 0;
 								font:font(primary-fix);
 							}
 							@include media (">=big-desktop") {
-								padding: padding(xs) 0;
 								font:font(primary-fix);
 							}
 
@@ -272,7 +285,7 @@ html{
 					&.clicked{
 						border-radius: $border-radius;
 						visibility: visible;
-						border: 4px solid color(primary);
+						// border: 4px solid color(primary);
 						filter: drop-shadow(0 0 10px color(shadow));
 						opacity: 1;
 					}
@@ -301,15 +314,24 @@ html{
 					padding: padding(xs) padding(l);
 					display: none;
 				}
+
+				&:hover{
+					transform: rotateX(10deg) rotateY(10deg);
+				}
 		
 				&.clicked{
-					transform: rotate(-90deg);
-					color: color(primary);
+					transform: rotateX(0deg) rotateY(0deg);
+					color: color(secondary);
+
+					&:hover{
+						transform: rotateX(10deg) rotateY(10deg);
+					}
 				}
 			}
 		}
 
 		.main-container{
+			scroll-behavior: smooth;
 			grid-row: 2/-1;
 			display: flex;
 			flex-direction: column;
@@ -329,15 +351,10 @@ html{
 				height: 100%;
 				grid-template-columns: repeat(4, 1fr);
 				grid-template-rows: auto repeat(5, 2fr);
-				// border-bottom: 4px solid color(black-custom);
 				background: color(almost-black1);
 			
 				&:nth-child(even){
 					background: color(almost-black2);
-				}
-
-				@include media("height>=1440px", ">=desktop"){
-					height: 63vw;
 				}
 
 				&#landing{
@@ -380,7 +397,7 @@ html{
 						font:font(primary-small);
 						padding: padding(xs);
 						padding-bottom: 0;
-						padding-top: padding(xs);
+						// padding-top: padding(xs);
 
 						span.highlight{
 							color: color(primary);
@@ -388,26 +405,30 @@ html{
 	
 						@include media (">=big-phone", "<tablet") {
 							padding: padding(s);
-							padding-bottom: 0;
+							// padding-bottom: 0;
 							padding-top: padding(xs);
+							padding-bottom: 0;
 							font:font(primary-medium);
 						}
 						@include media (">=tablet", "<desktop") {
 							padding: padding(m);
-							padding-bottom: 0;
+							// padding-bottom: 0;
 							padding-top: padding(xs);
+							padding-bottom: padding(xs);
 							font:font(primary-medium);
 						}
 						@include media (">=desktop", "<big-desktop") {
 							padding: padding(l);
-							padding-bottom: 0;
+							// padding-bottom: 0;
 							padding-top: padding(xs);
+							padding-bottom: padding(xs);
 							font:font(primary-large);
 						}
 						@include media (">=big-desktop") {
 							padding: padding(l);
-							padding-bottom: 0;
+							// padding-bottom: 0;
 							padding-top: padding(xs);
+							padding-bottom: padding(xs);
 							font:font(primary-large);
 						}
 					}
@@ -417,7 +438,7 @@ html{
 					grid-row: 2/-2;
 					grid-column: 1/-1;
 					display: grid;
-					grid-template-rows: 19fr 1fr;
+					grid-template-rows: minmax(0,19fr) minmax(0,1fr);
 					grid-template-columns: 1fr;
 
 
@@ -428,8 +449,9 @@ html{
 						z-index: 0;
 						width: 100%;
 						height: 100%;
+						perspective: 1000px;
 
-						@include media ("<tablet"){
+						@include media ("<big-phone"){
 							display: flex;
 							overflow-x: auto;
 							scroll-snap-type: x mandatory;
@@ -440,14 +462,14 @@ html{
 							}
 						}
 
-						@include media (">=tablet", "<desktop") {
+						@include media (">=big-phone", "<desktop") {
 							padding: padding(xs) padding(m);
 							display:grid;
 							grid-row:1/-1;
 							gap: padding(xs);
 
-							grid-template-columns: repeat(2, 1fr);
-							grid-template-rows: repeat(2, 1fr);
+							grid-template-columns: repeat(2, minmax(0,1fr));
+							grid-template-rows: repeat(2, minmax(0,1fr));
 						}
 
 						@include media (">=desktop") {
@@ -456,8 +478,8 @@ html{
 							grid-row:1/-1;
 							gap: padding(xs);
 
-							grid-template-columns: repeat(4, 1fr);
-							grid-template-rows: 1fr;
+							grid-template-columns: repeat(3, minmax(0,1fr));
+							grid-template-rows: repeat(2, minmax(0,1fr));
 						}
 
 						@include media (">=desktop", "portrait") {
@@ -466,20 +488,20 @@ html{
 							grid-row:1/-1;
 							gap: padding(xs);
 
-							grid-template-columns: repeat(2, 1fr);
-							grid-template-rows: repeat(2, 1fr);
+							grid-template-columns: repeat(3, minmax(0,1fr));
+							grid-template-rows: repeat(2, minmax(0,1fr));
 						}
 									
 						.card{
 							display: grid;
-							grid-template-rows: repeat(3, 1fr) auto;
+							grid-template-rows: minmax(0, 1fr) auto;
 							grid-template-columns: 1fr;
 							box-sizing: border-box;
-							// border-radius: $border-radius;
-							// background: color(darker);
+							border-radius: $border-radius;
+							transition: $anim-time $anim-type;
 							filter: drop-shadow(0 0 10px color(black-custom));
 
-							@include media("<tablet"){
+							@include media("<big-phone"){
 								height: 100%;
 								width: 100%;
 								flex-shrink: 0;
@@ -487,30 +509,51 @@ html{
 								scroll-snap-align: start;
 								scroll-snap-stop: always;
 							}
+
+							@include media(">=desktop", "<big-desktop"){
+								&:first-child{
+									grid-column: span 2;
+								}
+								&:last-child{
+									grid-column: span 2;
+								}
+							}
+
+							@include media(">=big-desktop"){
+								&:first-child{
+									grid-row: 1/-1;
+								}
+								&:last-child{
+									grid-row: 1/-1;
+									grid-column: -2/-1;
+								}
+							}
 	
 							.cardimg{
 								box-sizing: border-box;
 								background: color(darker);
 								border-radius: $border-radius $border-radius 0 0;
-								grid-row: 1/-2;
+								grid-row: 1/2;
 								grid-column: 1/-1;
 								display: flex;
 								overflow: hidden;
-								// border-bottom: 4px solid color(secondary);
 								z-index: 1;
-								// filter: drop-shadow(0 10px 10px color(shadow));
+								border: 0px solid color(white-custom);
+								border-bottom: none;
+								transition: $anim-time $anim-type;
 
 								img{
-									box-sizing: border-box;
 									object-fit: cover;
-									max-width: 100%;
-									max-height: 100%;
+									min-width: 100%;
+									min-height: 100%;
 								}
+
 							}
 	
 							.cardtext{
 								box-sizing: border-box;
 								color: color(almost-black1);
+								color: color(white-custom);
 								grid-row: -2/-1;
 								grid-column: 1/-1;
 								padding: padding(xs);
@@ -518,23 +561,21 @@ html{
 								z-index: 1;
 								line-height: 1em;
 								overflow: hidden;
-								background: color(white-custom);
+								background: color(secondary);
 								border-radius: 0 0 $border-radius $border-radius;
-								// border: 4px solid color(secondary);
 								filter: drop-shadow(0 0 4px color(shadow));
+								transition: $anim-time $anim-type;
 
-								// @include media (">=big-phone", "<tablet") {
-								// 	padding: padding(s);
-								// }
-								// @include media (">=tablet", "<desktop") {
-								// 	padding: padding(m);
-								// }
-								// @include media (">=desktop", "<big-desktop") {
-								// 	padding: padding(l);
-								// }
-								// @include media (">=big-desktop") {
-								// 	padding: padding(l);
-								// }
+								&.card-hover{
+									background: color(primary);
+								}
+							}
+
+							@include media(">=tablet"){
+								&:hover{
+									transform: rotateX(5deg) rotateY(5deg);
+									filter: drop-shadow(0 0 10px color(black-custom));
+								}
 							}
 						}
 					}
@@ -546,13 +587,13 @@ html{
 						padding: 0 padding(xs);
 						grid-row: 2;
 						grid-column: 1;
-						fill: color(grey-custom);
-						opacity: 0.3;
+						// fill: color(white-custom);
+						// opacity: 1;
 
-						@include media (">=big-phone", "<tablet") {
+						@include media ("<big-phone") {
 							padding: 0 padding(s);
 						}
-						@include media (">=tablet", "<desktop") {
+						@include media (">=big-phone", "<desktop") {
 							padding: 0 padding(m);
 							display: none;
 						}
@@ -566,8 +607,8 @@ html{
 						}
 
 						img{
-							height:100%;
-							max-width: 80%;
+							min-height: 100%;
+							opacity: 0.5;
 						}
 					}
 				}
@@ -670,8 +711,7 @@ html{
 						}
 					}
 				}
-
-				.scroll-indicator-container{
+				a{
 					grid-row: -2/-1;
 					grid-column: 1/-1;
 					display: flex;
@@ -681,18 +721,29 @@ html{
 					flex-grow: 0;
 					flex-shrink: 0;
 
-					i.arrow{
-						color: color(primary);
-						opacity: 0;
-						transition: $anim-time $anim-type;
-						margin-bottom: 0px;
-
-						&:last-child{
-							margin-top: -18px;
-						}
-
-						&.on{
-							opacity: 1;
+					.scroll-indicator-container{
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						flex-grow: 0;
+						flex-shrink: 0;
+						cursor: pointer;
+	
+						i.arrow{
+							color: color(primary);
+							opacity: 0;
+							transition: $anim-time $anim-type;
+							margin-bottom: 0px;
+							cursor: pointer;
+	
+							&:last-child{
+								margin-top: -18px;
+							}
+	
+							&.on{
+								opacity: 1;
+							}
 						}
 					}
 				}
@@ -722,7 +773,8 @@ html{
 							display: block;
 							fill: color(darker);
 							z-index: 1;
-							height:100%;
+							min-height:100%;
+							min-width: 100%;
 							transition: $anim-time $anim-type;
 
 							&.over{
@@ -777,15 +829,18 @@ html{
 				// 	}
 				// }
 
-				.footer{
-					grid-row: -3/-2;
+				.main-contact{
+					grid-row: 2/-1;
 					grid-column: 1/-1;
 					z-index: 1;
 					display: flex;
+					flex-direction: column;
 					// grid-template-rows: repeat(3, 1fr);
 					// grid-template-columns: repeat(3, 1fr);
 					justify-content: center;
-					align-items: stretch;
+					align-items: center;
+					margin-top: padding(xxs);
+					padding: 0 padding(xs);
 
 					.social-container{
 						display: flex;
@@ -815,95 +870,164 @@ html{
 							width: max-content;
 						}
 
-
-						.button{
-							box-sizing: border-box;
-							display: flex;
-							justify-content: center;
-							align-items: center;
-							padding: padding(xs);
+						form{
 							background: color(darker);
-							color: color(white-custom);
-							// border: 4px solid color(primary);
+							display: flex;
 							border-radius: $border-radius;
+							justify-content: space-evenly;
 							filter: drop-shadow(0 0 10px color(shadow));
-							z-index: 1;
-							transition: $anim-time $anim-type;
-							cursor: pointer;
-							font: font(secondary-small);
+							flex-direction: column;
+							padding: padding(xs);
 							margin-bottom: padding(xs);
-	
-							@include media (">=big-phone", "<tablet") {
-								padding: padding(xs) padding(s);
-								font: font(secondary-medium);
+
+							@include media("<big-phone"){
+								padding: padding(xxs);
 							}
-							@include media (">=tablet", "<desktop") {
-								padding: padding(xs) padding(m);
-								font: font(secondary-large);
+
+							textarea{
+								appearance: none;
+								border: none;
+								padding: padding(xxxs) padding(xxs);
+								background: color(darker);
+								color: color(white-custom);
+								border-radius: $border-radius;
+								filter: drop-shadow(0 0 10px color(shadow));
+								z-index: 1;
+								// transition: $anim-time $anim-type;
+								font: font(text-small);
+								border: 2px solid color(secondary);
+								margin-bottom: padding(xxs);
+								height: 84px;
+								resize: none;
+								overflow-y: scroll;
+
+								@include media("height>=640px") {
+									padding: padding(xxs);
+									height: 128px;
+								}
+
+								@include media (">=big-phone") {
+									padding: padding(xxs);
+									height: 256px;
+								}
+
+								&:focus{
+									outline: none;
+									filter: drop-shadow(0 0 2px color(secondary));
+								}
 							}
-							@include media (">=desktop", "<big-desktop") {
-								padding: padding(xs) padding(l);
-								font: font(secondary-large);
-							}
-							@include media (">=big-desktop") {
-								padding: padding(xs) padding(l);
-								font: font(secondary-large);
-							}
-		
-							&.over{
-								border: 0px solid color(primary);
-								background: color(primary);
+
+							input{
+								appearance: none;
+								border: none;
+								padding: padding(xxs);
+								background: color(darker);
+								color: color(white-custom);
+								border-radius: $border-radius;
+								filter: drop-shadow(0 0 10px color(shadow));
+								z-index: 1;
+								// transition: $anim-time $anim-type;
+								font: font(text-small);
+								border: 2px solid color(secondary);
+								margin-bottom: padding(xxs);
+
+								@include media (">=big-phone") {
+									padding: padding(xxs);
+								}
+
+								&#submit{
+									border: none;
+									justify-content: center;
+									align-items: center;
+									padding: padding(xxs);
+									background: color(darker);
+									color: color(white-custom);
+									border-radius: $border-radius;
+									filter: drop-shadow(0 0 10px color(shadow));
+									z-index: 1;
+									transition: $anim-time $anim-type;
+									cursor: pointer;
+									font: font(text-small);
+									margin: 0;
+			
+									@include media (">=big-phone", "<tablet") {
+										padding: padding(xs) padding(s);
+										font: font(text-small);
+									}
+									@include media (">=tablet", "<desktop") {
+										padding: padding(xs) padding(m);
+										font: font(text-small);
+									}
+									@include media (">=desktop", "<big-desktop") {
+										padding: padding(xs) padding(l);
+										font: font(text-small);
+									}
+									@include media (">=big-desktop") {
+										padding: padding(xs) padding(l);
+										font: font(text-small);
+									}
+				
+									&.over{
+										background: color(primary);
+									}
+								}
+
+								&:focus{
+									outline: none;
+									filter: drop-shadow(0 0 2px color(secondary));
+								}
 							}
 						}
 
 						.social{
-							display: block;
 							background: color(darker);
 							display: flex;
 							border-radius: $border-radius;
 							justify-content: space-evenly;
 							filter: drop-shadow(0 0 10px color(shadow));
 							
-							i{
-								display: block;
-								color:color(white-custom);
-								height: 100%;
-								transition: $anim-time $anim-type;
-								font-size: x-large;
-								padding: padding(xs) 0 padding(xs) padding(xs);
-
-								@include media (">=big-phone", "<tablet") {
-									padding: padding(xs) 0 padding(xs) padding(s);
-								}
-								@include media (">=tablet", "<desktop") {
-									padding: padding(xs) 0 padding(xs) padding(m);
-								}
-								@include media (">=desktop", "<big-desktop") {
-									padding: padding(xs) 0 padding(xs) padding(l);
-								}
-								@include media (">=big-desktop") {
-									padding: padding(xs) 0 padding(xs) padding(l);
-								}
-
-								&:last-child{
-									padding-right: padding(xs);
+							a{
+								i{
+									display: block;
+									color:color(white-custom);
+									height: 100%;
+									transition: $anim-time $anim-type;
+									font-size: x-large;
+									padding: padding(xxs) 0 padding(xxs) padding(xxs);
 
 									@include media (">=big-phone", "<tablet") {
-										padding-right: padding(s);
+										padding: padding(xs) 0 padding(xs) padding(s);
 									}
 									@include media (">=tablet", "<desktop") {
-										padding-right: padding(m);
+										padding: padding(xs) 0 padding(xs) padding(m);
 									}
 									@include media (">=desktop", "<big-desktop") {
-										padding-right: padding(l);
+										padding: padding(xs) 0 padding(xs) padding(l);
 									}
 									@include media (">=big-desktop") {
-										padding-right: padding(l);
+										padding: padding(xs) 0 padding(xs) padding(l);
 									}
-								}
-	
-								&:hover{
-									color:color(primary);
+
+									&:last-child{
+										padding-right: padding(xs);
+
+										@include media (">=big-phone", "<tablet") {
+											padding-right: padding(s);
+										}
+										@include media (">=tablet", "<desktop") {
+											padding-right: padding(m);
+										}
+										@include media (">=desktop", "<big-desktop") {
+											padding-right: padding(l);
+										}
+										@include media (">=big-desktop") {
+											padding-right: padding(l);
+										}
+									}
+
+									&:hover{
+										color:color(primary);
+									}
 								}
 							}
 						}
@@ -912,4 +1036,18 @@ html{
 			}
 		}
 	}
+}
+
+a{
+	text-decoration: none;
+}
+
+.copyright{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	color: color(gray-custom);
+	font: font(text-small);
+	padding: padding(xxs);
+	filter: drop-shadow(0 0 4px color(black-custom));
 }
