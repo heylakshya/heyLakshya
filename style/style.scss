@@ -69,6 +69,7 @@ $padding: (
 }
 
 $anim-time: 0.1s;
+$anim-time-slow: 0.3s;
 $anim-type: ease-in;
 $border-radius: 16px;
 
@@ -118,6 +119,8 @@ html{
 				padding:padding(xs);
 				padding-right:0;
 				height: 24px;
+				transition: $anim-time $anim-type;
+				transform-style: preserve-3d;
 
 				@include media (">=big-phone", "<tablet") {
 					padding: padding(xs) padding(s);
@@ -130,6 +133,10 @@ html{
 				@include media (">=desktop") {
 					padding: padding(xs) padding(l);
 					padding-right:0;
+				}
+
+				&:hover{
+					transform: translateZ(20px);
 				}
 			}
 
@@ -223,6 +230,7 @@ html{
 					padding: 0 padding(xs);
 					transition: $anim-time $anim-type;
 					z-index: 2;
+					perspective: 1000px;
 
 					@include media(">=desktop"){
 						padding-right: 0;
@@ -236,6 +244,8 @@ html{
 						padding-bottom: padding(xs);
 						opacity: 0;
 						z-index: 2;
+						transform-style: preserve-3d;
+						transition: $anim-time $anim-type;
 
 						@include media(">=desktop"){
 							padding: 0;
@@ -274,6 +284,16 @@ html{
 								padding: 0;
 							}
 						}
+
+						&:hover{
+							transform: translateX(10px);
+							filter: drop-shadow(0 0 4px color(shadow));
+							color: color(primary);
+
+							@include media(">=desktop"){
+								transform: translateZ(10px);
+							}
+						}
 					}
 				}
 
@@ -299,6 +319,7 @@ html{
 				transition: $anim-time $anim-type;
 				z-index: 2;
 				cursor: pointer;
+				transform-style: preserve-3d;
 
 				@include media (">=big-phone", "<tablet") {
 					padding: padding(xs) padding(s);
@@ -316,7 +337,7 @@ html{
 				}
 
 				&:hover{
-					transform: rotateX(10deg) rotateY(10deg);
+					transform: translateZ(20px);
 				}
 		
 				&.clicked{
@@ -493,6 +514,7 @@ html{
 						}
 									
 						.card{
+							perspective: 1000px;
 							display: grid;
 							grid-template-rows: minmax(0, 1fr) auto;
 							grid-template-columns: 1fr;
@@ -532,14 +554,13 @@ html{
 							.cardimg{
 								box-sizing: border-box;
 								background: color(darker);
-								border-radius: $border-radius $border-radius 0 0;
-								grid-row: 1/2;
+								border-radius: $border-radius;
+								grid-row: 1/-1;
 								grid-column: 1/-1;
 								display: flex;
 								overflow: hidden;
 								z-index: 1;
 								border: 0px solid color(white-custom);
-								border-bottom: none;
 								transition: $anim-time $anim-type;
 
 								img{
@@ -551,6 +572,7 @@ html{
 							}
 	
 							.cardtext{
+								transform-style: preserve-3d;
 								box-sizing: border-box;
 								color: color(almost-black1);
 								color: color(white-custom);
@@ -562,16 +584,21 @@ html{
 								line-height: 1em;
 								overflow: hidden;
 								background: color(secondary);
-								border-radius: 0 0 $border-radius $border-radius;
-								filter: drop-shadow(0 0 4px color(shadow));
+								border-radius: $border-radius;
+								filter: drop-shadow(0 0 10px color(shadow));
 								transition: $anim-time $anim-type;
+								margin: padding(xxs);
 
-								&.card-hover{
-									background: color(primary);
+								@include media(">=big-phone"){
+									&.card-hover{
+										background: color(primary);
+										transform: translate3d(5px, 5px, 5px);
+										z-index: 2;
+									}
 								}
 							}
 
-							@include media(">=tablet"){
+							@include media(">=big-phone"){
 								&:hover{
 									transform: rotateX(5deg) rotateY(5deg);
 									filter: drop-shadow(0 0 10px color(black-custom));
@@ -665,7 +692,11 @@ html{
 					flex-direction: column;
 					justify-content: center;
 					list-style-type: none;
+					align-items: flex-start;
 					font: font(secondary-small);
+					perspective: 1000px;
+
+					// background: inherit;
 
 					@include media (">=big-phone", "<tablet") {
 						padding: 0 padding(s);
@@ -690,6 +721,11 @@ html{
 						justify-content: flex-start;
 						align-items: center;
 						margin-bottom: 0;
+						transition: $anim-time $anim-type;
+						filter: drop-shadow(0 0 0 transparent);
+						// background: inherit;
+						// border-radius: 100px;
+						// padding: padding(xxs);
 
 						&::before{
 							display: inline-block;
@@ -708,6 +744,13 @@ html{
 							@include media (">=big-desktop") {
 								font: font(icons-large);
 							}
+						}
+
+						&:hover{
+							transform: translateZ(10px) translateX(10px);
+							filter: drop-shadow(0 0 4px color(shadow));
+							color: color(primary);
+							font-weight:bold;
 						}
 					}
 				}
@@ -733,7 +776,7 @@ html{
 						i.arrow{
 							color: color(primary);
 							opacity: 0;
-							transition: $anim-time $anim-type;
+							transition: $anim-time-slow $anim-type;
 							margin-bottom: 0px;
 							cursor: pointer;
 	
@@ -778,7 +821,8 @@ html{
 							transition: $anim-time $anim-type;
 
 							&.over{
-								fill: color(secondary);
+								fill: color(primary);
+								filter: drop-shadow(0 0 4px color(shadow));
 							}
 						}
 					}
@@ -879,6 +923,7 @@ html{
 							flex-direction: column;
 							padding: padding(xs);
 							margin-bottom: padding(xs);
+							perspective: 1000px;
 
 							@include media("<big-phone"){
 								padding: padding(xxs);
@@ -940,7 +985,7 @@ html{
 									justify-content: center;
 									align-items: center;
 									padding: padding(xxs);
-									background: color(darker);
+									background: color(secondary);
 									color: color(white-custom);
 									border-radius: $border-radius;
 									filter: drop-shadow(0 0 10px color(shadow));
@@ -949,6 +994,7 @@ html{
 									cursor: pointer;
 									font: font(text-small);
 									margin: 0;
+									transform-style: preserve-3d;
 			
 									@include media (">=big-phone", "<tablet") {
 										padding: padding(xs) padding(s);
@@ -967,8 +1013,9 @@ html{
 										font: font(text-small);
 									}
 				
-									&.over{
+									&:hover{
 										background: color(primary);
+										transform: translateZ(20px);
 									}
 								}
 
@@ -1046,8 +1093,12 @@ a{
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	color: color(gray-custom);
+	color: color(white-custom);
 	font: font(text-small);
 	padding: padding(xxs);
 	filter: drop-shadow(0 0 4px color(black-custom));
+	opacity: 1;
+	background: color(darker);
+	border-radius: $border-radius $border-radius 0 0;
+	z-index: 2;
 }

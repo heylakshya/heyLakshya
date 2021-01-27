@@ -49,12 +49,12 @@ window.onload = function() {
 
 function light_up_bg(){
 	document.getElementById('contact-bg').classList.add("over");
-	document.getElementById('submit').classList.add("over");
+	// document.getElementById('submit').classList.add("over");
 }
 
 function dark_up_bg(){
 	document.getElementById('contact-bg').classList.remove("over");
-	document.getElementById('submit').classList.remove("over");
+	// document.getElementById('submit').classList.remove("over");
 }
 
 function blink_toggle(id){

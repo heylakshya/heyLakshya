@@ -55,6 +55,10 @@ html body nav .logo {
   padding: 20px;
   padding-right: 0;
   height: 24px;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
@@ -76,6 +80,11 @@ html body nav .logo {
     padding: 20px 105px;
     padding-right: 0;
   }
+}
+
+html body nav .logo:hover {
+  -webkit-transform: translateZ(20px);
+          transform: translateZ(20px);
 }
 
 html body nav .glass {
@@ -214,6 +223,8 @@ html body nav .nav-links ul {
   -webkit-transition: 0.1s ease-in;
   transition: 0.1s ease-in;
   z-index: 2;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 
 @media (min-width: 1024px) {
@@ -235,6 +246,10 @@ html body nav .nav-links ul li {
   padding-bottom: 20px;
   opacity: 0;
   z-index: 2;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
 }
 
 @media (min-width: 1024px) {
@@ -291,6 +306,21 @@ html body nav .nav-links ul li:first-child {
   }
 }
 
+html body nav .nav-links ul li:hover {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  -webkit-filter: drop-shadow(0 0 4px #000000);
+          filter: drop-shadow(0 0 4px #000000);
+  color: #3385FF;
+}
+
+@media (min-width: 1024px) {
+  html body nav .nav-links ul li:hover {
+    -webkit-transform: translateZ(10px);
+            transform: translateZ(10px);
+  }
+}
+
 @media (max-width: 1023px) {
   html body nav .nav-links.clicked > ul > li {
     opacity: 1;
@@ -312,6 +342,8 @@ html body nav span.arrow {
   transition: 0.1s ease-in;
   z-index: 2;
   cursor: pointer;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
@@ -341,8 +373,8 @@ html body nav span.arrow {
 }
 
 html body nav span.arrow:hover {
-  -webkit-transform: rotateX(10deg) rotateY(10deg);
-          transform: rotateX(10deg) rotateY(10deg);
+  -webkit-transform: translateZ(20px);
+          transform: translateZ(20px);
 }
 
 html body nav span.arrow.clicked {
@@ -592,6 +624,8 @@ html body .main-container .page .card-area .card-container {
 }
 
 html body .main-container .page .card-area .card-container .card {
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: minmax(0, 1fr) auto;
@@ -642,10 +676,8 @@ html body .main-container .page .card-area .card-container .card .cardimg {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: #1d1d1d;
-  border-radius: 16px 16px 0 0;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
+  border-radius: 16px;
+  grid-row: 1/-1;
   grid-column: 1/-1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -653,7 +685,6 @@ html body .main-container .page .card-area .card-container .card .cardimg {
   overflow: hidden;
   z-index: 1;
   border: 0px solid #FDFFF7;
-  border-bottom: none;
   -webkit-transition: 0.1s ease-in;
   transition: 0.1s ease-in;
 }
@@ -666,6 +697,8 @@ html body .main-container .page .card-area .card-container .card .cardimg img {
 }
 
 html body .main-container .page .card-area .card-container .card .cardtext {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #242424;
@@ -678,18 +711,24 @@ html body .main-container .page .card-area .card-container .card .cardtext {
   line-height: 1em;
   overflow: hidden;
   background: #4e96ff;
-  border-radius: 0 0 16px 16px;
-  -webkit-filter: drop-shadow(0 0 4px #000000);
-          filter: drop-shadow(0 0 4px #000000);
+  border-radius: 16px;
+  -webkit-filter: drop-shadow(0 0 10px #000000);
+          filter: drop-shadow(0 0 10px #000000);
   -webkit-transition: 0.1s ease-in;
   transition: 0.1s ease-in;
+  margin: 12px;
 }
 
-html body .main-container .page .card-area .card-container .card .cardtext.card-hover {
-  background: #3385FF;
+@media (min-width: 480px) {
+  html body .main-container .page .card-area .card-container .card .cardtext.card-hover {
+    background: #3385FF;
+    -webkit-transform: translate3d(5px, 5px, 5px);
+            transform: translate3d(5px, 5px, 5px);
+    z-index: 2;
+  }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 480px) {
   html body .main-container .page .card-area .card-container .card:hover {
     -webkit-transform: rotateX(5deg) rotateY(5deg);
             transform: rotateX(5deg) rotateY(5deg);
@@ -840,7 +879,12 @@ html body .main-container .page ul.arrow-links {
       -ms-flex-pack: center;
           justify-content: center;
   list-style-type: none;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   font: 300 6vw "Poppins";
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
@@ -883,6 +927,10 @@ html body .main-container .page ul.arrow-links li {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 0;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  -webkit-filter: drop-shadow(0 0 0 transparent);
+          filter: drop-shadow(0 0 0 transparent);
 }
 
 html body .main-container .page ul.arrow-links li::before {
@@ -913,6 +961,15 @@ html body .main-container .page ul.arrow-links li::before {
   html body .main-container .page ul.arrow-links li::before {
     font: 32px "Material Icons";
   }
+}
+
+html body .main-container .page ul.arrow-links li:hover {
+  -webkit-transform: translateZ(10px) translateX(10px);
+          transform: translateZ(10px) translateX(10px);
+  -webkit-filter: drop-shadow(0 0 4px #000000);
+          filter: drop-shadow(0 0 4px #000000);
+  color: #3385FF;
+  font-weight: bold;
 }
 
 html body .main-container .page a {
@@ -963,8 +1020,8 @@ html body .main-container .page a .scroll-indicator-container {
 html body .main-container .page a .scroll-indicator-container i.arrow {
   color: #3385FF;
   opacity: 0;
-  -webkit-transition: 0.1s ease-in;
-  transition: 0.1s ease-in;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
   margin-bottom: 0px;
   cursor: pointer;
 }
@@ -1027,7 +1084,9 @@ html body .main-container .page .contact-container .svg-container svg.svgbg {
 }
 
 html body .main-container .page .contact-container .svg-container svg.svgbg.over {
-  fill: #4e96ff;
+  fill: #3385FF;
+  -webkit-filter: drop-shadow(0 0 4px #000000);
+          filter: drop-shadow(0 0 4px #000000);
 }
 
 html body .main-container .page .main-contact {
@@ -1127,6 +1186,8 @@ html body .main-container .page .main-contact .social-container form {
           flex-direction: column;
   padding: 20px;
   margin-bottom: 20px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 
 @media (max-width: 479px) {
@@ -1207,7 +1268,7 @@ html body .main-container .page .main-contact .social-container form input#submi
       -ms-flex-align: center;
           align-items: center;
   padding: 12px;
-  background: #1d1d1d;
+  background: #4e96ff;
   color: #FDFFF7;
   border-radius: 16px;
   -webkit-filter: drop-shadow(0 0 10px #000000);
@@ -1218,6 +1279,8 @@ html body .main-container .page .main-contact .social-container form input#submi
   cursor: pointer;
   font: 300 14px "Poppins";
   margin: 0;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
@@ -1248,8 +1311,10 @@ html body .main-container .page .main-contact .social-container form input#submi
   }
 }
 
-html body .main-container .page .main-contact .social-container form input#submit.over {
+html body .main-container .page .main-contact .social-container form input#submit:hover {
   background: #3385FF;
+  -webkit-transform: translateZ(20px);
+          transform: translateZ(20px);
 }
 
 html body .main-container .page .main-contact .social-container form input:focus {
@@ -1351,10 +1416,14 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #333333;
+  color: #FDFFF7;
   font: 300 14px "Poppins";
   padding: 12px;
   -webkit-filter: drop-shadow(0 0 4px #000000);
           filter: drop-shadow(0 0 4px #000000);
+  opacity: 1;
+  background: #1d1d1d;
+  border-radius: 16px 16px 0 0;
+  z-index: 2;
 }
 /*# sourceMappingURL=style.css.map */
