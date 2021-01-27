@@ -55,8 +55,8 @@ html body nav .logo {
   padding: 20px;
   padding-right: 0;
   height: 24px;
-  -webkit-transition: 0.1s ease-in;
-  transition: 0.1s ease-in;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
@@ -102,8 +102,8 @@ html body nav .glass {
   -webkit-backdrop-filter: blur(0px) grayscale(0);
           backdrop-filter: blur(0px) grayscale(0);
   z-index: -1;
-  -webkit-transition: 0.1s ease-in;
-  transition: 0.1s ease-in;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -114,7 +114,7 @@ html body nav .glass {
 
 html body nav .glass.clicked {
   visibility: visible;
-  z-index: 2;
+  z-index: 3;
   -webkit-backdrop-filter: blur(10px) grayscale(1);
           backdrop-filter: blur(10px) grayscale(1);
 }
@@ -137,7 +137,7 @@ html body nav .nav-links {
   width: auto;
   height: auto;
   margin: auto;
-  z-index: 2;
+  z-index: 4;
   border-radius: 16px;
   border: 0px solid #4e96ff;
   -webkit-filter: drop-shadow(0 0 0px #000000);
@@ -152,8 +152,8 @@ html body nav .nav-links {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: 0.1s ease-in;
-  transition: 0.1s ease-in;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
   position: fixed;
   right: 20px;
   top: 20px;
@@ -220,9 +220,9 @@ html body nav .nav-links ul {
   margin: 0%;
   list-style-type: none;
   padding: 0 20px;
-  -webkit-transition: 0.1s ease-in;
-  transition: 0.1s ease-in;
-  z-index: 2;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+  z-index: 4;
   -webkit-perspective: 1000px;
           perspective: 1000px;
 }
@@ -245,11 +245,11 @@ html body nav .nav-links ul {
 html body nav .nav-links ul li {
   padding-bottom: 20px;
   opacity: 0;
-  z-index: 2;
+  z-index: 4;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transition: 0.1s ease-in;
-  transition: 0.1s ease-in;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 @media (min-width: 1024px) {
@@ -264,8 +264,8 @@ html body nav .nav-links ul li a {
   color: #FDFFF7;
   text-decoration: none;
   font: 600 6vw "Poppins";
-  -webkit-transition: 0.1s ease-in;
-  transition: 0.1s ease-in;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
@@ -338,9 +338,9 @@ html body nav span.arrow {
   display: block;
   color: #FDFFF7;
   padding: 20px;
-  -webkit-transition: 0.1s ease-in;
-  transition: 0.1s ease-in;
-  z-index: 2;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+  z-index: 4;
   cursor: pointer;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
@@ -429,7 +429,7 @@ html body .main-container .page {
 }
 
 html body .main-container .page:nth-child(even) {
-  background: #303030;
+  background: #242424;
 }
 
 html body .main-container .page#landing {
@@ -635,8 +635,8 @@ html body .main-container .page .card-area .card-container .card {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 16px;
-  -webkit-transition: 0.1s ease-in;
-  transition: 0.1s ease-in;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
   -webkit-filter: drop-shadow(0 0 10px #000000);
           filter: drop-shadow(0 0 10px #000000);
 }
@@ -685,8 +685,8 @@ html body .main-container .page .card-area .card-container .card .cardimg {
   overflow: hidden;
   z-index: 1;
   border: 0px solid #FDFFF7;
-  -webkit-transition: 0.1s ease-in;
-  transition: 0.1s ease-in;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 html body .main-container .page .card-area .card-container .card .cardimg img {
@@ -714,8 +714,8 @@ html body .main-container .page .card-area .card-container .card .cardtext {
   border-radius: 16px;
   -webkit-filter: drop-shadow(0 0 10px #000000);
           filter: drop-shadow(0 0 10px #000000);
-  -webkit-transition: 0.1s ease-in;
-  transition: 0.1s ease-in;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
   margin: 12px;
 }
 
@@ -927,8 +927,8 @@ html body .main-container .page ul.arrow-links li {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 0;
-  -webkit-transition: 0.1s ease-in;
-  transition: 0.1s ease-in;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
   -webkit-filter: drop-shadow(0 0 0 transparent);
           filter: drop-shadow(0 0 0 transparent);
 }
@@ -1020,8 +1020,8 @@ html body .main-container .page a .scroll-indicator-container {
 html body .main-container .page a .scroll-indicator-container i.arrow {
   color: #3385FF;
   opacity: 0;
-  -webkit-transition: 0.3s ease-in;
-  transition: 0.3s ease-in;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   margin-bottom: 0px;
   cursor: pointer;
 }
@@ -1034,8 +1034,37 @@ html body .main-container .page a .scroll-indicator-container i.arrow.on {
   opacity: 1;
 }
 
-html body .main-container .page .contact-container {
-  grid-row: 2/-1;
+html body .main-container .page#contact .header-text-container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html body .main-container .page#contact .header-text-container .header-text {
+  height: auto;
+  width: auto;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 12px 20px;
+  margin-bottom: 0;
+  padding: 4px 40px;
+  background: #1d1d1d;
+  border-radius: 16px;
+  -webkit-filter: drop-shadow(0 0 10px #000000);
+          filter: drop-shadow(0 0 10px #000000);
+  text-align: center;
+}
+
+html body .main-container .page#contact .contact-container {
+  grid-row: 1/-1;
   grid-column: 1/-1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1054,11 +1083,10 @@ html body .main-container .page .contact-container {
   overflow: hidden;
 }
 
-html body .main-container .page .contact-container .svg-container {
+html body .main-container .page#contact .contact-container .svg-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 20px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1071,25 +1099,25 @@ html body .main-container .page .contact-container .svg-container {
   overflow: hidden;
 }
 
-html body .main-container .page .contact-container .svg-container svg.svgbg {
+html body .main-container .page#contact .contact-container .svg-container svg.svgbg {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   display: block;
   fill: #1d1d1d;
-  z-index: 1;
+  z-index: 0;
   min-height: 100%;
   min-width: 100%;
-  -webkit-transition: 0.1s ease-in;
-  transition: 0.1s ease-in;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
-html body .main-container .page .contact-container .svg-container svg.svgbg.over {
+html body .main-container .page#contact .contact-container .svg-container svg.svgbg.over {
   fill: #3385FF;
   -webkit-filter: drop-shadow(0 0 4px #000000);
           filter: drop-shadow(0 0 4px #000000);
 }
 
-html body .main-container .page .main-contact {
+html body .main-container .page#contact .main-contact {
   grid-row: 2/-1;
   grid-column: 1/-1;
   z-index: 1;
@@ -1106,11 +1134,10 @@ html body .main-container .page .main-contact {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 12px;
   padding: 0 20px;
 }
 
-html body .main-container .page .main-contact .social-container {
+html body .main-container .page#contact .main-contact .social-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1129,12 +1156,15 @@ html body .main-container .page .main-contact .social-container {
       -ms-flex-align: stretch;
           align-items: stretch;
   width: 100%;
-  height: 100%;
+  max-height: 100%;
   padding: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
-  html body .main-container .page .main-contact .social-container {
+  html body .main-container .page#contact .main-contact .social-container {
     padding: 20px 40px;
     width: -webkit-max-content;
     width: -moz-max-content;
@@ -1143,41 +1173,47 @@ html body .main-container .page .main-contact .social-container {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  html body .main-container .page .main-contact .social-container {
+  html body .main-container .page#contact .main-contact .social-container {
     padding: 20px 48px;
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
+    max-height: 50%;
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1199px) {
-  html body .main-container .page .main-contact .social-container {
+  html body .main-container .page#contact .main-contact .social-container {
     padding: 20px 105px;
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
+    max-height: 50%;
   }
 }
 
 @media (min-width: 1200px) {
-  html body .main-container .page .main-contact .social-container {
+  html body .main-container .page#contact .main-contact .social-container {
     padding: 20px 105px;
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
+    max-height: 50%;
   }
 }
 
-html body .main-container .page .main-contact .social-container form {
+html body .main-container .page#contact .main-contact .social-container form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   background: #1d1d1d;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   border-radius: 16px;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
   -webkit-filter: drop-shadow(0 0 10px #000000);
           filter: drop-shadow(0 0 10px #000000);
   -webkit-box-orient: vertical;
@@ -1191,12 +1227,15 @@ html body .main-container .page .main-contact .social-container form {
 }
 
 @media (max-width: 479px) {
-  html body .main-container .page .main-contact .social-container form {
+  html body .main-container .page#contact .main-contact .social-container form {
     padding: 12px;
   }
 }
 
-html body .main-container .page .main-contact .social-container form textarea {
+html body .main-container .page#contact .main-contact .social-container form textarea {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -1211,32 +1250,34 @@ html body .main-container .page .main-contact .social-container form textarea {
   font: 300 14px "Poppins";
   border: 2px solid #4e96ff;
   margin-bottom: 12px;
-  height: 84px;
+  height: auto;
   resize: none;
   overflow-y: scroll;
+  max-height: 312px;
+}
+
+@media (max-height: 639px) {
+  html body .main-container .page#contact .main-contact .social-container form textarea {
+    padding: 12px;
+  }
 }
 
 @media (min-height: 640px) {
-  html body .main-container .page .main-contact .social-container form textarea {
+  html body .main-container .page#contact .main-contact .social-container form textarea {
     padding: 12px;
-    height: 128px;
   }
 }
 
-@media (min-width: 480px) {
-  html body .main-container .page .main-contact .social-container form textarea {
-    padding: 12px;
-    height: 256px;
-  }
-}
-
-html body .main-container .page .main-contact .social-container form textarea:focus {
+html body .main-container .page#contact .main-contact .social-container form textarea:focus {
   outline: none;
   -webkit-filter: drop-shadow(0 0 2px #4e96ff);
           filter: drop-shadow(0 0 2px #4e96ff);
 }
 
-html body .main-container .page .main-contact .social-container form input {
+html body .main-container .page#contact .main-contact .social-container form input {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -1254,12 +1295,12 @@ html body .main-container .page .main-contact .social-container form input {
 }
 
 @media (min-width: 480px) {
-  html body .main-container .page .main-contact .social-container form input {
+  html body .main-container .page#contact .main-contact .social-container form input {
     padding: 12px;
   }
 }
 
-html body .main-container .page .main-contact .social-container form input#submit {
+html body .main-container .page#contact .main-contact .social-container form input#submit {
   border: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -1274,8 +1315,8 @@ html body .main-container .page .main-contact .social-container form input#submi
   -webkit-filter: drop-shadow(0 0 10px #000000);
           filter: drop-shadow(0 0 10px #000000);
   z-index: 1;
-  -webkit-transition: 0.1s ease-in;
-  transition: 0.1s ease-in;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
   cursor: pointer;
   font: 300 14px "Poppins";
   margin: 0;
@@ -1284,50 +1325,53 @@ html body .main-container .page .main-contact .social-container form input#submi
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
-  html body .main-container .page .main-contact .social-container form input#submit {
+  html body .main-container .page#contact .main-contact .social-container form input#submit {
     padding: 20px 40px;
     font: 300 14px "Poppins";
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  html body .main-container .page .main-contact .social-container form input#submit {
+  html body .main-container .page#contact .main-contact .social-container form input#submit {
     padding: 20px 48px;
     font: 300 14px "Poppins";
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1199px) {
-  html body .main-container .page .main-contact .social-container form input#submit {
+  html body .main-container .page#contact .main-contact .social-container form input#submit {
     padding: 20px 105px;
     font: 300 14px "Poppins";
   }
 }
 
 @media (min-width: 1200px) {
-  html body .main-container .page .main-contact .social-container form input#submit {
+  html body .main-container .page#contact .main-contact .social-container form input#submit {
     padding: 20px 105px;
     font: 300 14px "Poppins";
   }
 }
 
-html body .main-container .page .main-contact .social-container form input#submit:hover {
+html body .main-container .page#contact .main-contact .social-container form input#submit:hover {
   background: #3385FF;
   -webkit-transform: translateZ(20px);
           transform: translateZ(20px);
 }
 
-html body .main-container .page .main-contact .social-container form input:focus {
+html body .main-container .page#contact .main-contact .social-container form input:focus {
   outline: none;
   -webkit-filter: drop-shadow(0 0 2px #4e96ff);
           filter: drop-shadow(0 0 2px #4e96ff);
 }
 
-html body .main-container .page .main-contact .social-container .social {
+html body .main-container .page#contact .main-contact .social-container .social {
   background: #1d1d1d;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
   border-radius: 16px;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
@@ -1336,69 +1380,69 @@ html body .main-container .page .main-contact .social-container .social {
           filter: drop-shadow(0 0 10px #000000);
 }
 
-html body .main-container .page .main-contact .social-container .social a i {
+html body .main-container .page#contact .main-contact .social-container .social a i {
   display: block;
   color: #FDFFF7;
   height: 100%;
-  -webkit-transition: 0.1s ease-in;
-  transition: 0.1s ease-in;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
   font-size: x-large;
   padding: 12px 0 12px 12px;
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
-  html body .main-container .page .main-contact .social-container .social a i {
+  html body .main-container .page#contact .main-contact .social-container .social a i {
     padding: 20px 0 20px 40px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  html body .main-container .page .main-contact .social-container .social a i {
+  html body .main-container .page#contact .main-contact .social-container .social a i {
     padding: 20px 0 20px 48px;
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1199px) {
-  html body .main-container .page .main-contact .social-container .social a i {
-    padding: 20px 0 20px 105px;
+  html body .main-container .page#contact .main-contact .social-container .social a i {
+    padding: 20px 0 20px 48px;
   }
 }
 
 @media (min-width: 1200px) {
-  html body .main-container .page .main-contact .social-container .social a i {
-    padding: 20px 0 20px 105px;
+  html body .main-container .page#contact .main-contact .social-container .social a i {
+    padding: 20px 0 20px 48px;
   }
 }
 
-html body .main-container .page .main-contact .social-container .social a i:last-child {
+html body .main-container .page#contact .main-contact .social-container .social a i:last-child {
   padding-right: 20px;
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
-  html body .main-container .page .main-contact .social-container .social a i:last-child {
+  html body .main-container .page#contact .main-contact .social-container .social a i:last-child {
     padding-right: 40px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  html body .main-container .page .main-contact .social-container .social a i:last-child {
+  html body .main-container .page#contact .main-contact .social-container .social a i:last-child {
     padding-right: 48px;
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1199px) {
-  html body .main-container .page .main-contact .social-container .social a i:last-child {
-    padding-right: 105px;
+  html body .main-container .page#contact .main-contact .social-container .social a i:last-child {
+    padding-right: 48px;
   }
 }
 
 @media (min-width: 1200px) {
-  html body .main-container .page .main-contact .social-container .social a i:last-child {
-    padding-right: 105px;
+  html body .main-container .page#contact .main-contact .social-container .social a i:last-child {
+    padding-right: 48px;
   }
 }
 
-html body .main-container .page .main-contact .social-container .social a i:hover {
+html body .main-container .page#contact .main-contact .social-container .social a i:hover {
   color: #3385FF;
 }
 
@@ -1418,7 +1462,7 @@ a {
           align-items: center;
   color: #FDFFF7;
   font: 300 14px "Poppins";
-  padding: 12px;
+  padding: 4px;
   -webkit-filter: drop-shadow(0 0 4px #000000);
           filter: drop-shadow(0 0 4px #000000);
   opacity: 1;

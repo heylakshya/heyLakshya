@@ -35,7 +35,8 @@ $colors: (
 	dark: #171717,
 	darker: #1d1d1d,
 	almost-black1: #242424,
-	almost-black2: #303030,
+	// almost-black2: #303030,
+	almost-black2: #242424,
 	shadow: #000000,
 	secondary: #4e96ff,
 	black-custom: #000000,
@@ -70,7 +71,7 @@ $padding: (
 
 $anim-time: 0.1s;
 $anim-time-slow: 0.3s;
-$anim-type: ease-in;
+$anim-type: ease-in-out;
 $border-radius: 16px;
 
 $breakpoints: (
@@ -158,7 +159,7 @@ html{
 				
 				&.clicked{
 					visibility: visible;
-					z-index: 2;
+					z-index: 3;
 					backdrop-filter: blur(10px) grayscale(1);
 
 					@include media (">=desktop"){
@@ -178,7 +179,7 @@ html{
 				width: auto;
 				height: auto;
 				margin: auto;
-				z-index: 2;
+				z-index: 4;
 				border-radius: $border-radius;
 				border: 0px solid color(secondary);
 				filter: drop-shadow(0 0 0px color(shadow));
@@ -229,7 +230,7 @@ html{
 					list-style-type: none;
 					padding: 0 padding(xs);
 					transition: $anim-time $anim-type;
-					z-index: 2;
+					z-index: 4;
 					perspective: 1000px;
 
 					@include media(">=desktop"){
@@ -243,7 +244,7 @@ html{
 					li{
 						padding-bottom: padding(xs);
 						opacity: 0;
-						z-index: 2;
+						z-index: 4;
 						transform-style: preserve-3d;
 						transition: $anim-time $anim-type;
 
@@ -317,7 +318,7 @@ html{
 				color: color(white-custom);
 				padding: padding(xs);
 				transition: $anim-time $anim-type;
-				z-index: 2;
+				z-index: 4;
 				cursor: pointer;
 				transform-style: preserve-3d;
 
@@ -454,6 +455,7 @@ html{
 						}
 					}
 				}
+
 				.card-area{
 					box-sizing: border-box;
 					grid-row: 2/-2;
@@ -791,289 +793,279 @@ html{
 					}
 				}
 				
-				.contact-container{
-					grid-row: 2/-1;
-					grid-column: 1/-1;
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-					position: relative;
-					overflow: hidden;
+				&#contact{
 
-					.svg-container{
-						display: flex;
-						padding-top: padding(xs);
+					.header-text-container{
 						justify-content: center;
-						align-items: flex-start;
-						position: absolute;
-						height:100%;
-						width: 100%;
-						overflow:hidden;
 
-						svg.svgbg{
-							flex-shrink: 0;
-							display: block;
-							fill: color(darker);
+						.header-text{
+							height:auto;
+							width: auto;
 							z-index: 1;
-							min-height:100%;
-							min-width: 100%;
-							transition: $anim-time $anim-type;
-
-							&.over{
-								fill: color(primary);
-								filter: drop-shadow(0 0 4px color(shadow));
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							margin: padding(xxs) padding(xs);
+							margin-bottom: 0;
+							padding: padding(xxxs) padding(s);
+							// padding-bottom: 0;
+							background: color(darker);
+							border-radius: $border-radius;
+							filter: drop-shadow(0 0 10px color(shadow));
+							text-align: center;
+						}
+					}
+					.contact-container{
+						grid-row: 1/-1;
+						grid-column: 1/-1;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						position: relative;
+						overflow: hidden;
+	
+						.svg-container{
+							display: flex;
+							// padding-top: padding(xs);
+							justify-content: center;
+							align-items: flex-start;
+							position: absolute;
+							height:100%;
+							width: 100%;
+							overflow:hidden;
+	
+							svg.svgbg{
+								flex-shrink: 0;
+								display: block;
+								fill: color(darker);
+								z-index: 0;
+								min-height:100%;
+								min-width: 100%;
+								transition: $anim-time $anim-type;
+	
+								&.over{
+									fill: color(primary);
+									filter: drop-shadow(0 0 4px color(shadow));
+								}
 							}
 						}
 					}
-				}
-
-				// .button-container{
-				// 	grid-row: 2/-3;
-				// 	grid-column: 1/-1;
-				// 	display: flex;
-				// 	flex-direction: column;
-				// 	justify-content: center;
-				// 	align-items: center;
-					
-				// 	.button{
-				// 		box-sizing: border-box;
-				// 		padding: padding(xs);
-				// 		background: color(darker);
-				// 		color: color(white-custom);
-				// 		border: 4px solid color(primary);
-				// 		border-radius: $border-radius;
-				// 		filter: drop-shadow(0 0 10px color(shadow));
-				// 		z-index: 1;
-				// 		transition: $anim-time $anim-type;
-				// 		cursor: pointer;
-				// 		font: font(secondary-small);
-
-				// 		@include media (">=big-phone", "<tablet") {
-				// 			padding: padding(xs) padding(s);
-				// 			font: font(secondary-medium);
-				// 		}
-				// 		@include media (">=tablet", "<desktop") {
-				// 			padding: padding(xs) padding(m);
-				// 			font: font(secondary-large);
-				// 		}
-				// 		@include media (">=desktop", "<big-desktop") {
-				// 			padding: padding(xs) padding(l);
-				// 			font: font(secondary-large);
-				// 		}
-				// 		@include media (">=big-desktop") {
-				// 			padding: padding(xs) padding(l);
-				// 			font: font(secondary-large);
-				// 		}
 	
-				// 		&.over{
-				// 			border: 0px solid color(primary);
-				// 			background: color(primary);
-				// 		}
-				// 	}
-				// }
-
-				.main-contact{
-					grid-row: 2/-1;
-					grid-column: 1/-1;
-					z-index: 1;
-					display: flex;
-					flex-direction: column;
-					// grid-template-rows: repeat(3, 1fr);
-					// grid-template-columns: repeat(3, 1fr);
-					justify-content: center;
-					align-items: center;
-					margin-top: padding(xxs);
-					padding: 0 padding(xs);
-
-					.social-container{
+					.main-contact{
+						grid-row: 2/-1;
+						grid-column: 1/-1;
+						z-index: 1;
 						display: flex;
 						flex-direction: column;
-						grid-column: 2;
-						grid-row: 2;
+						// grid-template-rows: repeat(3, 1fr);
+						// grid-template-columns: repeat(3, 1fr);
 						justify-content: center;
-						align-items: stretch;
-						width: 100%;
-						height: 100%;
-						padding: padding(xs);
-
-						@include media (">=big-phone", "<tablet") {
-							padding: padding(xs) padding(s);
-							width: max-content;
-						}
-						@include media (">=tablet", "<desktop") {
-							padding: padding(xs) padding(m);
-							width: max-content;
-						}
-						@include media (">=desktop", "<big-desktop") {
-							padding: padding(xs) padding(l);
-							width: max-content;
-						}
-						@include media (">=big-desktop") {
-							padding: padding(xs) padding(l);
-							width: max-content;
-						}
-
-						form{
-							background: color(darker);
+						align-items: center;
+						// margin-top: padding(xxs);
+						padding: 0 padding(xs);
+	
+						.social-container{
 							display: flex;
-							border-radius: $border-radius;
-							justify-content: space-evenly;
-							filter: drop-shadow(0 0 10px color(shadow));
 							flex-direction: column;
+							grid-column: 2;
+							grid-row: 2;
+							justify-content: center;
+							align-items: stretch;
+							width: 100%;
+							max-height: 100%;
+							// max-width: 350px;
+
 							padding: padding(xs);
-							margin-bottom: padding(xs);
-							perspective: 1000px;
-
-							@include media("<big-phone"){
-								padding: padding(xxs);
+							flex-grow: 1;
+	
+							@include media (">=big-phone", "<tablet") {
+								padding: padding(xs) padding(s);
+								width: max-content;
 							}
-
-							textarea{
-								appearance: none;
-								border: none;
-								padding: padding(xxxs) padding(xxs);
-								background: color(darker);
-								color: color(white-custom);
-								border-radius: $border-radius;
-								filter: drop-shadow(0 0 10px color(shadow));
-								z-index: 1;
-								// transition: $anim-time $anim-type;
-								font: font(text-small);
-								border: 2px solid color(secondary);
-								margin-bottom: padding(xxs);
-								height: 84px;
-								resize: none;
-								overflow-y: scroll;
-
-								@include media("height>=640px") {
-									padding: padding(xxs);
-									height: 128px;
-								}
-
-								@include media (">=big-phone") {
-									padding: padding(xxs);
-									height: 256px;
-								}
-
-								&:focus{
-									outline: none;
-									filter: drop-shadow(0 0 2px color(secondary));
-								}
+							@include media (">=tablet", "<desktop") {
+								padding: padding(xs) padding(m);
+								width: max-content;
+								max-height: 50%;
 							}
-
-							input{
-								appearance: none;
-								border: none;
-								padding: padding(xxs);
+							@include media (">=desktop", "<big-desktop") {
+								padding: padding(xs) padding(l);
+								width: max-content;
+								max-height: 50%;
+							}
+							@include media (">=big-desktop") {
+								padding: padding(xs) padding(l);
+								width: max-content;
+								max-height: 50%;
+							}
+	
+							form{
+								flex: 1;
 								background: color(darker);
-								color: color(white-custom);
+								display: flex;
 								border-radius: $border-radius;
+								justify-content: stretch;
 								filter: drop-shadow(0 0 10px color(shadow));
-								z-index: 1;
-								// transition: $anim-time $anim-type;
-								font: font(text-small);
-								border: 2px solid color(secondary);
-								margin-bottom: padding(xxs);
-
-								@include media (">=big-phone") {
+								flex-direction: column;
+								padding: padding(xs);
+								margin-bottom: padding(xs);
+								perspective: 1000px;
+								
+								@include media("<big-phone"){
 									padding: padding(xxs);
 								}
-
-								&#submit{
+								
+								textarea{
+									flex-grow: 1;
+									appearance: none;
 									border: none;
-									justify-content: center;
-									align-items: center;
-									padding: padding(xxs);
-									background: color(secondary);
+									padding: padding(xxxs) padding(xxs);
+									background: color(darker);
 									color: color(white-custom);
 									border-radius: $border-radius;
 									filter: drop-shadow(0 0 10px color(shadow));
 									z-index: 1;
-									transition: $anim-time $anim-type;
-									cursor: pointer;
+									// transition: $anim-time $anim-type;
 									font: font(text-small);
-									margin: 0;
-									transform-style: preserve-3d;
-			
-									@include media (">=big-phone", "<tablet") {
-										padding: padding(xs) padding(s);
-										font: font(text-small);
+									border: 2px solid color(secondary);
+									margin-bottom: padding(xxs);
+									height: auto;
+									resize: none;
+									overflow-y: scroll;
+									max-height: 312px;
+									
+									
+									@include media ("height<640px") {
+										padding: padding(xxs);
+										// height: 82px;
 									}
-									@include media (">=tablet", "<desktop") {
-										padding: padding(xs) padding(m);
-										font: font(text-small);
+									
+									@include media("height>=640px") {
+										padding: padding(xxs);
+										// height: 128px;
 									}
-									@include media (">=desktop", "<big-desktop") {
-										padding: padding(xs) padding(l);
-										font: font(text-small);
+
+									&:focus{
+										outline: none;
+										filter: drop-shadow(0 0 2px color(secondary));
 									}
-									@include media (">=big-desktop") {
-										padding: padding(xs) padding(l);
-										font: font(text-small);
+								}
+	
+								input{
+									flex-grow: 0;
+									appearance: none;
+									border: none;
+									padding: padding(xxs);
+									background: color(darker);
+									color: color(white-custom);
+									border-radius: $border-radius;
+									filter: drop-shadow(0 0 10px color(shadow));
+									z-index: 1;
+									// transition: $anim-time $anim-type;
+									font: font(text-small);
+									border: 2px solid color(secondary);
+									margin-bottom: padding(xxs);
+	
+									@include media (">=big-phone") {
+										padding: padding(xxs);
 									}
+	
+									&#submit{
+										border: none;
+										justify-content: center;
+										align-items: center;
+										padding: padding(xxs);
+										background: color(secondary);
+										color: color(white-custom);
+										border-radius: $border-radius;
+										filter: drop-shadow(0 0 10px color(shadow));
+										z-index: 1;
+										transition: $anim-time $anim-type;
+										cursor: pointer;
+										font: font(text-small);
+										margin: 0;
+										transform-style: preserve-3d;
 				
-									&:hover{
-										background: color(primary);
-										transform: translateZ(20px);
-									}
-								}
-
-								&:focus{
-									outline: none;
-									filter: drop-shadow(0 0 2px color(secondary));
-								}
-							}
-						}
-
-						.social{
-							background: color(darker);
-							display: flex;
-							border-radius: $border-radius;
-							justify-content: space-evenly;
-							filter: drop-shadow(0 0 10px color(shadow));
-							
-							a{
-								i{
-									display: block;
-									color:color(white-custom);
-									height: 100%;
-									transition: $anim-time $anim-type;
-									font-size: x-large;
-									padding: padding(xxs) 0 padding(xxs) padding(xxs);
-
-									@include media (">=big-phone", "<tablet") {
-										padding: padding(xs) 0 padding(xs) padding(s);
-									}
-									@include media (">=tablet", "<desktop") {
-										padding: padding(xs) 0 padding(xs) padding(m);
-									}
-									@include media (">=desktop", "<big-desktop") {
-										padding: padding(xs) 0 padding(xs) padding(l);
-									}
-									@include media (">=big-desktop") {
-										padding: padding(xs) 0 padding(xs) padding(l);
-									}
-
-									&:last-child{
-										padding-right: padding(xs);
-
 										@include media (">=big-phone", "<tablet") {
-											padding-right: padding(s);
+											padding: padding(xs) padding(s);
+											font: font(text-small);
 										}
 										@include media (">=tablet", "<desktop") {
-											padding-right: padding(m);
+											padding: padding(xs) padding(m);
+											font: font(text-small);
 										}
 										@include media (">=desktop", "<big-desktop") {
-											padding-right: padding(l);
+											padding: padding(xs) padding(l);
+											font: font(text-small);
 										}
 										@include media (">=big-desktop") {
-											padding-right: padding(l);
+											padding: padding(xs) padding(l);
+											font: font(text-small);
+										}
+					
+										&:hover{
+											background: color(primary);
+											transform: translateZ(20px);
 										}
 									}
-
-									&:hover{
-										color:color(primary);
+	
+									&:focus{
+										outline: none;
+										filter: drop-shadow(0 0 2px color(secondary));
+									}
+								}
+							}
+	
+							.social{
+								background: color(darker);
+								display: flex;
+								flex-grow: 0;
+								border-radius: $border-radius;
+								justify-content: space-evenly;
+								filter: drop-shadow(0 0 10px color(shadow));
+								
+								a{
+									i{
+										display: block;
+										color:color(white-custom);
+										height: 100%;
+										transition: $anim-time $anim-type;
+										font-size: x-large;
+										padding: padding(xxs) 0 padding(xxs) padding(xxs);
+	
+										@include media (">=big-phone", "<tablet") {
+											padding: padding(xs) 0 padding(xs) padding(s);
+										}
+										@include media (">=tablet", "<desktop") {
+											padding: padding(xs) 0 padding(xs) padding(m);
+										}
+										@include media (">=desktop", "<big-desktop") {
+											padding: padding(xs) 0 padding(xs) padding(m);
+										}
+										@include media (">=big-desktop") {
+											padding: padding(xs) 0 padding(xs) padding(m);
+										}
+	
+										&:last-child{
+											padding-right: padding(xs);
+	
+											@include media (">=big-phone", "<tablet") {
+												padding-right: padding(s);
+											}
+											@include media (">=tablet", "<desktop") {
+												padding-right: padding(m);
+											}
+											@include media (">=desktop", "<big-desktop") {
+												padding-right: padding(m);
+											}
+											@include media (">=big-desktop") {
+												padding-right: padding(m);
+											}
+										}
+	
+										&:hover{
+											color:color(primary);
+										}
 									}
 								}
 							}
@@ -1095,7 +1087,7 @@ a{
 	align-items: center;
 	color: color(white-custom);
 	font: font(text-small);
-	padding: padding(xxs);
+	padding: padding(xxxs);
 	filter: drop-shadow(0 0 4px color(black-custom));
 	opacity: 1;
 	background: color(darker);
