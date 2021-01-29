@@ -43,7 +43,7 @@ typist.prototype.type = function() {
 
 window.onload = function() {
 	let element = document.getElementById('cursor-text');
-	let words = ["developer.", "builder.", "designer.", "researcher.", "collaborator."];
+	let words = ["developer.", "builder.", "designer.", "researcher."];
 	new typist(element, words);
 };
 

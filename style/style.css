@@ -140,8 +140,8 @@ html body nav .nav-links {
   z-index: 4;
   border-radius: 16px;
   border: 0px solid #4e96ff;
-  -webkit-filter: drop-shadow(0 0 0px #000000);
-          filter: drop-shadow(0 0 0px #000000);
+  -webkit-filter: drop-shadow(0 0 0px black);
+          filter: drop-shadow(0 0 0px black);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -309,8 +309,6 @@ html body nav .nav-links ul li:first-child {
 html body nav .nav-links ul li:hover {
   -webkit-transform: translateX(10px);
           transform: translateX(10px);
-  -webkit-filter: drop-shadow(0 0 4px #000000);
-          filter: drop-shadow(0 0 4px #000000);
   color: #3385FF;
 }
 
@@ -328,8 +326,8 @@ html body nav .nav-links ul li:hover {
   html body nav .nav-links.clicked {
     border-radius: 16px;
     visibility: visible;
-    -webkit-filter: drop-shadow(0 0 10px #000000);
-            filter: drop-shadow(0 0 10px #000000);
+    -webkit-filter: drop-shadow(0 0 10px black);
+            filter: drop-shadow(0 0 10px black);
     opacity: 1;
   }
 }
@@ -426,6 +424,9 @@ html body .main-container .page {
   -ms-grid-rows: auto (2fr)[5];
       grid-template-rows: auto repeat(5, 2fr);
   background: #242424;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 html body .main-container .page:nth-child(even) {
@@ -484,17 +485,23 @@ html body .main-container .page .header-text-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 html body .main-container .page .header-text-container .header-text {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
   color: #FDFFF7;
   font: 600 6vw "Poppins";
   padding: 20px;
   padding-bottom: 0;
+  max-width: 1200px;
 }
 
 html body .main-container .page .header-text-container .header-text span.highlight {
@@ -513,8 +520,8 @@ html body .main-container .page .header-text-container .header-text span.highlig
 @media (min-width: 768px) and (max-width: 1023px) {
   html body .main-container .page .header-text-container .header-text {
     padding: 48px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 48px;
+    padding-bottom: 48px;
     font: 600 24px "Poppins";
   }
 }
@@ -522,8 +529,8 @@ html body .main-container .page .header-text-container .header-text span.highlig
 @media (min-width: 1024px) and (max-width: 1199px) {
   html body .main-container .page .header-text-container .header-text {
     padding: 105px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 48px;
+    padding-bottom: 48px;
     font: 600 28px "Poppins";
   }
 }
@@ -531,8 +538,8 @@ html body .main-container .page .header-text-container .header-text span.highlig
 @media (min-width: 1200px) {
   html body .main-container .page .header-text-container .header-text {
     padding: 105px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 48px;
+    padding-bottom: 48px;
     font: 600 28px "Poppins";
   }
 }
@@ -548,6 +555,9 @@ html body .main-container .page .card-area {
       grid-template-rows: minmax(0, 19fr) minmax(0, 1fr);
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
+  max-width: 1200px;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 html body .main-container .page .card-area .card-container {
@@ -637,8 +647,9 @@ html body .main-container .page .card-area .card-container .card {
   border-radius: 16px;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
-  -webkit-filter: drop-shadow(0 0 10px #000000);
-          filter: drop-shadow(0 0 10px #000000);
+  -webkit-filter: drop-shadow(0 0 10px black);
+          filter: drop-shadow(0 0 10px black);
+  z-index: 1;
 }
 
 @media (max-width: 479px) {
@@ -712,8 +723,8 @@ html body .main-container .page .card-area .card-container .card .cardtext {
   overflow: hidden;
   background: #4e96ff;
   border-radius: 16px;
-  -webkit-filter: drop-shadow(0 0 10px #000000);
-          filter: drop-shadow(0 0 10px #000000);
+  -webkit-filter: drop-shadow(0 0 10px black);
+          filter: drop-shadow(0 0 10px black);
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
   margin: 12px;
@@ -730,10 +741,11 @@ html body .main-container .page .card-area .card-container .card .cardtext {
 
 @media (min-width: 480px) {
   html body .main-container .page .card-area .card-container .card:hover {
-    -webkit-transform: rotateX(5deg) rotateY(5deg);
-            transform: rotateX(5deg) rotateY(5deg);
-    -webkit-filter: drop-shadow(0 0 10px #000000);
-            filter: drop-shadow(0 0 10px #000000);
+    -webkit-transform: rotateX(5deg) rotateY(5deg) translateZ(20px);
+            transform: rotateX(5deg) rotateY(5deg) translateZ(20px);
+    -webkit-filter: drop-shadow(0 0 10px black);
+            filter: drop-shadow(0 0 10px black);
+    z-index: 2;
   }
 }
 
@@ -800,6 +812,11 @@ html body .main-container .page .landing-text-container {
   -ms-grid-row-span: 2;
   grid-row: 4/6;
   padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  justify-self: center;
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
@@ -852,7 +869,7 @@ html body .main-container .page .landing-text-container .landing-text {
 
 @media (min-width: 768px) {
   html body .main-container .page .landing-text-container .landing-text {
-    font: 600 4.5vw "Poppins";
+    font: 600 4vw "Poppins";
   }
 }
 
@@ -860,10 +877,7 @@ html body .main-container .page .landing-text-container .landing-text span#curso
   color: #3385FF;
 }
 
-html body .main-container .page ul.arrow-links {
-  padding: 0 20px;
-  padding-top: 0px;
-  margin: 0 0 0 -6px;
+html body .main-container .page .arrow-links-container {
   grid-column: 1/-1;
   -ms-grid-row: 6;
   -ms-grid-row-span: 1;
@@ -871,51 +885,67 @@ html body .main-container .page ul.arrow-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html body .main-container .page .arrow-links-container ul.arrow-links {
+  padding: 0 20px;
+  padding-top: 0px;
+  margin: 0 0 0 -6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   list-style-type: none;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font: 300 6vw "Poppins";
   -webkit-perspective: 1000px;
           perspective: 1000px;
+  width: 100%;
+  max-width: 1200px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
-  html body .main-container .page ul.arrow-links {
+  html body .main-container .page .arrow-links-container ul.arrow-links {
     padding: 0 40px;
     font: 300 28px "Poppins";
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  html body .main-container .page ul.arrow-links {
+  html body .main-container .page .arrow-links-container ul.arrow-links {
     padding: 0 48px;
     font: 300 32px "Poppins";
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1199px) {
-  html body .main-container .page ul.arrow-links {
+  html body .main-container .page .arrow-links-container ul.arrow-links {
     padding: 0 105px;
     font: 300 32px "Poppins";
   }
 }
 
 @media (min-width: 1200px) {
-  html body .main-container .page ul.arrow-links {
+  html body .main-container .page .arrow-links-container ul.arrow-links {
     padding: 0 105px;
     font: 300 32px "Poppins";
   }
 }
 
-html body .main-container .page ul.arrow-links li {
+html body .main-container .page .arrow-links-container ul.arrow-links li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -933,41 +963,39 @@ html body .main-container .page ul.arrow-links li {
           filter: drop-shadow(0 0 0 transparent);
 }
 
-html body .main-container .page ul.arrow-links li::before {
+html body .main-container .page .arrow-links-container ul.arrow-links li::before {
   display: inline-block;
   content: "\E315";
   font: 6vw "Material Icons";
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
-  html body .main-container .page ul.arrow-links li::before {
+  html body .main-container .page .arrow-links-container ul.arrow-links li::before {
     font: 28px "Material Icons";
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  html body .main-container .page ul.arrow-links li::before {
+  html body .main-container .page .arrow-links-container ul.arrow-links li::before {
     font: 32px "Material Icons";
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1199px) {
-  html body .main-container .page ul.arrow-links li::before {
+  html body .main-container .page .arrow-links-container ul.arrow-links li::before {
     font: 32px "Material Icons";
   }
 }
 
 @media (min-width: 1200px) {
-  html body .main-container .page ul.arrow-links li::before {
+  html body .main-container .page .arrow-links-container ul.arrow-links li::before {
     font: 32px "Material Icons";
   }
 }
 
-html body .main-container .page ul.arrow-links li:hover {
+html body .main-container .page .arrow-links-container ul.arrow-links li:hover {
   -webkit-transform: translateZ(10px) translateX(10px);
           transform: translateZ(10px) translateX(10px);
-  -webkit-filter: drop-shadow(0 0 4px #000000);
-          filter: drop-shadow(0 0 4px #000000);
   color: #3385FF;
   font-weight: bold;
 }
@@ -1058,8 +1086,8 @@ html body .main-container .page#contact .header-text-container .header-text {
   padding: 4px 40px;
   background: #1d1d1d;
   border-radius: 16px;
-  -webkit-filter: drop-shadow(0 0 10px #000000);
-          filter: drop-shadow(0 0 10px #000000);
+  -webkit-filter: drop-shadow(0 0 10px black);
+          filter: drop-shadow(0 0 10px black);
   text-align: center;
 }
 
@@ -1109,12 +1137,11 @@ html body .main-container .page#contact .contact-container .svg-container svg.sv
   min-width: 100%;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
+  opacity: 0.7;
 }
 
 html body .main-container .page#contact .contact-container .svg-container svg.svgbg.over {
-  fill: #3385FF;
-  -webkit-filter: drop-shadow(0 0 4px #000000);
-          filter: drop-shadow(0 0 4px #000000);
+  fill: #4e96ff;
 }
 
 html body .main-container .page#contact .main-contact {
@@ -1220,8 +1247,8 @@ html body .main-container .page#contact .main-contact .social-container form {
   -webkit-box-pack: stretch;
       -ms-flex-pack: stretch;
           justify-content: stretch;
-  -webkit-filter: drop-shadow(0 0 10px #000000);
-          filter: drop-shadow(0 0 10px #000000);
+  -webkit-filter: drop-shadow(0 0 10px black);
+          filter: drop-shadow(0 0 10px black);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1250,8 +1277,8 @@ html body .main-container .page#contact .main-contact .social-container form tex
   background: #1d1d1d;
   color: #FDFFF7;
   border-radius: 16px;
-  -webkit-filter: drop-shadow(0 0 10px #000000);
-          filter: drop-shadow(0 0 10px #000000);
+  -webkit-filter: drop-shadow(0 0 10px black);
+          filter: drop-shadow(0 0 10px black);
   z-index: 1;
   font: 300 14px "Poppins";
   border: 2px solid #4e96ff;
@@ -1292,8 +1319,8 @@ html body .main-container .page#contact .main-contact .social-container form inp
   background: #1d1d1d;
   color: #FDFFF7;
   border-radius: 16px;
-  -webkit-filter: drop-shadow(0 0 10px #000000);
-          filter: drop-shadow(0 0 10px #000000);
+  -webkit-filter: drop-shadow(0 0 10px black);
+          filter: drop-shadow(0 0 10px black);
   z-index: 1;
   font: 300 14px "Poppins";
   border: 2px solid #4e96ff;
@@ -1318,8 +1345,8 @@ html body .main-container .page#contact .main-contact .social-container form inp
   background: #4e96ff;
   color: #FDFFF7;
   border-radius: 16px;
-  -webkit-filter: drop-shadow(0 0 10px #000000);
-          filter: drop-shadow(0 0 10px #000000);
+  -webkit-filter: drop-shadow(0 0 10px black);
+          filter: drop-shadow(0 0 10px black);
   z-index: 1;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
@@ -1382,8 +1409,8 @@ html body .main-container .page#contact .main-contact .social-container .social 
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-filter: drop-shadow(0 0 10px #000000);
-          filter: drop-shadow(0 0 10px #000000);
+  -webkit-filter: drop-shadow(0 0 10px black);
+          filter: drop-shadow(0 0 10px black);
 }
 
 html body .main-container .page#contact .main-contact .social-container .social a i {
@@ -1470,8 +1497,8 @@ a {
   color: #FDFFF7;
   font: 300 14px "Poppins";
   padding: 4px;
-  -webkit-filter: drop-shadow(0 0 4px #000000);
-          filter: drop-shadow(0 0 4px #000000);
+  -webkit-filter: drop-shadow(0 0 4px black);
+          filter: drop-shadow(0 0 4px black);
   opacity: 1;
   background: #1d1d1d;
   border-radius: 16px 16px 0 0;
