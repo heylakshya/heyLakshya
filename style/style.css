@@ -55,8 +55,8 @@ html body nav .logo {
   padding: 20px;
   padding-right: 0;
   height: 24px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
@@ -102,8 +102,8 @@ html body nav .glass {
   -webkit-backdrop-filter: blur(0px) grayscale(0);
           backdrop-filter: blur(0px) grayscale(0);
   z-index: -1;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -152,8 +152,8 @@ html body nav .nav-links {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
   position: fixed;
   right: 20px;
   top: 20px;
@@ -220,8 +220,8 @@ html body nav .nav-links ul {
   margin: 0%;
   list-style-type: none;
   padding: 0 20px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
   z-index: 4;
   -webkit-perspective: 1000px;
           perspective: 1000px;
@@ -248,8 +248,8 @@ html body nav .nav-links ul li {
   z-index: 4;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 @media (min-width: 1024px) {
@@ -264,8 +264,8 @@ html body nav .nav-links ul li a {
   color: #FDFFF7;
   text-decoration: none;
   font: 600 6vw "Poppins";
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
@@ -307,8 +307,8 @@ html body nav .nav-links ul li:first-child {
 }
 
 html body nav .nav-links ul li:hover {
-  -webkit-transform: translateX(10px);
-          transform: translateX(10px);
+  -webkit-transform: translateX(-5px) rotateY(-15deg);
+          transform: translateX(-5px) rotateY(-15deg);
   color: #3385FF;
 }
 
@@ -336,8 +336,8 @@ html body nav span.arrow {
   display: block;
   color: #FDFFF7;
   padding: 20px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
   z-index: 4;
   cursor: pointer;
   -webkit-transform-style: preserve-3d;
@@ -645,8 +645,8 @@ html body .main-container .page .card-area .card-container .card {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 16px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
   -webkit-filter: drop-shadow(0 0 10px black);
           filter: drop-shadow(0 0 10px black);
   z-index: 1;
@@ -696,8 +696,8 @@ html body .main-container .page .card-area .card-container .card .cardimg {
   overflow: hidden;
   z-index: 1;
   border: 0px solid #FDFFF7;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 html body .main-container .page .card-area .card-container .card .cardimg img {
@@ -725,8 +725,8 @@ html body .main-container .page .card-area .card-container .card .cardtext {
   border-radius: 16px;
   -webkit-filter: drop-shadow(0 0 10px black);
           filter: drop-shadow(0 0 10px black);
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
   margin: 12px;
 }
 
@@ -957,8 +957,8 @@ html body .main-container .page .arrow-links-container ul.arrow-links li {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 0;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
   -webkit-filter: drop-shadow(0 0 0 transparent);
           filter: drop-shadow(0 0 0 transparent);
 }
@@ -1135,8 +1135,8 @@ html body .main-container .page#contact .contact-container .svg-container svg.sv
   z-index: 0;
   min-height: 100%;
   min-width: 100%;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
   opacity: 0.7;
 }
 
@@ -1348,8 +1348,8 @@ html body .main-container .page#contact .main-contact .social-container form inp
   -webkit-filter: drop-shadow(0 0 10px black);
           filter: drop-shadow(0 0 10px black);
   z-index: 1;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
   cursor: pointer;
   font: 300 14px "Poppins";
   margin: 0;
@@ -1417,8 +1417,8 @@ html body .main-container .page#contact .main-contact .social-container .social 
   display: block;
   color: #FDFFF7;
   height: 100%;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
   font-size: x-large;
   padding: 12px 0 12px 12px;
 }
