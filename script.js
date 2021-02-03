@@ -59,6 +59,7 @@ function dark_up_bg(){
 
 function blink_toggle(id){
 	document.getElementById(id).classList.toggle("on");
+	// console.log(id);
 }
 
 function blinker(){
@@ -66,15 +67,14 @@ function blinker(){
 	setTimeout(blink_toggle, 300, "arrow2");
 	setTimeout(blink_toggle, 600, "arrow1");
 	setTimeout(blink_toggle, 900, "arrow2");
-	// console.log("test");
 }
 
 function card_on(card){
-	card.children[1].classList.add('card-hover');
+	card.parentNode.children[1].classList.add('card-hover');
 }
 
 function card_off(card){
-	card.children[1].classList.remove('card-hover');
+	card.parentNode.children[1].classList.remove('card-hover');
 }
 
 console.log(document.getElementsByClassName('cardimg'));

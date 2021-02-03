@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>heyLakshya</title>
+	<link rel="stylesheet" href="style/style.css">
+	<script src="https://kit.fontawesome.com/6e89fd5e85.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+	<nav>
+		<a href="index.html#landing"><img class="logo" src="img/brandLogo4.svg" alt="heylakshya logo"></a>
+		<div class="glass" id="glass" onclick="navPress()"></div>
+
+		<div class="nav-links" id="nav-links">
+			<ul>
+				<li><a href="index.html#projects" onclick="navPress()">Projects</a></li>
+				<li><a href="index.html#work" onclick="navPress()">Experiences</a></li>
+				<li><a href="index.html#extracurricular" onclick="navPress()">Extracurriculars</a></li>
+				<li><a href="index.html#skills" onclick="navPress()">Skills</a></li>
+				<li><a href="index.html#interests" onclick="navPress()">Interests</a></li>
+				<li><a href="index.html#contact" onclick="navPress()">Contact</a></li>
+			</ul>
+		</div>
+
+		<span class="material-icons arrow" id="arrow" onclick="navPress()">dashboard</span>
+	</nav>
+
+	<div class="title">
+		Technical Portfolio
+	</div>
+
+	<div class="main-container">
+
+		<div class="section">
+			<div class="img-container">
+				<img src="img/projects/vidsumm.png" alt="">
+				<div class="topic-container">
+					<span>Video Summarization Using Reinforcement Learning With Attention</span>
+				</div>
+				<div class="text-container">
+					<span class="date">Aug - Dec 2020</span><br>
+					Designed a method for video summarization that incorporates a self-attention mechanism to generate importance scores for the frames to generate video summaries.<br>
+					Used Reinforcement Learning in the form of REINFORCE policy gradient method with a diversity-representativeness reward to train the model. <br>
+					Employed the rank comparison method "Kendall's tau" as a means to compare generated summaries in addition to the generic F-score metric, enabling more meaningful comparison between various methodologies.
+				</div>
+				<div class="links">
+					<a href="https://github.com/heylakshya/vsumm-reinforce-attention/tree/master" target="_blank"><i class="fab fa-github-alt"></i></a>
+					<a href="https://github.com/heylakshya/vsumm-reinforce-attention/blob/master/Video_Summarization_Using_Reinforcement_Learning_with_Attention_BTP_Report.pdf" target="_blank"><i class="fas fa-file-alt"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="img-container">
+				<img src="img/projects/wasteland-min.jpg" alt="">
+				<div class="topic-container">
+					<span>Exploring the Scope of Diversification of Wasteland Usage</span>
+				</div>
+				<div class="text-container">
+					<span class="date">November 2019</span><br>
+					Analysed the impact of barren and vacant land in Indian villages. <br>
+					Investigated possible reasons for this phenomenon and suggested plausible solutions to help tackle this problem in Dekhwala, our model village. <br>	
+				</div>
+				<div class="links">
+					<a href="https://github.com/heylakshya/WASTELAND-USAGE/blob/main/Human%20Geography%20Report.pdf" target="_blank"><i class="fas fa-file-alt"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="img-container">
+				<img src="img/projects/graphics-min.png" alt="">
+				<div class="topic-container">
+					<span>Skeletal Animation in PyOpenGL</span>
+				</div>
+				<div class="text-container">
+					<span class="date">December 2020</span><br>
+					Implemented the complete graphics pipeline for rendering a Collada(.dae) file, including the model, texture mappings, keyframes, and bone information.<br>
+					Implemented the interpolation between different keyframes using linear and quaternion models for translations and rotations, respectively.<br>
+				</div>
+				<div class="links">
+					<a href="https://github.com/heylakshya/Skeletal-Animation-in-PyOpenGL" target="_blank"><i class="fab fa-github-alt"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="img-container">
+				<img src="img/projects/ytrabbithole-min.jpg" alt="">
+				<div class="topic-container">
+					<span>Through The YouTube Rabbit Hole</span>
+				</div>
+				<div class="text-container">
+					<span class="date">November 2020</span><br>
+					Productive usage of YouTube requires the user to have continuous self-control to stay on the relevant topics and not be lured away into watching irrelevant content - which generally makes the user feel exhausted, inefficient, and frustrated.<br>
+					Empirical analysis of how the dissimilarity of content decreases as users go down the trail of recommended videos on the popular video streaming site, affirming the rabbit-hole phenomena' existence.<br>
+				</div>
+				<div class="links">
+					<a href="https://github.com/heylakshya/youtubeRabbitHole" target="_blank"><i class="fab fa-github-alt"></i></a>
+					<a href="https://github.com/heylakshya/youtubeRabbitHole/blob/main/Through_The_YouTube_Rabbit_Hole.pdf" target="_blank"><i class="fas fa-file-alt"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="img-container">
+				<img src="img/projects/harmony-min.jpg" alt="">
+				<div class="topic-container">
+					<span>Music Harmonization Using Reinforcement Learning</span>
+				</div>
+				<div class="text-container">
+					<span class="date">November 2020</span><br>
+					Modelled melody-based harmony generation in the form of states, actions, values, and rewards. <br>
+					Trained an artificial neural network to represent the value function using a modified SARSA algorithm that considers the immediate past action in addition to the current state.<br>
+					Sourced the training data from MIDI files representing a compilation of popular music. Best results achieved rewards that were 11.09 times the expected rewards for a random choice. <br>
+				</div>
+				<div class="links">
+					<a href="https://github.com/heylakshya/Music-Harmonization-Using-Reinforcement-Learning/tree/master" target="_blank"><i class="fab fa-github-alt"></i></a>
+					<a href="https://github.com/heylakshya/Music-Harmonization-Using-Reinforcement-Learning/blob/master/Music_Harmonization_Using_Reinforcement_Learning.pdf"><i class="fas fa-file-alt" target="_blank"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="img-container">
+				<img src="img/projects/gradcam-min.jpg" alt="">
+				<div class="topic-container">
+					<span>GradCAM Implementation</span>
+				</div>
+				<div class="text-container">
+					<span class="date">September 2020</span><br>
+					Utilized the pre-trained InceptionV3 to carry out transfer learning on the P29-Cross-Pure-Dogs dataset. Managed to achieve a test-set accuracy of 85.9%. <br>
+					Implemented the Grad-CAM methodology by Selvaraju et al. to visualize regions of the test image that are seminal to the classifier's output.<br>
+				</div>
+				<div class="links">
+					<a href="https://colab.research.google.com/drive/1PaKGovduP2OYvNSI3xv5qU4KOoElTqzS?usp=sharing" target="_blank"><i class="fas fa-code"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="img-container">
+				<img src="img/projects/riscv-min.png" alt="">
+				<div class="topic-container">
+					<span>RISC-V Emulator</span>
+				</div>
+				<div class="text-container">
+					<span class="date">Jan - June 2020</span><br>
+					Developed a RISC-V Instruction Set Architecture emulator from scratch in C++.  <br>
+					Implemented 1st order prediction pipeline, memory access, and cycle updates. <br>
+				</div>
+				<div class="links">
+					<a href="https://github.com/heylakshya/CAbackupphase3" target="_blank"><i class="fab fa-github-alt"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="img-container">
+				<img src="img/projects/synth-min.jpg" alt="">
+				<div class="topic-container">
+					<span>CMOS Sound Synth</span>
+				</div>
+				<div class="text-container">
+					<span class="date">November 2019</span><br>
+					Designed and built a sound synthesizer circuit to compose electronic music using generic analog ICs(OpAmps, Inverters, Mux, Demux).  <br>
+					Incorporated a pattern arpeggiator circuit with controllable frequency parameters.<br>
+				</div>
+				<div class="links">
+					<a href="https://youtu.be/5VL_mUIzDQY" target="_blank"><i class="fab fa-youtube"></i></a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
