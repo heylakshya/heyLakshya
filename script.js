@@ -41,12 +41,6 @@ typist.prototype.type = function() {
 	setTimeout(function() {that.type();}, this.timer);
 }
 
-window.onload = function() {
-	let element = document.getElementById('cursor-text');
-	let words = ["developer.", "builder.", "designer.", "researcher."];
-	new typist(element, words);
-};
-
 function light_up_bg(){
 	document.getElementById('contact-bg').classList.add("over");
 	// document.getElementById('submit').classList.add("over");
@@ -76,6 +70,10 @@ function card_on(card){
 function card_off(card){
 	card.parentNode.children[1].classList.remove('card-hover');
 }
+
+let element = document.getElementById('cursor-text');
+let words = ["developer.", "builder.", "designer.", "researcher."];
+new typist(element, words);
 
 console.log(document.getElementsByClassName('cardimg'));
 setInterval(blinker, 1200)
