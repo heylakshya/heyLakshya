@@ -1081,21 +1081,22 @@ html body .main-container .page .card-area .card-container .card .cardtext {
   -webkit-transition: 0.15s ease-in-out;
   transition: 0.15s ease-in-out;
   margin: 12px;
+  line-height: 1.5em;
 }
 
 @media (min-width: 480px) {
   html body .main-container .page .card-area .card-container .card .cardtext.card-hover {
     background: #3385FF;
-    -webkit-transform: translate3d(5px, 5px, 5px);
-            transform: translate3d(5px, 5px, 5px);
+    -webkit-transform: translate3d(0px, 0px, 40px);
+            transform: translate3d(0px, 0px, 40px);
     z-index: 2;
   }
 }
 
 @media (min-width: 480px) {
   html body .main-container .page .card-area .card-container .card:hover {
-    -webkit-transform: rotateX(5deg) rotateY(5deg) translateZ(20px);
-            transform: rotateX(5deg) rotateY(5deg) translateZ(20px);
+    -webkit-transform: rotateX(0deg) rotateY(0deg) translateZ(40px);
+            transform: rotateX(0deg) rotateY(0deg) translateZ(40px);
     -webkit-filter: drop-shadow(0 0 10px black);
             filter: drop-shadow(0 0 10px black);
     z-index: 2;
@@ -1504,7 +1505,7 @@ html body .main-container .page#contact .header-text-container {
 
 html body .main-container .page#contact .header-text-container .header-text {
   height: auto;
-  width: auto;
+  width: 100%;
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1515,11 +1516,9 @@ html body .main-container .page#contact .header-text-container .header-text {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 12px 20px;
   margin-bottom: 0;
-  padding: 4px 40px;
+  padding: 4px 12px;
   background: #1d1d1d;
-  border-radius: 16px;
   -webkit-filter: drop-shadow(0 0 10px black);
           filter: drop-shadow(0 0 10px black);
   text-align: center;
