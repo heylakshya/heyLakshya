@@ -413,7 +413,6 @@ html body .title {
 }
 
 html body .main-container {
-  scroll-behavior: smooth;
   grid-row: 3/-1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -431,6 +430,10 @@ html body .main-container {
   background: #242424;
   position: relative;
   z-index: 0;
+}
+
+html body .main-container.index-page {
+  scroll-behavior: smooth;
 }
 
 html body .main-container .section {
