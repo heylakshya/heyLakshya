@@ -412,6 +412,27 @@ html body .title {
           filter: drop-shadow(0 0 10px black);
 }
 
+@media (min-width: 480px) and (max-width: 767px) {
+  html body .title {
+    padding: 20px 40px;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  html body .title {
+    padding: 20px 48px;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  html body .title {
+    padding: 20px 105px;
+    padding-right: 0;
+  }
+}
+
 html body .main-container {
   grid-row: 3/-1;
   display: -webkit-box;
@@ -439,28 +460,14 @@ html body .main-container.index-page {
 html body .main-container .section {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  display: -ms-grid;
-  display: grid;
   width: 100%;
-  background: #242424;
+  background: #1d1d1d;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-grid-rows: minmax(33vh, 1fr) auto;
-      grid-template-rows: minmax(33vh, 1fr) auto;
-}
-
-@media (max-width: 768px) {
-  html body .main-container .section {
-    -ms-grid-rows: minmax(33vh, 1fr) auto;
-        grid-template-rows: minmax(33vh, 1fr) auto;
-  }
 }
 
 html body .main-container .section .img-container {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: #1d1d1d;
@@ -468,7 +475,6 @@ html body .main-container .section .img-container {
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  z-index: 1;
   border: 0px solid #FDFFF7;
   -webkit-transition: 0.15s ease-in-out;
   transition: 0.15s ease-in-out;
@@ -477,31 +483,82 @@ html body .main-container .section .img-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-bottom: 20px;
+  width: 100%;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 768px) {
   html body .main-container .section .img-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     border-radius: 16px;
     margin-top: 20px;
+    -webkit-filter: drop-shadow(0 0 10px black);
+            filter: drop-shadow(0 0 10px black);
+  }
+  html body .main-container .section .img-container:last-child {
     margin-bottom: 20px;
   }
 }
 
-html body .main-container .section .img-container img {
+html body .main-container .section .img-container img.bg-img {
   -o-object-fit: cover;
      object-fit: cover;
-  min-width: 100%;
-  min-height: 100%;
-  -webkit-filter: drop-shadow(0 0 10px black);
-          filter: drop-shadow(0 0 10px black);
+  width: 100%;
   z-index: 1;
-}
-
-html body .main-container .section .img-container .topic-container {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 16px;
+}
+
+@media (min-width: 768px) {
+  html body .main-container .section .img-container img.bg-img {
+    position: absolute;
+    -o-object-fit: cover;
+       object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 0;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+  }
+}
+
+html body .main-container .section .img-container .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #242424;
+  z-index: 1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-filter: drop-shadow(0 0 10px black);
+          filter: drop-shadow(0 0 10px black);
+}
+
+@media (min-width: 768px) {
+  html body .main-container .section .img-container .content {
+    border-radius: 16px;
+    width: 50%;
+    margin: 20px;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+}
+
+html body .main-container .section .img-container .content .topic-container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -513,10 +570,9 @@ html body .main-container .section .img-container .topic-container {
           align-items: center;
   padding: 20px;
   padding-bottom: 0;
-  z-index: 0;
 }
 
-html body .main-container .section .img-container .topic-container span {
+html body .main-container .section .img-container .content .topic-container span {
   font: 600 20px "Poppins";
   color: #4e96ff;
   -webkit-filter: drop-shadow(0 0 1px black);
@@ -524,58 +580,49 @@ html body .main-container .section .img-container .topic-container span {
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
-  html body .main-container .section .img-container .topic-container {
-    padding-left: 40px;
-    padding-right: 40px;
+  html body .main-container .section .img-container .content .topic-container {
     font: 600 24px "Poppins";
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  html body .main-container .section .img-container .topic-container {
-    padding-left: 48px;
-    padding-right: 48px;
+  html body .main-container .section .img-container .content .topic-container {
     font: 600 24px "Poppins";
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1199px) {
-  html body .main-container .section .img-container .topic-container {
-    padding-left: 105px;
-    padding-right: 105px;
+  html body .main-container .section .img-container .content .topic-container {
     font: 600 28px "Poppins";
   }
 }
 
 @media (min-width: 1200px) {
-  html body .main-container .section .img-container .topic-container {
-    padding-left: 105px;
-    padding-right: 105px;
+  html body .main-container .section .img-container .content .topic-container {
     font: 600 28px "Poppins";
   }
 }
 
-html body .main-container .section .img-container .text-container {
+html body .main-container .section .img-container .content .text-container {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #FDFFF7;
   padding: 20px;
   font: 300 14px "Poppins";
-  z-index: 0;
   line-height: 1.5em;
 }
 
-html body .main-container .section .img-container .text-container span.date {
+html body .main-container .section .img-container .content .text-container span.date {
   color: #4e96ff;
 }
 
-html body .main-container .section .img-container .text-container br {
+html body .main-container .section .img-container .content .text-container br {
   display: block;
   content: "";
   margin-bottom: 1em;
 }
 
-html body .main-container .section .img-container .links {
+html body .main-container .section .img-container .content .links {
   margin: 20px;
   margin-top: 0;
   border-radius: 16px;
@@ -594,7 +641,7 @@ html body .main-container .section .img-container .links {
   background: inherit;
 }
 
-html body .main-container .section .img-container .links a i {
+html body .main-container .section .img-container .content .links a i {
   display: block;
   color: #FDFFF7;
   height: 100%;
@@ -603,8 +650,43 @@ html body .main-container .section .img-container .links a i {
   font-size: x-large;
 }
 
-html body .main-container .section .img-container .links a i:hover {
+html body .main-container .section .img-container .content .links a i:hover {
   color: #3385FF;
+}
+
+html body .main-container .section .img-container .img-item {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #000000;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+  width: 50%;
+  border-radius: 16px;
+  overflow: hidden;
+  -webkit-filter: drop-shadow(0 0 10px black);
+          filter: drop-shadow(0 0 10px black);
+}
+
+@media (max-width: 767px) {
+  html body .main-container .section .img-container .img-item {
+    display: none;
+  }
+}
+
+html body .main-container .section .img-container .img-item img.side-img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: relative;
+  width: 100%;
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
@@ -896,8 +978,8 @@ html body .main-container .page .card-area .card-container .card {
   border-radius: 16px;
   -webkit-transition: 0.15s ease-in-out;
   transition: 0.15s ease-in-out;
-  -webkit-filter: drop-shadow(0 0 10px black);
-          filter: drop-shadow(0 0 10px black);
+  -webkit-filter: drop-shadow(0 0 4px black);
+          filter: drop-shadow(0 0 4px black);
   z-index: 1;
   overflow: hidden;
 }
@@ -926,6 +1008,18 @@ html body .main-container .page .card-area .card-container .card.skill .card-tit
   z-index: 1;
 }
 
+@media (min-width: 768px) {
+  html body .main-container .page .card-area .card-container .card.skill .card-title {
+    font: 600 5vw "Poppins";
+  }
+}
+
+@media (min-width: 1024px) {
+  html body .main-container .page .card-area .card-container .card.skill .card-title {
+    font: 600 3vw "Poppins";
+  }
+}
+
 html body .main-container .page .card-area .card-container .card.skill ul.skill-list {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -949,13 +1043,14 @@ html body .main-container .page .card-area .card-container .card.skill ul.skill-
           align-items: center;
   -ms-grid-column-align: stretch;
       justify-self: stretch;
-  background: #1d1d1d;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   width: auto;
   z-index: 1;
   border-radius: 16px;
   margin: 12px;
-  -webkit-filter: drop-shadow(0 0 10px black);
-          filter: drop-shadow(0 0 10px black);
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
 }
 
 html body .main-container .page .card-area .card-container .card.skill ul.skill-list li {
@@ -975,6 +1070,18 @@ html body .main-container .page .card-area .card-container .card.skill ul.skill-
 
 html body .main-container .page .card-area .card-container .card.skill ul.skill-list li.confident {
   color: #B0FE76;
+}
+
+@media (min-width: 768px) {
+  html body .main-container .page .card-area .card-container .card.skill ul.skill-list li {
+    font: 300 3vw "Poppins";
+  }
+}
+
+@media (min-width: 1024px) {
+  html body .main-container .page .card-area .card-container .card.skill ul.skill-list li {
+    font: 300 2vw "Poppins";
+  }
 }
 
 html body .main-container .page .card-area .card-container .card.skill .card-img {
@@ -1006,6 +1113,14 @@ html body .main-container .page .card-area .card-container .card.skill .card-img
   min-height: 100%;
 }
 
+html body .main-container .page .card-area .card-container .card.skill:hover {
+  -webkit-transform: none;
+          transform: none;
+  -webkit-filter: drop-shadow(0 0 10px black);
+          filter: drop-shadow(0 0 10px black);
+  z-index: 2;
+}
+
 @media (max-width: 479px) {
   html body .main-container .page .card-area .card-container .card {
     height: 100%;
@@ -1018,22 +1133,12 @@ html body .main-container .page .card-area .card-container .card.skill .card-img
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1199px) {
-  html body .main-container .page .card-area .card-container .card:first-child {
-    grid-column: span 2;
-  }
-  html body .main-container .page .card-area .card-container .card:last-child {
-    grid-column: span 2;
-  }
-}
-
-@media (min-width: 1200px) {
-  html body .main-container .page .card-area .card-container .card:first-child {
+@media (min-width: 1024px) {
+  html body .main-container .page .card-area .card-container .card:nth-child(1) {
     grid-row: 1/-1;
   }
-  html body .main-container .page .card-area .card-container .card:last-child {
+  html body .main-container .page .card-area .card-container .card:nth-child(2) {
     grid-row: 1/-1;
-    grid-column: -2/-1;
   }
 }
 
@@ -1082,8 +1187,8 @@ html body .main-container .page .card-area .card-container .card .cardtext {
   overflow: hidden;
   background: #4e96ff;
   border-radius: 16px;
-  -webkit-filter: drop-shadow(0 0 10px black);
-          filter: drop-shadow(0 0 10px black);
+  -webkit-filter: drop-shadow(0 0 4px black);
+          filter: drop-shadow(0 0 4px black);
   -webkit-transition: 0.15s ease-in-out;
   transition: 0.15s ease-in-out;
   margin: 12px;
@@ -1093,16 +1198,18 @@ html body .main-container .page .card-area .card-container .card .cardtext {
 @media (min-width: 480px) {
   html body .main-container .page .card-area .card-container .card .cardtext.card-hover {
     background: #3385FF;
-    -webkit-transform: translate3d(0px, 0px, 40px);
-            transform: translate3d(0px, 0px, 40px);
+    -webkit-transform: translate3d(0px, 0px, 20px);
+            transform: translate3d(0px, 0px, 20px);
+    -webkit-filter: drop-shadow(0 0 10px black);
+            filter: drop-shadow(0 0 10px black);
     z-index: 2;
   }
 }
 
 @media (min-width: 480px) {
   html body .main-container .page .card-area .card-container .card:hover {
-    -webkit-transform: rotateX(0deg) rotateY(0deg) translateZ(40px);
-            transform: rotateX(0deg) rotateY(0deg) translateZ(40px);
+    -webkit-transform: rotateZ(0.5deg) rotateY(0deg) translateZ(0px);
+            transform: rotateZ(0.5deg) rotateY(0deg) translateZ(0px);
     -webkit-filter: drop-shadow(0 0 10px black);
             filter: drop-shadow(0 0 10px black);
     z-index: 2;
@@ -1522,9 +1629,6 @@ html body .main-container .page#contact .header-text-container .header-text {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 0;
-  padding: 4px 12px;
-  background: #1d1d1d;
   -webkit-filter: drop-shadow(0 0 10px black);
           filter: drop-shadow(0 0 10px black);
   text-align: center;
@@ -1615,13 +1719,15 @@ html body .main-container .page#contact .main-contact .social-container {
   grid-column: 2;
   -ms-grid-row: 2;
   grid-row: 2;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
   width: 100%;
   height: 100%;
   max-height: 100%;
-  margin-bottom: auto;
   padding: 20px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -1645,7 +1751,7 @@ html body .main-container .page#contact .main-contact .social-container {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
-    max-height: 50%;
+    max-height: 70%;
   }
 }
 
@@ -1655,7 +1761,7 @@ html body .main-container .page#contact .main-contact .social-container {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
-    max-height: 50%;
+    max-height: 70%;
   }
 }
 
@@ -1665,7 +1771,7 @@ html body .main-container .page#contact .main-contact .social-container {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
-    max-height: 50%;
+    max-height: 70%;
   }
 }
 
@@ -1723,7 +1829,6 @@ html body .main-container .page#contact .main-contact .social-container form tex
   height: auto;
   resize: none;
   overflow-y: scroll;
-  max-height: 312px;
 }
 
 @media (max-height: 639px) {
@@ -1745,8 +1850,8 @@ html body .main-container .page#contact .main-contact .social-container form tex
 }
 
 html body .main-container .page#contact .main-contact .social-container form textarea:hover {
-  -webkit-transform: translateZ(20px);
-          transform: translateZ(20px);
+  -webkit-transform: translateZ(10px);
+          transform: translateZ(10px);
 }
 
 html body .main-container .page#contact .main-contact .social-container form input {
@@ -1778,8 +1883,8 @@ html body .main-container .page#contact .main-contact .social-container form inp
 }
 
 html body .main-container .page#contact .main-contact .social-container form input:hover {
-  -webkit-transform: translateZ(20px);
-          transform: translateZ(20px);
+  -webkit-transform: translateZ(10px);
+          transform: translateZ(10px);
 }
 
 html body .main-container .page#contact .main-contact .social-container form input#submit {
@@ -1929,8 +2034,8 @@ html body .main-container .page#contact .main-contact .social-container .social 
 }
 
 html body .main-container .page#contact .main-contact .social-container .social:hover {
-  -webkit-transform: translateZ(20px);
-          transform: translateZ(20px);
+  -webkit-transform: translateZ(10px);
+          transform: translateZ(10px);
 }
 
 a {
@@ -1957,5 +2062,6 @@ a {
   background: #1d1d1d;
   z-index: 2;
   width: 100vw;
+  justify-self: flex-end;
 }
 /*# sourceMappingURL=style.css.map */
