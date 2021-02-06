@@ -428,7 +428,7 @@ html{
 					background: color(darker);
 					display: flex;
 					overflow: hidden;
-					// z-index: 1;
+					z-index: 1;
 					border: 0px solid color(white-custom);
 					transition: $anim-time $anim-type;
 					
@@ -476,7 +476,7 @@ html{
 						display: flex;
 						flex-direction: column;
 						background: color(almost-black1);
-						z-index: 1;
+						z-index: 0;
 						box-sizing: border-box;
 						filter: drop-shadow(0 0 10px color(shadow));
 
@@ -496,7 +496,7 @@ html{
 							align-items: center;
 							padding: padding(xs);
 							padding-bottom: 0;
-							// z-index: 0;
+							z-index: 0;
 							// filter: drop-shadow(0 0 10px color(shadow));
 							
 							span{
@@ -1654,9 +1654,9 @@ a{
 
 .copyright{
 	box-sizing: border-box;
-	// grid-row: -1;
-	// grid-column: 1/-1;
-	width: 100vw;
+	grid-row: -1;
+	grid-column: 1/-1;
+	// width: 100vw;
 	justify-self: center;
 	display:flex;
 	justify-content: center;
@@ -1669,6 +1669,8 @@ a{
 	z-index: 2;
 	width: 100%;
 	span{
+		display: block;
 		opacity: 0.2;
+		width: 100%;
 	}
 }
