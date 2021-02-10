@@ -97,11 +97,13 @@ html{
 	scroll-behavior: smooth;
 	body{
 		scroll-behavior: smooth;
-		position: fixed;
-		top:0;
-		bottom:0;
-		left:0;
-		right:0;
+		position: relative;
+		// top:0;
+		// bottom:0;
+		// left:0;
+		// right:0;
+		width: 100vw;
+		height: 100vh;
 		padding:0;
 		margin:0;
 		display: grid;
@@ -349,7 +351,7 @@ html{
 				}
 
 				&:hover{
-					transform: translateZ(20px);
+					// transform: translateZ(20px);
 				}
 		
 				&.clicked{
@@ -357,7 +359,7 @@ html{
 					color: color(secondary);
 
 					&:hover{
-						transform: rotateX(10deg) rotateY(10deg);
+						// transform: rotateX(10deg) rotateY(10deg);
 					}
 				}
 			}
@@ -397,10 +399,12 @@ html{
 			display: flex;
 			flex-direction: column;
 			scroll-snap-type: y mandatory;
-			overflow-y: auto;
+			overflow-y: scroll;
+			// -webkit-overflow-scrolling: touch;
 			justify-content: flex-start;
 			background: color(almost-black1);
 			position: relative;
+			// position: fixed;
 			z-index: 0;
 
 			&.index-page{

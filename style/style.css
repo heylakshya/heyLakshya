@@ -5,11 +5,9 @@ html {
 
 html body {
   scroll-behavior: smooth;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   padding: 0;
   margin: 0;
   display: -ms-grid;
@@ -374,20 +372,10 @@ html body nav span.arrow {
   }
 }
 
-html body nav span.arrow:hover {
-  -webkit-transform: translateZ(20px);
-          transform: translateZ(20px);
-}
-
 html body nav span.arrow.clicked {
   -webkit-transform: rotateX(0deg) rotateY(0deg);
           transform: rotateX(0deg) rotateY(0deg);
   color: #4e96ff;
-}
-
-html body nav span.arrow.clicked:hover {
-  -webkit-transform: rotateX(10deg) rotateY(10deg);
-          transform: rotateX(10deg) rotateY(10deg);
 }
 
 html body .title {
@@ -444,7 +432,7 @@ html body .main-container {
           flex-direction: column;
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
-  overflow-y: auto;
+  overflow-y: scroll;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
