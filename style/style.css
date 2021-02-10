@@ -1684,9 +1684,9 @@ html body .main-container .page#contact .main-contact {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2033,13 +2033,13 @@ a {
           box-sizing: border-box;
   grid-row: -1;
   grid-column: 1/-1;
-  justify-self: center;
+  justify-self: flex-start;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2049,12 +2049,10 @@ a {
   opacity: 1;
   background: #1d1d1d;
   z-index: 2;
-  width: 100%;
 }
 
 .copyright span {
   display: block;
   opacity: 0.2;
-  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
