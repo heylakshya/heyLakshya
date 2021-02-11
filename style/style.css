@@ -385,7 +385,7 @@ html body .title {
   color: #4e96ff;
   font: 600 20px "Poppins";
   background: #000000;
-  z-index: 2;
+  z-index: 1;
   padding: 20px;
   padding-top: 0;
   -webkit-filter: drop-shadow(0 0 4px black);
