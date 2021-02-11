@@ -13,11 +13,11 @@ $fonts: (
 	primary-large: (600 28px 'Poppins'),
 
 	skill-title-small: (600 10vw 'Poppins'),
-	skill-text-small: (300 6vw 'Poppins'),
+	skill-text-small: (600 6vw 'Poppins'),
 	skill-title-large: (600 30px 'Poppins'),
-	skill-text-large: (300 18px 'Poppins'),
+	skill-text-large: (600 18px 'Poppins'),
 	skill-title-xlarge: (600 24px 'Poppins'),
-	skill-text-xlarge: (300 18px 'Poppins'),
+	skill-text-xlarge: (600 18px 'Poppins'),
 
 	secondary-small: (300 6vw 'Poppins'),
 	secondary-medium: (300 28px 'Poppins'),
@@ -79,7 +79,7 @@ $padding: (
 	@return map-get($padding, $arg);
 }
 
-$anim-time: 0.15s;
+$anim-time: 0.1s;
 $anim-time-slow: 0.3s;
 $anim-type: ease-in-out;
 $border-radius: 16px;
@@ -97,31 +97,41 @@ html{
 	scroll-behavior: smooth;
 	body{
 		scroll-behavior: smooth;
-		position: relative;
+		// position: absolute;
 		// top:0;
 		// bottom:0;
 		// left:0;
 		// right:0;
-		width: 100vw;
-		height: 100vh;
+		// width: 100vw;
 		padding:0;
 		margin:0;
-		display: grid;
-		grid-template-rows: auto auto 13fr;
+		// display: grid;
+		// grid-template-rows: minmax(64px,auto) auto 13fr;
 		-webkit-tap-highlight-color: rgba(0,0,0,0);
+		// overflow: auto;
+		// display:flex;
+		// flex-direction: column;
+		// align-items: stretch;
+		// justify-content: stretch;
+
 
 		nav{
 
 			background: color(black-custom);
-			grid-row: 1;
+			// grid-row: 1;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
 			display: flex;
 			box-sizing: border-box;
 			justify-content: space-between;
 			align-items: center;
 			z-index: 2;
-			flex-basis: 100%;
-			height: auto;
+			// flex-basis: 100%;
+			height: 64px;
 			perspective: 1000px;
+			// flex-grow: 0;
 
 			@include media (">=desktop") {
 				justify-content: space-between;
@@ -366,7 +376,7 @@ html{
 		}
 
 		.title{
-			grid-row: 2;
+			// grid-row: 2;
 			box-sizing: border-box;
 			width: 100%;
 			display: flex;
@@ -375,10 +385,17 @@ html{
 			color: color(secondary);
 			font: font(primary-fix);
 			background: color(black-custom);
-			z-index: 1;
+			z-index: 2;
 			padding: padding(xs);
 			padding-top: 0;
 			filter: drop-shadow(0 0 10px color(shadow));
+			height: 64px;
+			position: fixed;
+			top:64px;
+			left:0;
+			right:0;
+			// flex-grow: 0;
+
 
 			@include media (">=big-phone", "<tablet") {
 				padding: padding(xs) padding(s);
@@ -395,17 +412,28 @@ html{
 		}
 
 		.main-container{
-			grid-row: 3/-1;
-			display: flex;
-			flex-direction: column;
+			// grid-row: 3/-1;
+			// display: flex;
+			// flex-direction: column;
 			scroll-snap-type: y mandatory;
-			overflow-y: scroll;
-			// -webkit-overflow-scrolling: touch;
-			justify-content: flex-start;
-			background: color(almost-black1);
-			position: relative;
-			// position: fixed;
-			z-index: 0;
+			overflow-y: auto;
+			-webkit-overflow-scrolling: touch;
+			// justify-content: flex-start;
+			background: color(darker);
+			// flex-grow: 1;
+			// display: block;
+			// position: relative;
+			// height:100%;
+			position: fixed;
+			top: 64px;
+			bottom: 0;
+			left:0;
+			right:0;
+			// z-index: 0;
+
+			&.secondary-page{
+				top: 128px;
+			}
 
 			&.index-page{
 				scroll-behavior: smooth;
@@ -437,7 +465,7 @@ html{
 					transition: $anim-time $anim-type;
 					
 					position: relative;
-					flex-direction: column;
+					flex-direction: column-reverse;
 					// padding-bottom: padding(xs);
 					width: 100%;
 
@@ -472,7 +500,10 @@ html{
 							min-height: 100%;
 							z-index: 0;
 							align-self: center;
-							filter: blur(10px);
+							// filter: blur(10px);
+						}
+						@include media("<tablet"){
+							display: none;
 						}
 					}
 
@@ -618,20 +649,26 @@ html{
 
 					.img-item{
 						box-sizing: border-box;
-						margin: padding(xs);
+						width: 100%;
 						display: flex;
 						background: color(black-custom);
 						justify-content: center;
 						align-items: center;
 						z-index: 1;
-						width: 50%;
-						border-radius: $border-radius;
+						margin:0;
 						overflow: hidden;
 						filter: drop-shadow(0 0 10px color(shadow));
 
-						@include media("<tablet"){
-							display: none;
+						@include media(">=tablet"){
+							margin: padding(xs);
+							width: 50%;
+							border-radius: $border-radius;
 						}
+
+						// @include media("<tablet"){
+						// 	// display: none;
+
+						// }
 						
 						img.side-img{
 							object-fit: contain;
@@ -669,22 +706,25 @@ html{
 			}
 
 			.page{
-				flex-grow: 0;
-				flex-shrink: 0;
+				// flex-grow: 0;
+				// flex-shrink: 0;
 				scroll-snap-align: start;
 				scroll-snap-stop: always;
 				box-sizing: border-box;
 				position: relative;
 				display: grid;
+				// display: flex;
 				width: 100%;
 				height: 100%;
+				// flex-basis: minmax(0,100%);
 				grid-template-columns: repeat(4, 1fr);
 				grid-template-rows: auto repeat(5, 2fr);
+
 				background: color(darker);
 				justify-content: center;
 				
 				@include media(">=desktop", "portrait"){
-					max-height: 70vw;
+					height: 50%;
 				}
 			
 				&:nth-child(even){
@@ -697,8 +737,8 @@ html{
 					background: color(black-custom);
 
 					.profile-container{
-						grid-row: 1/4;
-						grid-column: 1/-1;
+						// grid-row: 1/4;
+						// grid-column: 1/-1;
 						display: flex;
 						justify-content: center;
 						align-items: center;
@@ -1011,7 +1051,7 @@ html{
 								padding: padding(xs);
 								font: font(text-small);
 								// font: font(primary-small);
-								z-index: 1;
+								z-index: 2;
 								line-height: 1em;
 								overflow: hidden;
 								background: color(secondary);
@@ -1023,15 +1063,15 @@ html{
 								margin: padding(xxs);
 								line-height: 1.5em;
 
-								@include media(">=tablet"){
-									&.card-hover{
-										background: color(primary);
-										// color: color(primary);
-										transform: translate3d(0px, 0px, 20px);
-										filter: drop-shadow(0 0 10px color(shadow));
-										z-index: 2;
-									}
-								}
+								// @include media(">=tablet"){
+								// 	&.card-hover{
+								// 		background: color(primary);
+								// 		// color: color(primary);
+								// 		transform: translate3d(0px, 0px, 20px);
+								// 		filter: drop-shadow(0 0 10px color(shadow));
+								// 		z-index: 2;
+								// 	}
+								// }
 
 								@include media(">=desktop"){
 									font: font(text-medium);
@@ -1043,6 +1083,14 @@ html{
 									transform: rotateZ(0.5deg) rotateY(0deg) translateZ(0px);
 									filter: drop-shadow(0 0 10px color(shadow));
 									z-index: 2;
+
+									.cardtext{
+										background: color(primary);
+										// color: color(primary);
+										transform: translate3d(0px, 0px, 20px);
+										filter: drop-shadow(0 0 10px color(shadow));
+										z-index: 2;
+									}
 								}
 							}
 						}
@@ -1263,7 +1311,7 @@ html{
 							&:hover{
 								transform: translateZ(10px) translateX(10px);
 								color: color(primary);
-								font-weight:bold;
+								// font-weight:bold;
 								transition: $anim-time $anim-type;
 								&::before{
 									display: block;
@@ -1337,13 +1385,21 @@ html{
 							transition: $anim-time-slow $anim-type;
 							margin-bottom: 0px;
 							cursor: pointer;
+							animation: blink 0.6s ease-in-out alternate infinite;
+							animation-timing-function: ease-in-out;
 	
 							&:last-child{
 								margin-top: -18px;
+								// animation-delay: 0.15s;
 							}
 	
-							&.on{
-								opacity: 1;
+							@keyframes blink {
+								0%{
+									opacity: 0;
+								}
+								100%{
+									opacity: 1;
+								}
 							}
 						}
 					}
@@ -1445,17 +1501,17 @@ html{
 							@include media (">=tablet", "<desktop") {
 								padding: padding(xs) padding(m);
 								width: max-content;
-								max-height: 70%;
+								// max-height: 70%;
 							}
 							@include media (">=desktop", "<big-desktop") {
 								padding: padding(xs) padding(l);
 								width: max-content;
-								max-height: 70%;
+								// max-height: 70%;
 							}
 							@include media (">=big-desktop") {
 								padding: padding(xs) padding(l);
 								width: max-content;
-								max-height: 70%;
+								// max-height: 70%;
 							}
 							// @include media ("height<1000px"){
 							// 	max-height: 75%;
@@ -1481,6 +1537,7 @@ html{
 								
 								textarea{
 									flex-grow: 1;
+									flex-shrink: 0;
 									appearance: none;
 									border: none;
 									padding: padding(xxxs) padding(xxs);
@@ -1493,9 +1550,9 @@ html{
 									font: font(text-small);
 									border: 2px solid color(secondary);
 									margin-bottom: padding(xxs);
-									height: auto;
+									// height: minmax(initial, auto);
 									resize: none;
-									overflow-y: scroll;
+									overflow-y: auto;
 									// max-height: 312px;
 									
 									

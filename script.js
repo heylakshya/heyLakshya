@@ -51,29 +51,29 @@ function dark_up_bg(){
 	// document.getElementById('submit').classList.remove("over");
 }
 
-function blink_toggle(id){
-	document.getElementById(id).classList.toggle("on");
-	// console.log(id);
-}
+// function blink_toggle(id){
+// 	document.getElementById(id).classList.toggle("on");
+// 	// console.log(id);
+// }
 
-function blinker(){
-	setTimeout(blink_toggle, 0, "arrow1");
-	setTimeout(blink_toggle, 300, "arrow2");
-	setTimeout(blink_toggle, 600, "arrow1");
-	setTimeout(blink_toggle, 900, "arrow2");
-}
+// function blinker(){
+// 	setTimeout(blink_toggle, 0, "arrow1");
+// 	setTimeout(blink_toggle, 300, "arrow2");
+// 	setTimeout(blink_toggle, 600, "arrow1");
+// 	setTimeout(blink_toggle, 900, "arrow2");
+// }
 
-function card_on(card){
-	card.parentNode.children[1].classList.add('card-hover');
-}
+// function card_on(card){
+// 	card.parentNode.children[1].classList.add('card-hover');
+// }
 
-function card_off(card){
-	card.parentNode.children[1].classList.remove('card-hover');
-}
+// function card_off(card){
+// 	card.parentNode.children[1].classList.remove('card-hover');
+// }
 
 let element = document.getElementById('cursor-text');
 let words = ["developer.", "builder.", "designer.", "researcher."];
 new typist(element, words);
 
-console.log(document.getElementsByClassName('cardimg'));
-setInterval(blinker, 1200)
+// console.log(document.getElementsByClassName('cardimg'));
+// setInterval(blinker, 1200)
