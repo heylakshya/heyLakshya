@@ -889,6 +889,7 @@ html{
 						}
 
 						.card{
+							// transform-style: flat;
 							perspective: 1000px;
 							display: grid;
 							grid-template-rows: minmax(20px, 1fr) auto;
@@ -977,6 +978,7 @@ html{
 									z-index: 0;
 									border: 0px solid color(white-custom);
 									transition: $anim-time $anim-type;
+									// box-shadow: 0 0 10px color(shadow);
 	
 									img{
 										object-fit: cover;
@@ -1003,6 +1005,9 @@ html{
 								padding: padding(xs);
 								scroll-snap-align: start;
 								scroll-snap-stop: always;
+								box-shadow: 0 0 0 color(shadow);
+								filter: drop-shadow(0 0 10px color(shadow));
+								// box-sizing: content-box;
 							}
 
 							// @include media(">=desktop", "<big-desktop"){
@@ -1412,7 +1417,7 @@ html{
 							margin-bottom: 0px;
 							cursor: pointer;
 							animation: blink 0.6s ease-in-out alternate infinite;
-							animation-timing-function: ease-in-out;
+							// animation-timing-function: ease-in-out;
 	
 							&:last-child{
 								margin-top: -18px;
