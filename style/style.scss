@@ -740,8 +740,8 @@ html{
 					background: color(black-custom);
 
 					.profile-container{
-						// grid-row: 1/4;
-						// grid-column: 1/-1;
+						grid-row: 1/4;
+						grid-column: 1/-1;
 						display: flex;
 						justify-content: center;
 						align-items: center;

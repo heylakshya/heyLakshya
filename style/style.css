@@ -743,6 +743,10 @@ html body .main-container .page#landing {
 }
 
 html body .main-container .page#landing .profile-container {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  grid-row: 1/4;
+  grid-column: 1/-1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
