@@ -182,7 +182,7 @@ html{
 				&.clicked{
 					visibility: visible;
 					z-index: 3;
-					backdrop-filter: blur(10px) grayscale(1);
+					backdrop-filter: blur(4px) grayscale(1);
 
 					@include media (">=desktop"){
 						visibility: hidden;
@@ -204,7 +204,7 @@ html{
 				z-index: 4;
 				border-radius: $border-radius;
 				border: 0px solid color(secondary);
-				filter: drop-shadow(0 0 0px color(shadow));
+				// filter: drop-shadow(0 0 0px color(shadow));
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
@@ -230,7 +230,7 @@ html{
 					transform: initial;
 					opacity: 1;
 					border-radius: 0;
-					filter: none;
+					// filter: none;
 					visibility: visible;
 					background: none;
 					margin: 0;
@@ -298,7 +298,7 @@ html{
 							}
 
 							&:hover{
-								color:color(primary);
+								// color:color(primary);
 							}
 						}
 
@@ -312,7 +312,7 @@ html{
 
 						&:hover{
 							transform: translateZ(20px);
-							color: color(primary);
+							// color: color(primary);
 
 							@include media(">=desktop"){
 								transform: translateZ(10px);
@@ -330,7 +330,7 @@ html{
 						border-radius: $border-radius;
 						visibility: visible;
 						// border: 4px solid color(primary);
-						filter: drop-shadow(0 0 10px color(shadow));
+						filter: drop-shadow(0 0 4px color(shadow));
 						opacity: 1;
 					}
 				}
@@ -361,15 +361,15 @@ html{
 				}
 
 				&:hover{
-					// transform: translateZ(20px);
+					transform: rotateZ(5deg);
 				}
 		
 				&.clicked{
-					transform: rotateX(0deg) rotateY(0deg);
+					transform: rotateZ(0deg) translateZ(20px);
 					color: color(secondary);
 
 					&:hover{
-						// transform: rotateX(10deg) rotateY(10deg);
+						transform: rotateZ(-5deg) translateZ(20px);
 					}
 				}
 			}
@@ -388,7 +388,7 @@ html{
 			z-index: 2;
 			padding: padding(xs);
 			padding-top: 0;
-			filter: drop-shadow(0 0 10px color(shadow));
+			filter: drop-shadow(0 0 4px color(shadow));
 			height: 64px;
 			position: fixed;
 			top:64px;
@@ -417,7 +417,7 @@ html{
 			// flex-direction: column;
 			scroll-snap-type: y mandatory;
 			overflow-y: auto;
-			-webkit-overflow-scrolling: touch;
+			// -webkit-overflow-scrolling: touch;
 			// justify-content: flex-start;
 			background: color(darker);
 			// flex-grow: 1;
@@ -478,7 +478,8 @@ html{
 						align-items: flex-start;
 						border-radius: $border-radius;
 						margin-top: padding(xs);
-						filter: drop-shadow(0 0 10px color(shadow));
+						// filter: drop-shadow(0 0 4px color(shadow));
+						box-shadow: 0 0 10px color(shadow);
 
 						&:last-child{
 							margin-bottom: padding(xs);
@@ -513,14 +514,15 @@ html{
 						background: color(almost-black1);
 						z-index: 0;
 						box-sizing: border-box;
-						filter: drop-shadow(0 0 10px color(shadow));
+						// filter: drop-shadow(0 0 4px color(shadow));
+						box-shadow: 0 0 10px color(shadow);
 
 						@include media(">=tablet"){
 							border-radius: $border-radius;
 							width: 50%;
 							margin: padding(xs);
 							margin-right: 0;
-							backdrop-filter: blur(10px);
+							backdrop-filter: blur(4px);
 							// opacity: 0.9;
 						}
 
@@ -589,7 +591,7 @@ html{
 							margin: padding(xs);
 							margin-top: 0;
 							border-radius: $border-radius;
-							filter: drop-shadow(0 0 10px color(shadow));
+							filter: drop-shadow(0 0 4px color(shadow));
 							display: flex;
 							align-items: center;
 							justify-content: space-evenly;
@@ -640,7 +642,7 @@ html{
 									// }
 	
 									&:hover{
-										color:color(primary);
+										// color:color(primary);
 									}
 								}
 							}
@@ -657,7 +659,8 @@ html{
 						z-index: 1;
 						margin:0;
 						overflow: hidden;
-						filter: drop-shadow(0 0 10px color(shadow));
+						// filter: drop-shadow(0 0 4px color(shadow));
+						box-shadow: 0 0 10px color(shadow);
 
 						@include media(">=tablet"){
 							margin: padding(xs);
@@ -753,7 +756,7 @@ html{
 							max-height: 100%; 
 							max-width: 100%; 
 							object-fit: scale-down;
-							z-index: 1;
+							z-index: 0;
 						}
 					}
 				}
@@ -893,9 +896,11 @@ html{
 							box-sizing: border-box;
 							border-radius: $border-radius;
 							transition: $anim-time $anim-type;
-							filter: drop-shadow(0 0 4px color(shadow));
-							z-index: 1;
+							// filter: drop-shadow(0 0 4px color(shadow));
+							box-shadow: 0 0 10px color(shadow);
+							z-index: 0;
 							overflow: hidden;
+							will-change: transform;
 
 							&.skill{
 								.card-title{
@@ -910,7 +915,7 @@ html{
 									// flex-direction: column;
 									align-items: center;
 									justify-content: center;
-									z-index: 1;
+									z-index: 0;
 
 									@include media(">=tablet"){
 										font:font(skill-title-large);
@@ -933,7 +938,7 @@ html{
 									// background: color(darker);
 									backdrop-filter: blur(10px);
 									width: auto;
-									z-index: 1;
+									z-index: 0;
 									border-radius: $border-radius;
 									margin: padding(xxs);
 									box-shadow: 0 0 10px color(shadow);
@@ -969,7 +974,7 @@ html{
 									grid-column: 1/-1;
 									display: flex;
 									overflow: hidden;
-									z-index: 1;
+									z-index: 0;
 									border: 0px solid color(white-custom);
 									transition: $anim-time $anim-type;
 	
@@ -984,8 +989,8 @@ html{
 								@include media(">=tablet"){
 									&:hover{
 										transform: none;
-										filter: drop-shadow(0 0 10px color(shadow));
-										z-index: 2;
+										// filter: drop-shadow(0 0 4px color(shadow));
+										// z-index: 2;
 									}
 								}
 
@@ -1028,7 +1033,7 @@ html{
 								grid-column: 1/-1;
 								display: flex;
 								overflow: hidden;
-								z-index: 1;
+								z-index: 0;
 								border: 0px solid color(white-custom);
 								transition: $anim-time $anim-type;
 
@@ -1051,17 +1056,19 @@ html{
 								padding: padding(xs);
 								font: font(text-small);
 								// font: font(primary-small);
-								z-index: 2;
+								z-index: 0;
 								line-height: 1em;
 								overflow: hidden;
 								background: color(secondary);
 								border-radius: $border-radius;
-								filter: drop-shadow(0 0 4px color(shadow));
+								// filter: drop-shadow(0 0 4px color(shadow));
+								box-shadow: 0 0 10px color(shadow);
 								// backdrop-filter: blur(10px);
 								// box-shadow: 0 0 10px color(shadow);
 								transition: $anim-time $anim-type;
 								margin: padding(xxs);
 								line-height: 1.5em;
+								transform: translateZ(0px);
 
 								// @include media(">=tablet"){
 								// 	&.card-hover{
@@ -1080,16 +1087,31 @@ html{
 
 							@include media(">=tablet"){
 								&:hover{
-									transform: rotateZ(0.5deg) rotateY(0deg) translateZ(0px);
-									filter: drop-shadow(0 0 10px color(shadow));
-									z-index: 2;
+									// animation-timing-function: $anim-type;
+									// animation-duration: $anim-time;
+									// animation-name: card-hover;
+
+									// @keyframes card-hover{
+									// 	0%{
+									// 		transform: translateZ(0px);
+									// 	}
+									// 	50%{
+									// 		transform: rotateX(5deg);
+									// 	}
+									// 	100%{
+									// 		transform: translateZ(10px);
+									// 	}
+									// }
+									transform: translateZ(10px);
+									// filter: drop-shadow(0 0 4px color(shadow));
+									// z-index: 2;
 
 									.cardtext{
-										background: color(primary);
+										// background: color(primary);
 										// color: color(primary);
-										transform: translate3d(0px, 0px, 20px);
-										filter: drop-shadow(0 0 10px color(shadow));
-										z-index: 2;
+										transform: translateZ(20px);
+										// filter: drop-shadow(0 0 4px color(shadow));
+										// z-index: 2;
 									}
 								}
 							}
@@ -1102,7 +1124,7 @@ html{
 								position: absolute;
 								left:0;
 								top:0;
-								z-index: 2;
+								z-index: 0;
 							}
 						}
 
@@ -1112,7 +1134,7 @@ html{
 								position: absolute;
 								left:0;
 								top:0;
-								z-index: 2;
+								z-index: 0;
 						}
 									
 					}
@@ -1189,6 +1211,7 @@ html{
 						font:font(landing-small);
 						color:color(white-custom);
 						z-index: 1;
+						will-change: contents;
 
 						@include media (">=tablet"){
 							font: font(landing-large)
@@ -1254,7 +1277,7 @@ html{
 								align-items: center;
 								margin-bottom: 0;
 								transition: $anim-time $anim-type;
-								filter: drop-shadow(0 0 0 transparent);
+								// filter: drop-shadow(0 0 0 transparent);
 							}
 							&::before{
 								position: absolute;
@@ -1263,7 +1286,9 @@ html{
 								content: "\E315";
 								transition: $anim-time $anim-type;
 								font: font(icons-small);
-								color: color(invisible);
+								// color: color(invisible);
+								opacity: 0;
+								color: color(secondary);
 								// width: 0;
 								// position: absolute;
 
@@ -1310,29 +1335,30 @@ html{
 							
 							&:hover{
 								transform: translateZ(10px) translateX(10px);
-								color: color(primary);
+								// color: color(primary);
 								// font-weight:bold;
-								transition: $anim-time $anim-type;
+								// transition: $anim-time $anim-type;
 								&::before{
-									display: block;
-									content: "\E315";
-									transition: $anim-time $anim-type;
-									font: font(icons-small);
-									color: color(primary);
-									width: auto;
+									// display: block;
+									// content: "\E315";
+									// transition: $anim-time $anim-type;
+									// font: font(icons-small);
+									// color: color(secon);
+									opacity: 1;
+									// width: auto;
 		
-									@include media (">=big-phone", "<tablet") {
-										font: font(icons-medium);
-									}
-									@include media (">=tablet", "<desktop") {
-										font: font(icons-large);
-									}
-									@include media (">=desktop", "<big-desktop") {
-										font: font(icons-large);
-									}
-									@include media (">=big-desktop") {
-										font: font(icons-large);
-									}
+									// @include media (">=big-phone", "<tablet") {
+									// 	font: font(icons-medium);
+									// }
+									// @include media (">=tablet", "<desktop") {
+									// 	font: font(icons-large);
+									// }
+									// @include media (">=desktop", "<big-desktop") {
+									// 	font: font(icons-large);
+									// }
+									// @include media (">=big-desktop") {
+									// 	font: font(icons-large);
+									// }
 								}
 
 								// &::after{
@@ -1422,7 +1448,7 @@ html{
 							// padding: padding(xxxs) padding(xxs);
 							// background: color(darker);
 							// border-radius: $border-radius;
-							filter: drop-shadow(0 0 10px color(shadow));
+							filter: drop-shadow(0 0 4px color(shadow));
 							text-align: center;
 
 						}
@@ -1441,10 +1467,10 @@ html{
 							display: flex;
 							// padding-top: padding(xs);
 							justify-content: center;
-							align-items: flex-start;
+							align-items: stretch;
 							position: absolute;
 							height:100%;
-							width: 100%;
+							min-width: 100%;
 							overflow:hidden;
 	
 							svg.svgbg{
@@ -1452,10 +1478,11 @@ html{
 								display: block;
 								fill: color(dark);
 								z-index: 0;
-								min-height:100%;
+								height:100%;
 								min-width: 100%;
 								transition: $anim-time $anim-type;
 								opacity: 0.7;
+								object-fit: cover;
 	
 								&.over{
 									fill: color(secondary);
@@ -1524,7 +1551,8 @@ html{
 								display: flex;
 								border-radius: $border-radius;
 								justify-content: stretch;
-								filter: drop-shadow(0 0 10px color(shadow));
+								// filter: drop-shadow(0 0 4px color(shadow));
+								box-shadow: 0 0 10px color(shadow);
 								flex-direction: column;
 								padding: padding(xs);
 								margin-bottom: padding(xs);
@@ -1544,7 +1572,8 @@ html{
 									background: color(darker);
 									color: color(white-custom);
 									border-radius: $border-radius;
-									filter: drop-shadow(0 0 10px color(shadow));
+									// filter: drop-shadow(0 0 4px color(shadow));
+									box-shadow: 0 0 10px color(shadow);
 									z-index: 1;
 									transition: $anim-time $anim-type;
 									font: font(text-small);
@@ -1568,7 +1597,8 @@ html{
 
 									&:focus{
 										outline: none;
-										filter: drop-shadow(0 0 2px color(secondary));
+										// filter: drop-shadow(0 0 2px color(secondary));
+										box-shadow: 0 0 2px color(secondary);
 									}
 
 									&:hover{
@@ -1584,7 +1614,8 @@ html{
 									background: color(darker);
 									color: color(white-custom);
 									border-radius: $border-radius;
-									filter: drop-shadow(0 0 10px color(shadow));
+									// filter: drop-shadow(0 0 4px color(shadow));
+									box-shadow: 0 0 10px color(shadow);
 									z-index: 1;
 									// transition: $anim-time $anim-type;
 									font: font(text-small);
@@ -1608,7 +1639,8 @@ html{
 										background: color(secondary);
 										color: color(white-custom);
 										border-radius: $border-radius;
-										filter: drop-shadow(0 0 10px color(shadow));
+										// filter: drop-shadow(0 0 4px color(shadow));
+										box-shadow: 0 0 10px color(shadow);
 										z-index: 1;
 										cursor: pointer;
 										font: font(text-small);
@@ -1633,13 +1665,14 @@ html{
 										}
 					
 										&:hover{
-											background: color(primary);
+											// background: color(primary);
 										}
 									}
 	
 									&:focus{
 										outline: none;
-										filter: drop-shadow(0 0 2px color(secondary));
+										// filter: drop-shadow(0 0 2px color(secondary));
+										box-shadow: 0 0 2px color(secondary);
 									}
 								}
 							}
@@ -1651,7 +1684,8 @@ html{
 								flex-grow: 0;
 								border-radius: $border-radius;
 								justify-content: space-evenly;
-								filter: drop-shadow(0 0 10px color(shadow));
+								// filter: drop-shadow(0 0 4px color(shadow));
+								box-shadow: 0 0 10px color(shadow);
 								transition: $anim-time $anim-type;
 								
 								a{

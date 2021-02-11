@@ -106,8 +106,8 @@ html body nav .glass {
 html body nav .glass.clicked {
   visibility: visible;
   z-index: 3;
-  -webkit-backdrop-filter: blur(10px) grayscale(1);
-          backdrop-filter: blur(10px) grayscale(1);
+  -webkit-backdrop-filter: blur(4px) grayscale(1);
+          backdrop-filter: blur(4px) grayscale(1);
 }
 
 @media (min-width: 1024px) {
@@ -131,8 +131,6 @@ html body nav .nav-links {
   z-index: 4;
   border-radius: 16px;
   border: 0px solid #4e96ff;
-  -webkit-filter: drop-shadow(0 0 0px black);
-          filter: drop-shadow(0 0 0px black);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -180,8 +178,6 @@ html body nav .nav-links {
             transform: initial;
     opacity: 1;
     border-radius: 0;
-    -webkit-filter: none;
-            filter: none;
     visibility: visible;
     background: none;
     margin: 0;
@@ -287,10 +283,6 @@ html body nav .nav-links ul li a {
   }
 }
 
-html body nav .nav-links ul li a:hover {
-  color: #3385FF;
-}
-
 html body nav .nav-links ul li:first-child {
   padding-top: 20px;
 }
@@ -304,7 +296,6 @@ html body nav .nav-links ul li:first-child {
 html body nav .nav-links ul li:hover {
   -webkit-transform: translateZ(20px);
           transform: translateZ(20px);
-  color: #3385FF;
 }
 
 @media (min-width: 1024px) {
@@ -321,8 +312,8 @@ html body nav .nav-links ul li:hover {
   html body nav .nav-links.clicked {
     border-radius: 16px;
     visibility: visible;
-    -webkit-filter: drop-shadow(0 0 10px black);
-            filter: drop-shadow(0 0 10px black);
+    -webkit-filter: drop-shadow(0 0 4px black);
+            filter: drop-shadow(0 0 4px black);
     opacity: 1;
   }
 }
@@ -365,10 +356,20 @@ html body nav span.arrow {
   }
 }
 
+html body nav span.arrow:hover {
+  -webkit-transform: rotateZ(5deg);
+          transform: rotateZ(5deg);
+}
+
 html body nav span.arrow.clicked {
-  -webkit-transform: rotateX(0deg) rotateY(0deg);
-          transform: rotateX(0deg) rotateY(0deg);
+  -webkit-transform: rotateZ(0deg) translateZ(20px);
+          transform: rotateZ(0deg) translateZ(20px);
   color: #4e96ff;
+}
+
+html body nav span.arrow.clicked:hover {
+  -webkit-transform: rotateZ(-5deg) translateZ(20px);
+          transform: rotateZ(-5deg) translateZ(20px);
 }
 
 html body .title {
@@ -387,8 +388,8 @@ html body .title {
   z-index: 2;
   padding: 20px;
   padding-top: 0;
-  -webkit-filter: drop-shadow(0 0 10px black);
-          filter: drop-shadow(0 0 10px black);
+  -webkit-filter: drop-shadow(0 0 4px black);
+          filter: drop-shadow(0 0 4px black);
   height: 64px;
   position: fixed;
   top: 64px;
@@ -421,7 +422,6 @@ html body .main-container {
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   background: #1d1d1d;
   position: fixed;
   top: 64px;
@@ -479,8 +479,8 @@ html body .main-container .section .img-container {
             align-items: flex-start;
     border-radius: 16px;
     margin-top: 20px;
-    -webkit-filter: drop-shadow(0 0 10px black);
-            filter: drop-shadow(0 0 10px black);
+    -webkit-box-shadow: 0 0 10px black;
+            box-shadow: 0 0 10px black;
   }
   html body .main-container .section .img-container:last-child {
     margin-bottom: 20px;
@@ -528,8 +528,8 @@ html body .main-container .section .img-container .content {
   z-index: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-filter: drop-shadow(0 0 10px black);
-          filter: drop-shadow(0 0 10px black);
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
 }
 
 @media (min-width: 768px) {
@@ -538,8 +538,8 @@ html body .main-container .section .img-container .content {
     width: 50%;
     margin: 20px;
     margin-right: 0;
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
   }
 }
 
@@ -614,8 +614,8 @@ html body .main-container .section .img-container .content .links {
   margin: 20px;
   margin-top: 0;
   border-radius: 16px;
-  -webkit-filter: drop-shadow(0 0 10px black);
-          filter: drop-shadow(0 0 10px black);
+  -webkit-filter: drop-shadow(0 0 4px black);
+          filter: drop-shadow(0 0 4px black);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -638,10 +638,6 @@ html body .main-container .section .img-container .content .links a i {
   font-size: x-large;
 }
 
-html body .main-container .section .img-container .content .links a i:hover {
-  color: #3385FF;
-}
-
 html body .main-container .section .img-container .img-item {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -659,8 +655,8 @@ html body .main-container .section .img-container .img-item {
   z-index: 1;
   margin: 0;
   overflow: hidden;
-  -webkit-filter: drop-shadow(0 0 10px black);
-          filter: drop-shadow(0 0 10px black);
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
 }
 
 @media (min-width: 768px) {
@@ -775,7 +771,7 @@ html body .main-container .page#landing .profile-container img.profile {
   max-width: 100%;
   -o-object-fit: scale-down;
      object-fit: scale-down;
-  z-index: 1;
+  z-index: 0;
 }
 
 html body .main-container .page .header-text-container {
@@ -944,10 +940,11 @@ html body .main-container .page .card-area .card-container .card {
   border-radius: 16px;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
-  -webkit-filter: drop-shadow(0 0 4px black);
-          filter: drop-shadow(0 0 4px black);
-  z-index: 1;
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+  z-index: 0;
   overflow: hidden;
+  will-change: transform;
 }
 
 html body .main-container .page .card-area .card-container .card.skill .card-title {
@@ -971,7 +968,7 @@ html body .main-container .page .card-area .card-container .card.skill .card-tit
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  z-index: 1;
+  z-index: 0;
 }
 
 @media (min-width: 768px) {
@@ -1012,7 +1009,7 @@ html body .main-container .page .card-area .card-container .card.skill ul.skill-
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   width: auto;
-  z-index: 1;
+  z-index: 0;
   border-radius: 16px;
   margin: 12px;
   -webkit-box-shadow: 0 0 10px black;
@@ -1066,7 +1063,7 @@ html body .main-container .page .card-area .card-container .card.skill .card-img
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  z-index: 1;
+  z-index: 0;
   border: 0px solid #FDFFF7;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
@@ -1083,9 +1080,6 @@ html body .main-container .page .card-area .card-container .card.skill .card-img
   html body .main-container .page .card-area .card-container .card.skill:hover {
     -webkit-transform: none;
             transform: none;
-    -webkit-filter: drop-shadow(0 0 10px black);
-            filter: drop-shadow(0 0 10px black);
-    z-index: 2;
   }
 }
 
@@ -1117,7 +1111,7 @@ html body .main-container .page .card-area .card-container .card .card-img {
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  z-index: 1;
+  z-index: 0;
   border: 0px solid #FDFFF7;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
@@ -1141,17 +1135,19 @@ html body .main-container .page .card-area .card-container .card .cardtext {
   grid-column: 1/-1;
   padding: 20px;
   font: 300 14px "Poppins";
-  z-index: 2;
+  z-index: 0;
   line-height: 1em;
   overflow: hidden;
   background: #4e96ff;
   border-radius: 16px;
-  -webkit-filter: drop-shadow(0 0 4px black);
-          filter: drop-shadow(0 0 4px black);
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
   margin: 12px;
   line-height: 1.5em;
+  -webkit-transform: translateZ(0px);
+          transform: translateZ(0px);
 }
 
 @media (min-width: 1024px) {
@@ -1162,19 +1158,12 @@ html body .main-container .page .card-area .card-container .card .cardtext {
 
 @media (min-width: 768px) {
   html body .main-container .page .card-area .card-container .card:hover {
-    -webkit-transform: rotateZ(0.5deg) rotateY(0deg) translateZ(0px);
-            transform: rotateZ(0.5deg) rotateY(0deg) translateZ(0px);
-    -webkit-filter: drop-shadow(0 0 10px black);
-            filter: drop-shadow(0 0 10px black);
-    z-index: 2;
+    -webkit-transform: translateZ(10px);
+            transform: translateZ(10px);
   }
   html body .main-container .page .card-area .card-container .card:hover .cardtext {
-    background: #3385FF;
-    -webkit-transform: translate3d(0px, 0px, 20px);
-            transform: translate3d(0px, 0px, 20px);
-    -webkit-filter: drop-shadow(0 0 10px black);
-            filter: drop-shadow(0 0 10px black);
-    z-index: 2;
+    -webkit-transform: translateZ(20px);
+            transform: translateZ(20px);
   }
 }
 
@@ -1184,7 +1173,7 @@ html body .main-container .page .card-area .card-container a span {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 2;
+  z-index: 0;
 }
 
 html body .main-container .page .card-area .card-container .hover-area {
@@ -1193,7 +1182,7 @@ html body .main-container .page .card-area .card-container .hover-area {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 2;
+  z-index: 0;
 }
 
 html body .main-container .page .card-area .swipe-text {
@@ -1317,6 +1306,7 @@ html body .main-container .page .landing-text-container .landing-text {
   font: 600 6.5vw "Poppins";
   color: #FDFFF7;
   z-index: 1;
+  will-change: contents;
 }
 
 @media (min-width: 768px) {
@@ -1425,8 +1415,6 @@ html body .main-container .page .arrow-links-container ul.arrow-links li a {
   margin-bottom: 0;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
-  -webkit-filter: drop-shadow(0 0 0 transparent);
-          filter: drop-shadow(0 0 0 transparent);
 }
 
 html body .main-container .page .arrow-links-container ul.arrow-links li::before {
@@ -1438,7 +1426,8 @@ html body .main-container .page .arrow-links-container ul.arrow-links li::before
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
   font: 6vw "Material Icons";
-  color: rgba(0, 0, 0, 0);
+  opacity: 0;
+  color: #4e96ff;
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
@@ -1468,43 +1457,10 @@ html body .main-container .page .arrow-links-container ul.arrow-links li::before
 html body .main-container .page .arrow-links-container ul.arrow-links li:hover {
   -webkit-transform: translateZ(10px) translateX(10px);
           transform: translateZ(10px) translateX(10px);
-  color: #3385FF;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
 }
 
 html body .main-container .page .arrow-links-container ul.arrow-links li:hover::before {
-  display: block;
-  content: "\E315";
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
-  font: 6vw "Material Icons";
-  color: #3385FF;
-  width: auto;
-}
-
-@media (min-width: 480px) and (max-width: 767px) {
-  html body .main-container .page .arrow-links-container ul.arrow-links li:hover::before {
-    font: 28px "Material Icons";
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  html body .main-container .page .arrow-links-container ul.arrow-links li:hover::before {
-    font: 32px "Material Icons";
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1199px) {
-  html body .main-container .page .arrow-links-container ul.arrow-links li:hover::before {
-    font: 32px "Material Icons";
-  }
-}
-
-@media (min-width: 1200px) {
-  html body .main-container .page .arrow-links-container ul.arrow-links li:hover::before {
-    font: 32px "Material Icons";
-  }
+  opacity: 1;
 }
 
 html body .main-container .page a {
@@ -1606,8 +1562,8 @@ html body .main-container .page#contact .header-text-container .header-text {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-filter: drop-shadow(0 0 10px black);
-          filter: drop-shadow(0 0 10px black);
+  -webkit-filter: drop-shadow(0 0 4px black);
+          filter: drop-shadow(0 0 4px black);
   text-align: center;
 }
 
@@ -1638,12 +1594,12 @@ html body .main-container .page#contact .contact-container .svg-container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   position: absolute;
   height: 100%;
-  width: 100%;
+  min-width: 100%;
   overflow: hidden;
 }
 
@@ -1653,11 +1609,13 @@ html body .main-container .page#contact .contact-container .svg-container svg.sv
   display: block;
   fill: #171717;
   z-index: 0;
-  min-height: 100%;
+  height: 100%;
   min-width: 100%;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
   opacity: 0.7;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 html body .main-container .page#contact .contact-container .svg-container svg.svgbg.over {
@@ -1762,8 +1720,8 @@ html body .main-container .page#contact .main-contact .social-container form {
   -webkit-box-pack: stretch;
       -ms-flex-pack: stretch;
           justify-content: stretch;
-  -webkit-filter: drop-shadow(0 0 10px black);
-          filter: drop-shadow(0 0 10px black);
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1794,8 +1752,8 @@ html body .main-container .page#contact .main-contact .social-container form tex
   background: #1d1d1d;
   color: #FDFFF7;
   border-radius: 16px;
-  -webkit-filter: drop-shadow(0 0 10px black);
-          filter: drop-shadow(0 0 10px black);
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
   z-index: 1;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
@@ -1820,8 +1778,8 @@ html body .main-container .page#contact .main-contact .social-container form tex
 
 html body .main-container .page#contact .main-contact .social-container form textarea:focus {
   outline: none;
-  -webkit-filter: drop-shadow(0 0 2px #4e96ff);
-          filter: drop-shadow(0 0 2px #4e96ff);
+  -webkit-box-shadow: 0 0 2px #4e96ff;
+          box-shadow: 0 0 2px #4e96ff;
 }
 
 html body .main-container .page#contact .main-contact .social-container form textarea:hover {
@@ -1841,8 +1799,8 @@ html body .main-container .page#contact .main-contact .social-container form inp
   background: #1d1d1d;
   color: #FDFFF7;
   border-radius: 16px;
-  -webkit-filter: drop-shadow(0 0 10px black);
-          filter: drop-shadow(0 0 10px black);
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
   z-index: 1;
   font: 300 14px "Poppins";
   border: 2px solid #4e96ff;
@@ -1874,8 +1832,8 @@ html body .main-container .page#contact .main-contact .social-container form inp
   background: #4e96ff;
   color: #FDFFF7;
   border-radius: 16px;
-  -webkit-filter: drop-shadow(0 0 10px black);
-          filter: drop-shadow(0 0 10px black);
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
   z-index: 1;
   cursor: pointer;
   font: 300 14px "Poppins";
@@ -1912,14 +1870,10 @@ html body .main-container .page#contact .main-contact .social-container form inp
   }
 }
 
-html body .main-container .page#contact .main-contact .social-container form input#submit:hover {
-  background: #3385FF;
-}
-
 html body .main-container .page#contact .main-contact .social-container form input:focus {
   outline: none;
-  -webkit-filter: drop-shadow(0 0 2px #4e96ff);
-          filter: drop-shadow(0 0 2px #4e96ff);
+  -webkit-box-shadow: 0 0 2px #4e96ff;
+          box-shadow: 0 0 2px #4e96ff;
 }
 
 html body .main-container .page#contact .main-contact .social-container .social {
@@ -1936,8 +1890,8 @@ html body .main-container .page#contact .main-contact .social-container .social 
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-filter: drop-shadow(0 0 10px black);
-          filter: drop-shadow(0 0 10px black);
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
 }
