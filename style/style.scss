@@ -97,28 +97,13 @@ html{
 	scroll-behavior: smooth;
 	body{
 		scroll-behavior: smooth;
-		// position: absolute;
-		// top:0;
-		// bottom:0;
-		// left:0;
-		// right:0;
-		// width: 100vw;
 		padding:0;
 		margin:0;
-		// display: grid;
-		// grid-template-rows: minmax(64px,auto) auto 13fr;
 		-webkit-tap-highlight-color: rgba(0,0,0,0);
-		// overflow: auto;
-		// display:flex;
-		// flex-direction: column;
-		// align-items: stretch;
-		// justify-content: stretch;
-
 
 		nav{
 
 			background: color(black-custom);
-			// grid-row: 1;
 			position: fixed;
 			top: 0;
 			left: 0;
@@ -128,10 +113,8 @@ html{
 			justify-content: space-between;
 			align-items: center;
 			z-index: 2;
-			// flex-basis: 100%;
 			height: 64px;
 			perspective: 1000px;
-			// flex-grow: 0;
 
 			@include media (">=desktop") {
 				justify-content: space-between;
@@ -204,7 +187,6 @@ html{
 				z-index: 4;
 				border-radius: $border-radius;
 				border: 0px solid color(secondary);
-				// filter: drop-shadow(0 0 0px color(shadow));
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
@@ -230,7 +212,6 @@ html{
 					transform: initial;
 					opacity: 1;
 					border-radius: 0;
-					// filter: none;
 					visibility: visible;
 					background: none;
 					margin: 0;
@@ -296,10 +277,6 @@ html{
 							@include media (">=big-desktop") {
 								font:font(primary-fix);
 							}
-
-							&:hover{
-								// color:color(primary);
-							}
 						}
 
 						&:first-child{
@@ -312,7 +289,6 @@ html{
 
 						&:hover{
 							transform: translateZ(20px);
-							// color: color(primary);
 
 							@include media(">=desktop"){
 								transform: translateZ(10px);
@@ -329,7 +305,6 @@ html{
 					&.clicked{
 						border-radius: $border-radius;
 						visibility: visible;
-						// border: 4px solid color(primary);
 						filter: drop-shadow(0 0 4px color(shadow));
 						opacity: 1;
 					}
@@ -376,11 +351,9 @@ html{
 		}
 
 		.title{
-			// grid-row: 2;
 			box-sizing: border-box;
 			width: 100%;
 			display: flex;
-			// justify-content: center;
 			align-items: center;
 			color: color(secondary);
 			font: font(primary-fix);
@@ -394,7 +367,6 @@ html{
 			top:64px;
 			left:0;
 			right:0;
-			// flex-grow: 0;
 
 
 			@include media (">=big-phone", "<tablet") {
@@ -412,24 +384,14 @@ html{
 		}
 
 		.main-container{
-			// grid-row: 3/-1;
-			// display: flex;
-			// flex-direction: column;
 			scroll-snap-type: y mandatory;
 			overflow-y: auto;
-			// -webkit-overflow-scrolling: touch;
-			// justify-content: flex-start;
 			background: color(darker);
-			// flex-grow: 1;
-			// display: block;
-			// position: relative;
-			// height:100%;
 			position: fixed;
 			top: 64px;
 			bottom: 0;
 			left:0;
 			right:0;
-			// z-index: 0;
 
 			&.secondary-page{
 				top: 128px;
@@ -443,19 +405,11 @@ html{
 
 			.section{
 				box-sizing: border-box;
-				// display: grid;
 				width: 100%;
 				background: color(darker);
 				justify-content: center;
-				// grid-template-rows: minmax(33vh, 1fr) auto;
-				// grid-template-columns: 1fr;
-
-				@include media(">=tablet"){
-					// max-height: 300px;
-				}
 
 				.img-container{
-					// grid-row: 1/2;
 					box-sizing: border-box;
 					background: color(darker);
 					display: flex;
@@ -466,19 +420,13 @@ html{
 					
 					position: relative;
 					flex-direction: column-reverse;
-					// padding-bottom: padding(xs);
 					width: 100%;
 
-					@include media("<tablet"){
-						// width: 100%;
-					}
 					@include media(">=tablet"){
 						flex-direction: row;
-						// height: 100%;
 						align-items: flex-start;
 						border-radius: $border-radius;
 						margin-top: padding(xs);
-						// filter: drop-shadow(0 0 4px color(shadow));
 						box-shadow: 0 0 10px color(shadow);
 
 						&:last-child{
@@ -491,8 +439,6 @@ html{
 						width: 100%;
 						z-index: 1;
 						box-sizing: border-box;
-						// padding-top: padding(xs);
-						// opacity: 0.4;
 
 						@include media(">=tablet"){
 							position: absolute;
@@ -501,7 +447,6 @@ html{
 							min-height: 100%;
 							z-index: 0;
 							align-self: center;
-							// filter: blur(10px);
 						}
 						@include media("<tablet"){
 							display: none;
@@ -514,7 +459,6 @@ html{
 						background: color(almost-black1);
 						z-index: 0;
 						box-sizing: border-box;
-						// filter: drop-shadow(0 0 4px color(shadow));
 						box-shadow: 0 0 10px color(shadow);
 
 						@include media(">=tablet"){
@@ -523,7 +467,6 @@ html{
 							margin: padding(xs);
 							margin-right: 0;
 							backdrop-filter: blur(4px);
-							// opacity: 0.9;
 						}
 
 						.topic-container{
@@ -534,33 +477,23 @@ html{
 							padding: padding(xs);
 							padding-bottom: 0;
 							z-index: 0;
-							// filter: drop-shadow(0 0 10px color(shadow));
 							
 							span{
-								// display: block;
 								font:font(primary-fix);
 								color: color(secondary);
 								filter: drop-shadow(0 0 1px color(shadow));
 							}
 						
 							@include media (">=big-phone", "<tablet") {
-								// padding-left: padding(s);
-								// padding-right: padding(s);
 								font:font(primary-medium);
 							}
 							@include media (">=tablet", "<desktop") {
-								// padding-left: padding(m);
-								// padding-left: 0;
 								font:font(primary-medium);
 							}
 							@include media (">=desktop", "<big-desktop") {
-								// padding-left: padding(l);
-								// padding-left: 0;
 								font:font(primary-large);
 							}
 							@include media (">=big-desktop") {
-								// padding-left: padding(l);
-								// padding-left: 0;
 								font:font(primary-large);
 							}
 						}
@@ -570,12 +503,7 @@ html{
 							color: color(white-custom);
 							padding: padding(xs);
 							font: font(text-small);
-							// z-index: 0;
 							line-height: 1.5em;
-
-							@include media(">=tablet"){
-								// padding-left: 0;
-							}
 							
 							span.date{
 								color: color(secondary)
@@ -597,10 +525,6 @@ html{
 							justify-content: space-evenly;
 							padding: padding(xs);
 							background: inherit;
-
-							@include media(">=tablet"){
-								// margin-left: 0;
-							}
 	
 							a{
 								i{
@@ -609,41 +533,6 @@ html{
 									height: 100%;
 									transition: $anim-time $anim-type;
 									font-size: x-large;
-									// padding: padding(xxs) 0 padding(xxs) padding(xxs);
-	
-									// @include media (">=big-phone", "<tablet") {
-									// 	padding: padding(xs) 0 padding(xs) padding(s);
-									// }
-									// @include media (">=tablet", "<desktop") {
-									// 	padding: padding(xs) 0 padding(xs) padding(m);
-									// }
-									// @include media (">=desktop", "<big-desktop") {
-									// 	padding: padding(xs) 0 padding(xs) padding(m);
-									// }
-									// @include media (">=big-desktop") {
-									// 	padding: padding(xs) 0 padding(xs) padding(m);
-									// }
-	
-									// &:last-child{
-									// 	padding-right: padding(xs);
-	
-									// 	@include media (">=big-phone", "<tablet") {
-									// 		padding-right: padding(s);
-									// 	}
-									// 	@include media (">=tablet", "<desktop") {
-									// 		padding-right: padding(m);
-									// 	}
-									// 	@include media (">=desktop", "<big-desktop") {
-									// 		padding-right: padding(m);
-									// 	}
-									// 	@include media (">=big-desktop") {
-									// 		padding-right: padding(m);
-									// 	}
-									// }
-	
-									&:hover{
-										// color:color(primary);
-									}
 								}
 							}
 						}
@@ -659,7 +548,6 @@ html{
 						z-index: 1;
 						margin:0;
 						overflow: hidden;
-						// filter: drop-shadow(0 0 4px color(shadow));
 						box-shadow: 0 0 10px color(shadow);
 
 						@include media(">=tablet"){
@@ -668,18 +556,10 @@ html{
 							border-radius: $border-radius;
 						}
 
-						// @include media("<tablet"){
-						// 	// display: none;
-
-						// }
-						
 						img.side-img{
 							object-fit: contain;
 							position: relative;
-							// max-width: 100%;
-							// max-height: 100%;
 							width: 100%;
-							// height: 300px;
 						}
 					}
 				}
@@ -709,17 +589,13 @@ html{
 			}
 
 			.page{
-				// flex-grow: 0;
-				// flex-shrink: 0;
 				scroll-snap-align: start;
 				scroll-snap-stop: always;
 				box-sizing: border-box;
 				position: relative;
 				display: grid;
-				// display: flex;
 				width: 100%;
 				height: 100%;
-				// flex-basis: minmax(0,100%);
 				grid-template-columns: repeat(4, 1fr);
 				grid-template-rows: auto repeat(5, 2fr);
 
@@ -732,7 +608,6 @@ html{
 			
 				&:nth-child(even){
 					background: color(almost-black2);
-					// background: color(almost-white);
 				}
 
 				&#landing{
@@ -774,12 +649,9 @@ html{
 						box-sizing: border-box;
 						width: 100%;
 						color:color(white-custom);
-						// color:color(almost-black1);
 						font:font(primary-small);
 						padding: padding(xs);
 						padding-bottom: 0;
-						// padding-top: padding(xs);
-						// max-width: 1200px;
 
 						span.highlight{
 							color: color(primary);
@@ -787,21 +659,18 @@ html{
 	
 						@include media (">=big-phone", "<tablet") {
 							padding: padding(s);
-							// padding-bottom: 0;
 							padding-top: padding(xs);
 							padding-bottom: 0;
 							font:font(primary-medium);
 						}
 						@include media (">=tablet", "<desktop") {
 							padding: padding(m);
-							// padding-bottom: 0;
 							padding-top: padding(m);
 							padding-bottom: padding(m);
 							font:font(primary-medium);
 						}
 						@include media (">=desktop", "<big-desktop") {
 							padding: padding(l);
-							// padding-bottom: 0;
 							padding-top: padding(m);
 							padding-bottom: padding(m);
 							font:font(primary-large);
@@ -809,7 +678,6 @@ html{
 						}
 						@include media (">=big-desktop") {
 							padding: padding(l);
-							// padding-bottom: 0;
 							padding-top: padding(m);
 							padding-bottom: padding(m);
 							font:font(primary-large);
@@ -824,7 +692,6 @@ html{
 					display: grid;
 					grid-template-rows: minmax(0,1fr) auto;
 					grid-template-columns: 1fr;
-					// max-width: 1200px;
 					justify-self: center;
 
 
@@ -848,16 +715,6 @@ html{
 							}
 						}
 
-						// @include media (">=big-phone", "<tablet") {
-						// 	padding: padding(xs) padding(s);
-						// 	display:grid;
-						// 	grid-row:1/-1;
-						// 	gap: padding(xs);
-
-						// 	grid-template-columns: repeat(2, minmax(0,1fr));
-						// 	grid-template-rows: repeat(2, minmax(0,1fr));
-						// }
-
 						@include media (">=tablet", "<desktop") {
 							padding: padding(xs) padding(m);
 							display:grid;
@@ -875,7 +732,6 @@ html{
 							gap: padding(xs);
 
 							grid-template-columns: repeat(4, minmax(0,1fr));
-							// grid-template-rows: repeat(2, minmax(0,1fr));
 						}
 
 						@include media (">=desktop", "portrait") {
@@ -885,11 +741,9 @@ html{
 							gap: padding(xs);
 
 							grid-template-columns: repeat(4, minmax(0,1fr));
-							// grid-template-rows: repeat(2, minmax(0,1fr));
 						}
 
 						.card{
-							// transform-style: flat;
 							perspective: 1000px;
 							display: grid;
 							grid-template-rows: minmax(20px, 1fr) auto;
@@ -897,7 +751,6 @@ html{
 							box-sizing: border-box;
 							border-radius: $border-radius;
 							transition: $anim-time $anim-type;
-							// filter: drop-shadow(0 0 4px color(shadow));
 							box-shadow: 0 0 10px color(shadow);
 							z-index: 0;
 							overflow: hidden;
@@ -913,7 +766,6 @@ html{
 									grid-column: 1/-1;
 									border-radius: $border-radius;
 									display: flex;
-									// flex-direction: column;
 									align-items: center;
 									justify-content: center;
 									z-index: 0;
@@ -936,7 +788,6 @@ html{
 									justify-content: center;
 									align-items: center;
 									justify-self: stretch;
-									// background: color(darker);
 									backdrop-filter: blur(10px);
 									width: auto;
 									z-index: 0;
@@ -978,7 +829,6 @@ html{
 									z-index: 0;
 									border: 0px solid color(white-custom);
 									transition: $anim-time $anim-type;
-									// box-shadow: 0 0 10px color(shadow);
 	
 									img{
 										object-fit: cover;
@@ -991,8 +841,6 @@ html{
 								@include media(">=tablet"){
 									&:hover{
 										transform: none;
-										// filter: drop-shadow(0 0 4px color(shadow));
-										// z-index: 2;
 									}
 								}
 
@@ -1007,26 +855,7 @@ html{
 								scroll-snap-stop: always;
 								box-shadow: 0 0 0 color(shadow);
 								filter: drop-shadow(0 0 10px color(shadow));
-								// box-sizing: content-box;
 							}
-
-							// @include media(">=desktop", "<big-desktop"){
-							// 	&:first-child{
-							// 		grid-column: span 2;
-							// 	}
-							// 	&:last-child{
-							// 		grid-column: span 2;
-							// 	}
-							// }
-
-							// @include media(">=desktop"){
-							// 	&:nth-child(1){
-							// 		grid-row: 1/-1;
-							// 	}
-							// 	&:nth-child(2){
-							// 		grid-row: 1/-1;
-							// 	}
-							// }
 	
 							.card-img{
 								flex-grow: 0;
@@ -1055,35 +884,20 @@ html{
 								box-sizing: border-box;
 								color: color(almost-black1);
 								color: color(white-custom);
-								// color: color(secondary);
 								grid-row: -2/-1;
 								grid-column: 1/-1;
 								padding: padding(xs);
 								font: font(text-small);
-								// font: font(primary-small);
 								z-index: 0;
 								line-height: 1em;
 								overflow: hidden;
 								background: color(secondary);
 								border-radius: $border-radius;
-								// filter: drop-shadow(0 0 4px color(shadow));
 								box-shadow: 0 0 10px color(shadow);
-								// backdrop-filter: blur(10px);
-								// box-shadow: 0 0 10px color(shadow);
 								transition: $anim-time $anim-type;
 								margin: padding(xxs);
 								line-height: 1.5em;
 								transform: translateZ(0px);
-
-								// @include media(">=tablet"){
-								// 	&.card-hover{
-								// 		background: color(primary);
-								// 		// color: color(primary);
-								// 		transform: translate3d(0px, 0px, 20px);
-								// 		filter: drop-shadow(0 0 10px color(shadow));
-								// 		z-index: 2;
-								// 	}
-								// }
 
 								@include media(">=desktop"){
 									font: font(text-medium);
@@ -1092,31 +906,10 @@ html{
 
 							@include media(">=tablet"){
 								&:hover{
-									// animation-timing-function: $anim-type;
-									// animation-duration: $anim-time;
-									// animation-name: card-hover;
-
-									// @keyframes card-hover{
-									// 	0%{
-									// 		transform: translateZ(0px);
-									// 	}
-									// 	50%{
-									// 		transform: rotateX(5deg);
-									// 	}
-									// 	100%{
-									// 		transform: translateZ(10px);
-									// 	}
-									// }
 									transform: translateZ(10px);
-									// filter: drop-shadow(0 0 4px color(shadow));
-									// z-index: 2;
 
 									.cardtext{
-										// background: color(primary);
-										// color: color(primary);
 										transform: translateZ(20px);
-										// filter: drop-shadow(0 0 4px color(shadow));
-										// z-index: 2;
 									}
 								}
 							}
@@ -1189,7 +982,6 @@ html{
 					grid-row: 4/6;
 					padding: padding(xs);
 					width: 100%;
-					// max-width: 1200px;
 					box-sizing: border-box;
 					justify-self: center;
 
@@ -1235,7 +1027,6 @@ html{
 					ul.arrow-links{
 						padding: 0 padding(xs);
 						padding-top: 0px;
-						// margin: 0 0 0 -6px;
 						display: flex;
 						flex-direction: column;
 						list-style-type: none;
@@ -1244,7 +1035,6 @@ html{
 						font: font(secondary-small);
 						perspective: 1000px;
 						width: 100%;
-						// max-width: 1200px;
 						box-sizing: border-box;
 	
 						@include media (">=big-phone", "<tablet") {
@@ -1262,15 +1052,12 @@ html{
 						@include media (">=big-desktop") {
 							padding: 0 padding(l);
 							font: font(secondary-large);
-							// justify-self: center;
 						}
 	
 						li{
 							display:flex;
 							justify-content: flex-start;
 							align-items: center;
-							// width: 100%;
-							// height: 100%;
 							transition: $anim-time $anim-type;
 							color: color(secondary);
 
@@ -1282,7 +1069,6 @@ html{
 								align-items: center;
 								margin-bottom: 0;
 								transition: $anim-time $anim-type;
-								// filter: drop-shadow(0 0 0 transparent);
 							}
 							&::before{
 								position: absolute;
@@ -1291,11 +1077,8 @@ html{
 								content: "\E315";
 								transition: $anim-time $anim-type;
 								font: font(icons-small);
-								// color: color(invisible);
 								opacity: 0;
 								color: color(secondary);
-								// width: 0;
-								// position: absolute;
 
 								@include media (">=big-phone", "<tablet") {
 									font: font(icons-medium);
@@ -1310,83 +1093,12 @@ html{
 									font: font(icons-large);
 								}
 							}
-
-							// &::after{
-							// 	position: absolute;
-							// 	left: 100%;
-							// 	// transform: translateX(100%);
-							// 	display: block;
-							// 	content: "\E315";
-							// 	transition: $anim-time $anim-type;
-							// 	font: font(icons-small);
-							// 	color: color(secondary);
-							// 	// width: 0;
-							// 	// position: absolute;
-
-							// 	@include media (">=big-phone", "<tablet") {
-							// 		font: font(icons-medium);
-							// 	}
-							// 	@include media (">=tablet", "<desktop") {
-							// 		font: font(icons-large);
-							// 	}
-							// 	@include media (">=desktop", "<big-desktop") {
-							// 		font: font(icons-large);
-							// 	}
-							// 	@include media (">=big-desktop") {
-							// 		font: font(icons-large);
-							// 	}
-							// }
-	
-							
+								
 							&:hover{
 								transform: translateZ(10px) translateX(10px);
-								// color: color(primary);
-								// font-weight:bold;
-								// transition: $anim-time $anim-type;
 								&::before{
-									// display: block;
-									// content: "\E315";
-									// transition: $anim-time $anim-type;
-									// font: font(icons-small);
-									// color: color(secon);
 									opacity: 1;
-									// width: auto;
-		
-									// @include media (">=big-phone", "<tablet") {
-									// 	font: font(icons-medium);
-									// }
-									// @include media (">=tablet", "<desktop") {
-									// 	font: font(icons-large);
-									// }
-									// @include media (">=desktop", "<big-desktop") {
-									// 	font: font(icons-large);
-									// }
-									// @include media (">=big-desktop") {
-									// 	font: font(icons-large);
-									// }
 								}
-
-								// &::after{
-								// 	display: block;
-								// 	content: "\E315";
-								// 	transition: $anim-time $anim-type;
-								// 	font: font(icons-small);
-								// 	color: color(invisible);
-								// 	width: auto;
-		
-								// 	@include media (">=big-phone", "<tablet") {
-								// 		font: font(icons-medium);
-								// 	}
-								// 	@include media (">=tablet", "<desktop") {
-								// 		font: font(icons-large);
-								// 	}
-								// 	@include media (">=desktop", "<big-desktop") {
-								// 		font: font(icons-large);
-								// 	}
-								// 	@include media (">=big-desktop") {
-								// 		font: font(icons-large);
-								// 	}
-								// }
 							}
 						}
 					}
@@ -1417,11 +1129,9 @@ html{
 							margin-bottom: 0px;
 							cursor: pointer;
 							animation: blink 0.6s ease-in-out alternate infinite;
-							// animation-timing-function: ease-in-out;
 	
 							&:last-child{
 								margin-top: -18px;
-								// animation-delay: 0.15s;
 							}
 	
 							@keyframes blink {
@@ -1448,11 +1158,6 @@ html{
 							display: flex;
 							justify-content: center;
 							align-items: center;
-							// margin: padding(xxs) padding(xs);
-							// margin-bottom: 0;
-							// padding: padding(xxxs) padding(xxs);
-							// background: color(darker);
-							// border-radius: $border-radius;
 							filter: drop-shadow(0 0 4px color(shadow));
 							text-align: center;
 
@@ -1470,7 +1175,6 @@ html{
 	
 						.svg-container{
 							display: flex;
-							// padding-top: padding(xs);
 							justify-content: center;
 							align-items: stretch;
 							position: absolute;
@@ -1491,7 +1195,6 @@ html{
 	
 								&.over{
 									fill: color(secondary);
-									// filter: drop-shadow(0 0 1px color(secondary));
 								}
 							}
 						}
@@ -1503,11 +1206,8 @@ html{
 						z-index: 1;
 						display: flex;
 						flex-direction: column;
-						// grid-template-rows: repeat(3, 1fr);
-						// grid-template-columns: repeat(3, 1fr);
 						justify-content: flex-start;
 						align-items: center;
-						// margin-top: padding(xxs);
 						padding: 0 padding(xs);
 	
 						.social-container{
@@ -1520,7 +1220,6 @@ html{
 							width: 100%;
 							height: 100%;
 							max-height: 100%;
-							// margin-bottom: auto;
 							padding: padding(xs);
 							flex-grow: 1;
 							perspective: 1000px;
@@ -1533,21 +1232,15 @@ html{
 							@include media (">=tablet", "<desktop") {
 								padding: padding(xs) padding(m);
 								width: max-content;
-								// max-height: 70%;
 							}
 							@include media (">=desktop", "<big-desktop") {
 								padding: padding(xs) padding(l);
 								width: max-content;
-								// max-height: 70%;
 							}
 							@include media (">=big-desktop") {
 								padding: padding(xs) padding(l);
 								width: max-content;
-								// max-height: 70%;
 							}
-							// @include media ("height<1000px"){
-							// 	max-height: 75%;
-							// }
 	
 							form{
 								justify-self: center;
@@ -1556,13 +1249,11 @@ html{
 								display: flex;
 								border-radius: $border-radius;
 								justify-content: stretch;
-								// filter: drop-shadow(0 0 4px color(shadow));
 								box-shadow: 0 0 10px color(shadow);
 								flex-direction: column;
 								padding: padding(xs);
 								margin-bottom: padding(xs);
 								perspective: 1000px;
-								// height: 100%;
 								
 								@include media("<big-phone"){
 									padding: padding(xxs);
@@ -1577,32 +1268,26 @@ html{
 									background: color(darker);
 									color: color(white-custom);
 									border-radius: $border-radius;
-									// filter: drop-shadow(0 0 4px color(shadow));
 									box-shadow: 0 0 10px color(shadow);
 									z-index: 1;
 									transition: $anim-time $anim-type;
 									font: font(text-small);
 									border: 2px solid color(secondary);
 									margin-bottom: padding(xxs);
-									// height: minmax(initial, auto);
 									resize: none;
 									overflow-y: auto;
-									// max-height: 312px;
 									
 									
 									@include media ("height<640px") {
 										padding: padding(xxs);
-										// height: 82px;
 									}
 									
 									@include media("height>=640px") {
 										padding: padding(xxs);
-										// height: 128px;
 									}
 
 									&:focus{
 										outline: none;
-										// filter: drop-shadow(0 0 2px color(secondary));
 										box-shadow: 0 0 2px color(secondary);
 									}
 
@@ -1619,10 +1304,8 @@ html{
 									background: color(darker);
 									color: color(white-custom);
 									border-radius: $border-radius;
-									// filter: drop-shadow(0 0 4px color(shadow));
 									box-shadow: 0 0 10px color(shadow);
 									z-index: 1;
-									// transition: $anim-time $anim-type;
 									font: font(text-small);
 									border: 2px solid color(secondary);
 									margin-bottom: padding(xxs);
@@ -1644,7 +1327,6 @@ html{
 										background: color(secondary);
 										color: color(white-custom);
 										border-radius: $border-radius;
-										// filter: drop-shadow(0 0 4px color(shadow));
 										box-shadow: 0 0 10px color(shadow);
 										z-index: 1;
 										cursor: pointer;
@@ -1668,15 +1350,10 @@ html{
 											padding: padding(xs) padding(l);
 											font: font(text-small);
 										}
-					
-										&:hover{
-											// background: color(primary);
-										}
 									}
 	
 									&:focus{
 										outline: none;
-										// filter: drop-shadow(0 0 2px color(secondary));
 										box-shadow: 0 0 2px color(secondary);
 									}
 								}
@@ -1689,7 +1366,6 @@ html{
 								flex-grow: 0;
 								border-radius: $border-radius;
 								justify-content: space-evenly;
-								// filter: drop-shadow(0 0 4px color(shadow));
 								box-shadow: 0 0 10px color(shadow);
 								transition: $anim-time $anim-type;
 								
@@ -1757,7 +1433,6 @@ a{
 	box-sizing: border-box;
 	grid-row: -1;
 	grid-column: 1/-1;
-	// width: 100vw;
 	justify-self: flex-start;
 	display:flex;
 	justify-content: flex-start;
@@ -1772,6 +1447,5 @@ a{
 	span{
 		display: block;
 		opacity: 0.2;
-		// width: 100%;
 	}
 }
